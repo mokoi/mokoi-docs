@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>PlayerRemove</h2>
+<p class="fundef">PlayerRemove(num)</p>
+<p>Removes a players</p>
+<p><strong>Argument 'num':</strong></p>
+<p>0 on Error.</p>
+</div>

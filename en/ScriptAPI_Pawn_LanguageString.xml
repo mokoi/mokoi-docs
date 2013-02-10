@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>LanguageString</h2>
+<p class="fundef">LanguageString(line,returnstring[])</p>
+<p>Get String from Language File.</p>
+<p><strong>Argument 'line':</strong>line of language wanted.</p>
+<p><strong>Argument 'returnstring[]':</strong>String to store language string.</p>
+</div>

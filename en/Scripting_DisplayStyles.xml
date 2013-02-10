@@ -1,0 +1,36 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; DisplayStyles</div>
+<h2>Display Styles</h2>
+
+<p>These are still in development, and may or may not be available.</p>
+<h3>Normal</h3>
+
+<img src="./images/style_normal.png" alt=""/>
+STYLE_NORMAL 
+<h3>Vertical Gradient</h3>
+
+<img src="./images/style_vgradient.png" alt=""/>
+STYLE_VGRADIENT 
+<h3>Horizontal Gradient</h3>
+
+<img src="./images/style_hgradient.png" alt=""/>
+STYLE_HGRADIENT 
+<h3>Glow</h3>
+
+
+STYLE_GLOW
+<h3>Outline</h3>
+
+<img src="./images/style_outline.png" alt=""/>
+STYLE_OUTLINE
+<h3>Replace Colour</h3>
+
+
+STYLE_REPLACECOLOUR
+<h3>Negative</h3>
+
+<img src="./images/style_negative.png" alt=""/>
+<p>STYLE_NEGATIVE</p>
+
+
+</div>

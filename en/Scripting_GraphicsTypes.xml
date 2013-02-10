@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; GraphicsTypes</div>
+<h2>Graphics Types</h2>
+
+This are graphically types that Mokoi Games support.
+ <ul><li>SPRITE</li><li>RECTANGLE</li><li>LINE</li><li>ANIMATION</li><li>TEXT</li><li>POLYGON</li><li>CIRCLE</li></ul>
+</div>

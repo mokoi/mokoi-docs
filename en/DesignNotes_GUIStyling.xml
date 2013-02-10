@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="DesignNotes.xml">DesignNotes</a> &gt; GUIStyling</div>
+<p><strong>In-development for Mokoi Gaming 0.91</strong></p>
+<p>CSS-like styling for the GUI component.</p>
+<h3>Elements</h3>
+
+emptywindow,
+dialogok,
+dialogyesno,
+dialogyesnocancel,
+dialogtext,
+throbber,
+checkbox,
+text,
+inputtext,
+button,
+imagebutton,
+image,
+<p>box</p>
+<h4>Element States</h4>
+
+enabled,
+pressed,
+hover,
+clicked,
+active,
+disabled,
+<p>activehover</p>
+<h3>properties</h3>
+
+<p>Note: Doesn't support multiple values for a property.</p>
+
+background-color<br/>
+background-color2<br/>
+background-style<br/>
+
+border-color<br/>
+border-image<br/>
+border-style<br/>
+border-width<br/>
+
+color<br/>
+color2<br/>
+style<br/>
+
+
+</div>

@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>FileGetList</h2>
+<p class="fundef">FileGetList(strings[][],directory[])</p>
+<p>List File in a directory.</p>
+<p><strong>Argument 'strings[][]':</strong>Stores file name in directory.</p>
+<p><strong>Argument 'directory[]':</strong>Directory name.</p>
+</div>

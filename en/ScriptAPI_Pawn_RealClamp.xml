@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>RealClamp</h2>
+<p class="fundef">RealClamp(Real:value,Real:min,Real:max)</p>
+<p>Return value thats has been limited between min and max.</p>
+<p><strong>Argument 'Real:value':</strong></p>
+<p><strong>Argument 'Real:min':</strong></p>
+<p><strong>Argument 'Real:max':</strong></p>
+</div>

@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>InputPointer</h2>
+<p class="fundef">InputPointer(axis,player)</p>
+<p>Returns Pointer value for Player.</p>
+<p><strong>Argument 'axis':</strong>0 for x axis, 1 for y axis.</p>
+<p><strong>Argument 'player':</strong>0 for current player otherwise the selected player.</p>
+<p>Value the current value of axis of mouse or touchscreen.</p>
+<h3>Example Code</h3>
+<pre>
+	if ( InputButton(0,0) == 1 )
+		ShootAt(InputPointer(0,0), InputPointer(1,0));
+	</pre>
+</div>

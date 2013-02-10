@@ -1,0 +1,115 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; <a href="Pawn.xml">Pawn</a> &gt; Variables</div>
+<p><em>Mokoi Gaming uses [http://compuphase.com/pawn/pawn.htm Pawn] as default scripting language, so further references to Pawn will also refer to the default scripting language.</em></p>
+<p>Variables must be declared before they are used in an expression. Pawn is a type-less language, all variables are 'Cell' or a group of 'Cell'. A Cell can hold 32-bit integral number.</p>
+<h3>Type of Declarations</h3>
+
+<h4>Local declarations</h4>
+ 
+A local declaration appears inside a compound statement. A local variable can only be accessed from within the compound statement, and from nested compound statements. A declaration in the expression of a for loop instruction is also a local declaration. Taken from Pawn's Manual <br/>
+<h4>Global declarations</h4>
+ 
+A global declaration appears outside a function and a global variable is accessible to any function. Global data objects can only be initialised with constant expressions. Taken from Pawn's Manual <br/>
+<h4>Static declarations</h4>
+ 
+Static declaration variable are added to global scope.
+<pre>
+add2Static()
+{
+   //add one to staticvar from main() function
+   staticvar++;
+}
+
+main()
+{
+  new localvar; //Can only in this function.
+  static staticvar; // Statics variable are added to global scope.
+  add2Static();
+}
+</pre>
+<h4>Stock declarations</h4>
+ 
+Stock declaration variable or function may not be include in the compiled output if they aren't being used <br/>
+<h4>Public declarations</h4>
+ 
+<p>Public declaration function can be access outside of the script, either by the program or other entity.</p>
+<h3>Initialisation</h3>
+
+Variables can be initialised at their declaration. Uninitialised data defaults to zero. <br/>
+<em>Examples:</em>
+<pre>
+new i = 1
+new j /* j is zero */
+new k = 'a' /* k has character code for letter 'a' */
+new a[] = {1,4,9,16,25} /* a has 5 elements */
+new s1[20] = {'a','b'} /* the other 18 elements are 0 */
+new s2[] = &quot;Hello world...&quot; /* a unpacked string */
+new s3[] = !&quot;Hello world...&quot; /* a packed string */
+new s4[14 char] = !&quot;Hello world...&quot; /* a packed string */
+new b[10]= {1,2,...} /* b=1,2,3,4,5,6,7,8,9,10 */
+</pre>
+<em>Examples of invalid declarations</em>
+<pre>
+new c[3] = 4 /* an array cannot be set to a value */
+new i = &quot;Good-bye&quot; /* i must be an array for this initialisers */
+new q[] /* unknown size of array */
+new p[2] = { i + j, k - 3} /*array initialisers must be constants */
+</pre>
+
+<h4>Integrals/Numbers</h4>
+ 
+<p>Integrals are the basic variable type in Pawn. These can hold a whole number value between &amp;acirc;ˆ’2,147,483,648 and +2,147,483,647.</p>
+<h4>Arrays</h4>
+ 
+<p>Arrays are a group of Cells.</p>
+<h4>2D Arrays</h4>
+ 
+<p>2D Arrays are just a Array of Arrays</p>
+<h4>Strings</h4>
+ 
+A string is just a array with a terminating 0. Characters are stored as UTF-32 in the array.
+<pre>
+// Valid Examples
+new a0[6] = &quot;valid&quot;;
+new a1[6] = {'v', 'a', 'l', 'i', 'd', 0 };
+new a2[6] = {118, 97, 108, 105, 100, 0 };
+// Invalid Examples
+new b1[6] = {'v', 'a', 'l', 'i', 'd' }; // Invalid string, but valid Array
+</pre>
+<h4>Packed Strings</h4>
+ 
+In a unpacked string, each Cell store the ASCII character value (7bit), since each Cell can hold a 32bit value, a packed string takes advanced of that and stores multiply character value in one Cell.
+<pre>
+new author[3] = {1819634533,2013265920, 0 }; // This this a packed string that says 'lukex'.
+new author[3] = !&quot;lukex&quot;; // ! before the string will pack the string.
+</pre>
+<h4>Tagged Variables. Floats, Fixed, Boolean and other.</h4>
+ 
+<p>To get around the fact the Pawn only has one type, Variables can be tagged to emphasize their usage.</p>
+<h4>Bit manipulation</h4>
+
+
+<pre>
+SetBit( &amp;v, n )
+{
+	v |= (1 &lt;&lt; n);
+}
+
+ClearBit( &amp;v, n )
+{
+	v &amp;= ~(1 &lt;&lt; n);
+}
+
+ToggleBit( &amp;v, n )
+{
+	v ^= (1 &lt;&lt; n);
+}
+
+TestBit( v, n )
+{
+	return !!(v &amp; (1 &lt;&lt; n));
+}
+</pre>
+
+
+</div>

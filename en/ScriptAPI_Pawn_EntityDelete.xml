@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>EntityDelete</h2>
+<p class="fundef">EntityDelete(id)</p>
+<p>Deletes a entity.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+</div>

@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>InputButton</h2>
+<p class="fundef">InputButton(input,player)</p>
+<p>Returns Button value for Player.</p>
+<p><strong>Argument 'input':</strong>A value between 0-15.</p>
+<p><strong>Argument 'player':</strong>0 for current player otherwise the selected player.</p>
+<p>0 for un-pressed button, 1 for pressed button, 2 for held down button</p>
+<h3>Example Code</h3>
+<pre>
+	if ( InputButton(0,0) == 1 )
+		Shoot();
+	</pre>
+</div>

@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>NumberRandom</h2>
+<p class="fundef">NumberRandom(max)</p>
+<p>Returns a random number between 0 and max - 1</p>
+<p><strong>Argument 'max':</strong>max value.</p>
+</div>

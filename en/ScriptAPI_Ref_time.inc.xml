@@ -1,0 +1,44 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _time_included
+  #endinput
+#endif
+#define _time_included
+
+//Time Functions
+native Time(&amp;hour=0, &amp;minute=0, &amp;second=0);
+native Date(&amp;year=0, &amp;month=0, &amp;day=0);
+
+native TimestampCurrent();
+native TimestampDetails(seconds1970, &amp;year=0, &amp;month=0, &amp;day=0, &amp;hour=0, &amp;minute=0, &amp;second=0);
+
+/***
+&lt;function name=&quot;Time&quot;&gt;
+	&lt;summary&gt;Get Current time&lt;/summary&gt;
+	&lt;param name=&quot;&amp;amp;hour&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;minute&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;second&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;Date&quot;&gt;
+	&lt;summary&gt;Get Current Date&lt;/summary&gt;
+	&lt;param name=&quot;&amp;amp;year&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;month&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;day&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;TimestampCurrent&quot;&gt;
+	&lt;summary&gt;Returns the seconds from 1970. Also known as Unix Time&lt;/summary&gt;
+	&lt;return&gt;Returns the seconds from 1970&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;TimestampDetails&quot;&gt;
+	&lt;summary&gt;Converts a Unix Timestamp to a time and date.&lt;/summary&gt;
+	&lt;param name=&quot;seconds1970&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Timestamp to use&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;year&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;month&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;day&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;hour&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;minute&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;second&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Variable to store the infomation.&lt;/param&gt;
+&lt;/function&gt;
+***/
+</pre>
+</div>

@@ -1,0 +1,290 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt; Basic Invaders</div>
+<p>This Code is outdate, we are working on updating it.</p>
+<h3>Map Script</h3>
+
+In this case the Map Script acts as parent to the Invaders entity
+<pre>
+new Float:posx = 248.00;
+new Float:posy = 352.00;
+new dir = 1;
+new Float:endofline = 140.00;
+
+public Init()
+{
+    EntityCreate(&quot;player&quot;, &quot;player&quot;, 200, 100, -2); /* Create the Player Entity */
+
+    /* We create the enemy here, cause it easier */
+    new i = 0;
+    new l = 0;
+    new enemy[] = &quot;inv0x&quot;;
+    while(i &lt; 60)
+    {
+        enemy[4] = i + 65;
+        l = i / 20;
+        EntityCreate(&quot;invader&quot;, enemy, 10 + ((i-(l*20)) * 20), (l*20) + 10, -2);
+        i++;
+    }
+    endofline = 140.00;
+    dir = 1;
+}
+
+main()
+{
+    new Float:movement = GameFrame() * 10.00;
+    new enemy[] = &quot;inv0x&quot;;
+    new i = 0;
+
+    endofline -= movement;
+    if ( endofline &lt;= 0.00 )
+    {
+        dir++;
+        if (dir == 4)
+        {
+            dir = 0;
+            endofline = 16.00;
+        }
+        else
+            endofline = (dir == 2 ? 16.00 : 140.00);
+    }
+    while(i &lt; 60)
+    {
+        /* A Better Option here could be to call a function to move, but passing argument via Public Function */
+        enemy[4] = i + 65;
+        EntityGetPosition(enemy, posx, posy );
+        switch (dir) /* Move Invaders */
+        {
+        case 1:
+            EntitySetPosition(enemy, posx + movement, posy );
+        case 3:
+            EntitySetPosition(enemy, posx - movement, posy );
+        default:
+            EntitySetPosition(enemy, posx , posy + movement );
+        }
+        i++;
+    }
+
+}
+
+public Destroy()
+{
+    EntityDelete(&quot;player&quot;);
+    new i = 0;
+    new enemy[] = &quot;inv0x&quot;;
+    while(i &lt; 60)
+    {
+        enemy[4] = i + 65;
+        EntityDelete(enemy);
+        i++;
+    }
+}
+</pre>
+
+<h3>Invader Entity</h3>
+
+<pre>
+new Float:posx = 10.00;
+new Float:posy = 10.00;
+new dead = 0;
+new obj = 0;
+
+forward public Init(...);
+forward public Close();
+forward public hit();
+
+public Init(...)
+{
+    EntityGetPosition(posx, posy);
+    obj = ObjectCreate(&quot;enemy.png:main&quot;, SPRITE, floatround(posx), floatround(posy), 4, 0, 0);
+
+}
+
+public Close()
+{
+    CollisionSet( 0, 0, 0, 0, 0);
+    ObjectDelete(obj);
+}
+
+main()
+{
+    if (!dead)
+    {
+        move();
+    }
+}
+
+move()
+{
+    GetEntityPosition(&quot;&quot;, posx, posy );
+    ChangeObjectPosition(obj, floatround(posx), floatround(posy), 4, 0, 0);
+    SetCollisionRect(&quot;&quot;, 0, floatround(posx)+2, floatround(posy)+2, 12, 12);
+}
+
+public hit()
+{
+    EntityPublicFunction(&quot;player&quot;, &quot;score&quot;);
+    dead = 1;
+    SoundPlay(&quot;invader_death.wav&quot;);
+    EntityDelete(SELF);
+}
+</pre>
+
+Player Entity
+<pre>
+#include &lt;core&gt;
+
+forward public hit();
+forward public score();
+
+new obj = -1;
+new Float: weapon_delay = 0.00;
+new lives = 3;
+new pscore = 0;
+new Float:posx = 248.00;
+new Float:posy = 352.00;
+new width = 16;
+
+public Init(...)
+{
+    obj = ObjectCreate(&quot;player.png:main&quot;, SPRITE, floatround(posx), floatround(posy), 4, 0, 0);
+}
+
+public Close()
+{
+    ObjectDelete(obj);
+}
+
+main()
+{
+    HUD();
+
+    if( lives &gt; 0)
+    {
+        new axis = InputAxis(0, 0);
+        new Float:movement = GameFrame2() * float(axis/15);
+
+        if ( axis != 0 )
+        {
+            posx += movement;
+            ObjectPosition(obj, floatround(posx), floatround(posy), 4, 0, 0);
+        }
+        if( weapon_delay &lt;= 0.00)
+        {
+            if ( InputButton(0, 0) == 1)
+            {
+                weapon_delay = 0.6;
+                Shoot();
+            }
+        }
+        else
+        {
+            weapon_delay -= GameFrame2();
+        }
+        CheckBorders();
+        CollisionSet(SELF, 0, floatround(posx), floatround(posy), 16, 16);
+    }
+    else
+    {
+        ObjectDelete(obj);
+    }
+}
+
+HUD()
+{
+    new out[10];
+    if (lives)
+    {
+        valstr(out, lives);
+    }
+    valstr(out, pscore);
+}
+
+Shoot()
+{
+    EntityCreate(&quot;bullet&quot;, &quot;*&quot;, floatround(posx) + 6, floatround(posy) - 4);
+}
+
+CheckBorders()
+{
+    if (posx &gt;= (512 - width))
+    {
+        posx = (512 - width);
+        return;
+    }
+    else if (posx &lt;= 0)
+    {
+        posx = 0;
+        return;
+    }
+}
+
+public hit()
+{
+    if( lives &gt; 0)
+    {
+    //lives--;
+    }
+}
+public score()
+{
+    pscore += 200;
+}
+</pre>
+
+<h3>Bullet Entity</h3>
+
+<pre>
+#include &lt;core&gt;
+
+new type = 0;
+new Float:x = 0.00;
+new Float:y = 0.00;
+new obj = -1;
+
+public Init()
+{
+    GetEntityPosition(&quot;&quot;, x, y);
+    obj = CreateObject(&quot; &quot;, 'r');
+    ChangeObjectEffect(obj, &quot;#22EEFFFF&quot;, 0, 100, 100, 0);
+    ChangeObjectPosition(obj, floatround(x), floatround(y), 4, 2, 4);
+}
+
+public Destroy()
+{
+    SetCollisionRect(&quot;&quot;, 0, 0, 0, 0, 0);
+    DeleteObject(obj);
+}
+
+main()
+{
+    new Float:movement = FrameTimeAsFloat() * 8.00;
+
+    y -= movement;
+    CheckForEnemies();
+
+    if( y &lt; 6.00)
+    {
+        SetCollisionRect(&quot;&quot;, 0, 0, 0, 0, 0);
+        DeleteEntity(&quot;&quot;);
+        return;
+    }
+
+    SetCollisionRect(&quot;&quot;, 0, floatround(x), floatround(y), 2, 4);
+    ChangeObjectPosition(obj, floatround(x), floatround(y), 4, 2, 4);
+
+}
+
+CheckForEnemies()
+{
+    new hit_string[128];
+    GetHits(&quot;&quot;);
+    if (GetCurrentCollision(&quot;&quot;, hit_string) )
+    {
+        PublicFunction(hit_string, &quot;hit&quot;);
+        DeleteEntity(&quot;&quot;);
+    }
+}
+</pre>
+
+
+</div>

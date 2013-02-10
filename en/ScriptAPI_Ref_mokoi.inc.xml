@@ -1,0 +1,313 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _project_included
+	#endinput
+#endif
+
+#define _project_included
+
+//title Main Functions
+
+#include &lt;fixed&gt;
+#include &lt;enums&gt;
+
+native printf(const format[], ...);
+
+///Engine Functions 
+/***
+&lt;function name=&quot;KeyboardWatch&quot;&gt;
+	&lt;summary&gt;Send Keyboard input to KeyboardInput function in the current entity.&lt;/summary&gt;
+	&lt;param name=&quot;able&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;example&gt;
+	forward public KeyboardInput( unicode );
+	public KeyboardInput( unicode )
+	{
+		DebugText(&quot;Input: %c %d&quot;, unicode, unicode)
+	}
+
+	public Init( ... )
+	{
+		KeyboardWatch(true);
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameState&quot;&gt;
+	&lt;summary&gt;Get/Set Global State.&lt;/summary&gt;
+	&lt;param name=&quot;newstate&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Set new engine state, -1 to skip.&lt;/param&gt;
+	&lt;return&gt;Current state of the engine.&lt;/return&gt;
+	&lt;example&gt;
+	if ( GameState() == 0 )
+	{
+		if ( InputButton(0) )
+		{
+			GameState(1);
+		}
+	}
+	else
+	{
+		MoveEntity();
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameFrame&quot;&gt;
+	&lt;summary&gt;Return the length of last frame in milliseconds.&lt;/summary&gt;
+	&lt;return&gt;Length of time of last frame.&lt;/return&gt;
+	&lt;example&gt;
+	new time = GameFrame();
+	DebugText(&quot;Last Frame took %d milliseconds&quot;, time);
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameFrame2&quot;&gt;
+	&lt;summary&gt;Return the length of last frame in seconds as a fixed point number.&lt;/summary&gt;
+	&lt;return&gt;Length of time of last frame.&lt;/return&gt;
+	&lt;example&gt;
+	new Fixed:time = GameFrame2();
+	DebugText(&quot;Last Frame took %q seconds&quot;, time);
+	&lt;/example&gt;
+&lt;/function&gt;
+***/
+native KeyboardWatch( able );
+native GameState(newstate = -1);
+native GameFrame();
+native Fixed:GameFrame2() = GameFrame;
+
+///Log Functions
+/***
+&lt;function name=&quot;GameLog&quot;&gt;
+	&lt;summary&gt;Prints formatted text to a text file.&lt;/summary&gt;
+	&lt;param name=&quot;text[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Format string.%c print a character at this position. %d print a number at this position in decimal radix. %f print a floating point number at this position. %q print a fixed point number at this position. %s print a character string at this position. %x print a number at this position in hexadecimal radix&lt;/param&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;List of Arguments to used to produce the formatted text&lt;/param&gt;
+	&lt;example&gt;
+	GameLog(&quot;Doing Something :)&quot;);
+	GameLog(&quot;Text: %s, Color: %x, Number: %d, Fixed: %q\n&quot;, &quot;Hello&quot;, 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: FFBBAAFF, Number: 42, Fixed: 50.254
+	GameLog(&quot;Text: %s, Color: %d, Number: %05d, Fixed: %.1q\n&quot;, &quot;Hello&quot;, 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: -4478209, Number: 00042, Fixed: 50.3
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;DebugText&quot;&gt;
+	&lt;summary&gt;Prints formatted text to the debug console.&lt;/summary&gt;
+	&lt;param name=&quot;text[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Format string. %c print a character at this position. %d print a number at this position in decimal radix. %f print a floating point number at this position. %q print a fixed point number at this position. %s print a character string at this position. %x print a number at this position in hexadecimal radix&lt;/param&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;List of Arguments to used to produce the formatted text.&lt;/param&gt;
+	&lt;example&gt;
+	DebugText(&quot;Doing Something :)&quot;);
+	DebugText(&quot;Text: %s, Color: %x, Number: %d, Fixed: %q\n&quot;, &quot;Hello&quot;, 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: FFBBAAFF, Number: 42, Fixed: 50.254
+	DebugText(&quot;Text: %s, Color: %d, Number: %05d, Fixed: %.1q\n&quot;, &quot;Hello&quot;, 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: -4478209, Number: 00042, Fixed: 50.3
+	&lt;/example&gt;
+&lt;/function&gt;
+
+***/
+native GameLog( text[], {Fixed,_}:... ) = printf;
+native DebugText( text[], {Fixed,_}:... );
+
+///Save Functions
+/***
+&lt;function name=&quot;GameSave&quot;&gt;
+	&lt;summary&gt;Save Current Game.&lt;/summary&gt;
+	&lt;param name=&quot;slot&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Save slot to use, 0-9 are available.&lt;/param&gt;
+	&lt;param name=&quot;detail[64]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;256 bytes of extra save data, for uses such as high scores, player name, time of save. This can be access via other games if feature is enable.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameLoad&quot;&gt;
+	&lt;summary&gt;Load Game from Slot.&lt;/summary&gt;
+	&lt;param name=&quot;slot&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Save slot to use, 0-9 are available.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameSetDetails&quot;&gt;
+	&lt;summary&gt;Set Save Game Details.&lt;/summary&gt;
+	&lt;param name=&quot;slot&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Save slot to use, 0-9 are available.&lt;/param&gt;
+	&lt;param name=&quot;array[64]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;256 bytes of extra save data, for uses such as high scores, player name, time of save. This can be access via other games if feature is enable.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameGetDetails&quot;&gt;
+	&lt;summary&gt;Get Save Game Details.&lt;/summary&gt;
+	&lt;param name=&quot;slot&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Save slot to use, 0-9 are available.&lt;/param&gt;
+	&lt;param name=&quot;array[64]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Array to store the information in.&lt;/param&gt;
+	&lt;example&gt;
+	new array[64];
+	GameGetDetails(0, array);
+	highscore = array[0];
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GameDetails&quot;&gt;
+	&lt;summary&gt;Get another game save details.&lt;/summary&gt;
+	&lt;param name=&quot;gameid&quot; default=&quot;&quot; type=&quot;n&quot;&gt;ID to the game you wish to access.&lt;/param&gt;
+	&lt;param name=&quot;slot&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Save slot to use, 0-9 are available.&lt;/param&gt;
+	&lt;param name=&quot;array[64]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Array to store the information in.&lt;/param&gt;
+	&lt;example&gt;
+	new array[64];
+	GameDetails(prequel_id, 0, array);
+	played_prequel = array[0];
+	&lt;/example&gt;
+&lt;/function&gt;
+***/
+native GameSave(slot, detail[64]);
+native GameLoad(slot);
+native GameSetDetails(slot, array[64], maxlength=sizeof array);
+native GameGetDetails(slot, array[64], maxlength=sizeof array);
+native GameDetails(gameid, slot, array[64], maxlength=sizeof array);
+
+///Input Functions
+/***
+&lt;function name=&quot;InputButton&quot;&gt;
+	&lt;summary&gt;Returns Button value for Player.&lt;/summary&gt;
+	&lt;param name=&quot;input&quot; default=&quot;&quot; type=&quot;n&quot;&gt;A value between 0-15.&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+	&lt;return&gt;0 for un-pressed button, 1 for pressed button, 2 for held down button&lt;/return&gt;
+	&lt;example&gt;
+	if ( InputButton(0,0) == 1 )
+		Shoot();
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;InputAxis&quot;&gt;
+	&lt;summary&gt;Returns Axis value for Player.&lt;/summary&gt;
+	&lt;param name=&quot;axis&quot; default=&quot;&quot; type=&quot;n&quot;&gt;A value between 0-5, this representing x1,y1,z1,x2,y2,z2 axis.&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+	&lt;return&gt;Value between -255 and 255.&lt;/return&gt;
+	&lt;example&gt;
+	if ( InputButton(1,0) == 255 )
+		MoveUp();
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;InputPointer&quot;&gt;
+	&lt;summary&gt;Returns Pointer value for Player.&lt;/summary&gt;
+	&lt;param name=&quot;axis&quot; default=&quot;&quot; type=&quot;n&quot;&gt;0 for x axis, 1 for y axis.&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+	&lt;return&gt;Value the current value of axis of mouse or touchscreen.&lt;/return&gt;
+	&lt;example&gt;
+	if ( InputButton(0,0) == 1 )
+		ShootAt(InputPointer(0,0), InputPointer(1,0));
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;InputButtonSet&quot;&gt;
+	&lt;summary&gt;Set Button value for the Player.&lt;/summary&gt;
+	&lt;param name=&quot;input&quot; default=&quot;&quot; type=&quot;n&quot;&gt;A value between 0-15.&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;0 for un-pressed button, 1 for pressed button, 2 for held down button&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;InputAxisSet&quot;&gt;
+	&lt;summary&gt;Set Axis value for the Player.&lt;/summary&gt;
+	&lt;param name=&quot;axis&quot; default=&quot;&quot; type=&quot;n&quot;&gt;A value between 0-5, this representing x1,y1,z1,x2,y2,z2 axis.&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Value between -255 and 255.&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;InputPointerSet&quot;&gt;
+	&lt;summary&gt;Set Pointer value for the Player.&lt;/summary&gt;
+	&lt;param name=&quot;axis&quot; default=&quot;&quot; type=&quot;n&quot;&gt;0 for x axis, 1 for y axis.&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;player&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;0 for current player otherwise the selected player.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native InputButton(input, player = 0);
+native InputAxis(axis, player = 0);
+native InputPointer(axis, player = 0);
+native InputButtonSet(input, value, player = 0);
+native InputAxisSet(axis, value, player = 0);
+native InputPointerSet(axis, value, player = 0);
+
+///Misc Functions 
+/***
+&lt;function name=&quot;MiscGetWidth&quot;&gt;
+	&lt;summary&gt;Get Width of Map, Screen or Sprite.&lt;/summary&gt;
+	&lt;param name=&quot;id[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of sprite or &quot;__screen&quot; for screen, &quot;__map&quot; for standard map and &quot;map&quot; for current map.&lt;/param&gt;
+	&lt;return&gt;Width of Map, Screen or Sprite.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MiscGetHeight&quot;&gt;
+	&lt;summary&gt;Get Height of Map, Screen or Sprite.&lt;/summary&gt;
+	&lt;param name=&quot;id[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of sprite or &quot;__screen&quot; for screen, &quot;__map&quot; for standard map and &quot;map&quot; for current map.&lt;/param&gt;
+	&lt;return&gt;Height of Map, Screen or Sprite.&lt;/return&gt;
+&lt;/function&gt;
+***/
+native MiscGetWidth(id[]);
+native MiscGetHeight(id[]);
+
+///Language Functions
+/***
+&lt;function name=&quot;LanguageString&quot;&gt;
+	&lt;summary&gt;Get String from Language File.&lt;/summary&gt;
+	&lt;param name=&quot;line&quot; default=&quot;&quot; type=&quot;n&quot;&gt;line of language wanted.&lt;/param&gt;
+	&lt;param name=&quot;returnstring[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to store language string.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;LanguageSet&quot;&gt;
+	&lt;summary&gt;Loads a new language set. note: previous strings may have updated.&lt;/summary&gt;
+	&lt;param name=&quot;lang[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Two letter language code &lt;/param&gt;
+&lt;/function&gt;
+***/
+native LanguageString(line, returnstring[], maxlength=sizeof returnstring);
+native LanguageSet(lang[], maxlength=sizeof lang);
+
+///Dialog Functions
+/***
+&lt;function name=&quot;DialogShow&quot;&gt;
+	&lt;summary&gt;Shows Dialog box.&lt;/summary&gt;
+	&lt;param name=&quot;line&quot; default=&quot;&quot; type=&quot;n&quot;&gt;the requested line.&lt;/param&gt;
+	&lt;param name=&quot;callback[]&quot; default=&quot;&amp;quot;dialogbox&amp;quot;&quot; type=&quot;a&quot;&gt;Function to call in the main script.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;DialogGetString&quot;&gt;
+	&lt;summary&gt;Get String from Dialog File.&lt;/summary&gt;
+	&lt;param name=&quot;line&quot; default=&quot;&quot; type=&quot;n&quot;&gt;the requested line.&lt;/param&gt;
+	&lt;param name=&quot;returnstring[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;DialogPlayAudio&quot;&gt;
+	&lt;summary&gt;Play Dialog.&lt;/summary&gt;
+	&lt;param name=&quot;line&quot; default=&quot;&quot; type=&quot;n&quot;&gt;the requested line.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native DialogShow(line, callback{} = &quot;dialogbox&quot;);
+native DialogGetString(line, returnstring[], maxlength=sizeof returnstring);
+native DialogPlayAudio(line);
+
+///Audio Functions 
+/***
+&lt;function name=&quot;AudioVolume&quot;&gt;
+	&lt;summary&gt;Sets Audio device volume.&lt;/summary&gt;
+	&lt;param name=&quot;AudioDevice:device&quot; default=&quot;&quot; type=&quot;n&quot;&gt;The Audio device you wish to change.&lt;/param&gt;
+	&lt;param name=&quot;level&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Requested Volume level.&lt;/param&gt;
+	&lt;return&gt;Current volume level&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;AudioPlaySound&quot;&gt;
+	&lt;summary&gt;Play Sound Effect. Also return length of file in seconds.&lt;/summary&gt;
+	&lt;param name=&quot;file[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;filename of the sound effect.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;X-axis screen position of the sound.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;y-axis screen position of the sound.&lt;/param&gt;
+	&lt;return&gt;Length of the audio file.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;AudioPlayMusic&quot;&gt;
+	&lt;summary&gt;Play Music.&lt;/summary&gt;
+	&lt;param name=&quot;file[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Filename of the music you wish to play.&lt;/param&gt;
+	&lt;param name=&quot;loop&quot; default=&quot;1&quot; type=&quot;n&quot;&gt;Set to false to play music only once.&lt;/param&gt;
+	&lt;param name=&quot;fadeLength&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;The length of fade in milliseconds&lt;/param&gt;
+&lt;/function&gt;
+***/
+native AudioVolume(AudioDevice:device, level = -1);
+native AudioPlaySound(file[], x = -1, y = -1);
+native AudioPlayMusic(file[], loop = 1, fadeLength = 0);
+
+///Config Functions
+/***
+&lt;function name=&quot;ConfigGetString&quot;&gt;
+	&lt;summary&gt;Get Engine config as a string.&lt;/summary&gt;
+	&lt;param name=&quot;config[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;value[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ConfigGetNumber&quot;&gt;
+	&lt;summary&gt;Get Engine config as a number.&lt;/summary&gt;
+	&lt;param name=&quot;config[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;A number from game settings, 0 if no value is found or not is not a number.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ConfigSetString&quot;&gt;
+	&lt;summary&gt;Update Engine config.&lt;/summary&gt;
+	&lt;param name=&quot;config[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;value[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+***/
+native ConfigGetString(config[], value[], maxlength=sizeof value);
+native ConfigGetNumber(config[]);
+native ConfigSetString(config[], value[]);
+
+///File Listing Functions
+/***
+&lt;function name=&quot;FileGetList&quot;&gt;
+	&lt;summary&gt;List File in a directory.&lt;/summary&gt;
+	&lt;param name=&quot;strings[][]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Stores file name in directory.&lt;/param&gt;
+	&lt;param name=&quot;directory[]&quot; default=&quot;&amp;quot;map&amp;quot;&quot; type=&quot;a&quot;&gt;Directory name.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native FileGetList(strings[][], directory{} = &quot;map&quot;, size=sizeof strings);
+</pre>
+</div>

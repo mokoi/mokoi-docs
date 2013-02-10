@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="DesignNotes.xml">DesignNotes</a> &gt; Roadmap</div>
+<h2>0.9 series</h2>
+
+ <ul><li><strong>All</strong> - General improvements and optimizations.</li><li><strong>Lux Engine</strong> - Custom Mask Shapes.</li><li><strong>Lux Engine</strong> - Finalize Scripting Interface.</li><li><strong>Lux Engine</strong> - Save System.</li><li><strong>Loader_Mokoi</strong> - Game info editor (tried into Game Listing)</li></ul>
+<h2>After 1.0</h2>
+
+ <ul><li><strong>Lux Engine</strong> - Finish Network Support.</li><li><strong>Lux Engine</strong> - 2D effects - layer rotating, layer scaling and particle effects.</li><li><strong>Lux Engine</strong> - Ports to different processors &amp; platforms.</li><li><strong>Lux Engine</strong> - Add Computer controlled player support.</li></ul>
+</div>

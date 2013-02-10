@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; AudioType</div>
+<h2>Audio Types</h2>
+
+
+<h3>SOUNDFX</h3>
+ 
+<p>Support up to 8 channels for playing sound effects. Supports WAV and OGG format audio.</p>
+<h3>DIALOG</h3>
+
+<p>Dialog most likely share the SOUNDFX channels. Supports WAV and OGG format audio.</p>
+<h3>MUSIC</h3>
+
+<p>Only supports one channel, but can play OGG and IT formatted audio.</p>
+
+
+</div>

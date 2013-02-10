@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>StringNumber</h2>
+<p class="fundef">StringNumber(dest[],value)</p>
+<p>Converts a whole number into string 'dest'.</p>
+<p><strong>Argument 'dest[]':</strong></p>
+<p><strong>Argument 'value':</strong></p>
+</div>

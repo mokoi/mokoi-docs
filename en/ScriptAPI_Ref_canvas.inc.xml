@@ -1,0 +1,9 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _canvas_included
+  #endinput
+#endif
+#define _canvas_included
+
+</pre>
+</div>

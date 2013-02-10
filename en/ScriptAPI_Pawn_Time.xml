@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>Time</h2>
+<p class="fundef">Time(&hour,&minute,&second)</p>
+<p>Get Current time</p>
+<p><strong>Argument '&hour':</strong>Variable to store the infomation.</p>
+<p><strong>Argument '&minute':</strong>Variable to store the infomation.</p>
+<p><strong>Argument '&second':</strong>Variable to store the infomation.</p>
+</div>

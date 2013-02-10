@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; AudioDevice</div>
+<h2>Audio Device</h2>
+
+<p>Allow control over audio output. Currently only allows volume changing.</p>
+<pre> 
+enum AudioDevice{
+	SOUNDFX,
+	DIALOG, // Dialog most likely share the SOUNDFX channels
+	MUSIC
+}
+</pre>
+
+
+</div>

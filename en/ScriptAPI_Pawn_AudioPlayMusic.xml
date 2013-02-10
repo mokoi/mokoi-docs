@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>AudioPlayMusic</h2>
+<p class="fundef">AudioPlayMusic(file[],loop,fadeLength)</p>
+<p>Play Music.</p>
+<p><strong>Argument 'file[]':</strong>Filename of the music you wish to play.</p>
+<p><strong>Argument 'loop':</strong>Set to false to play music only once.</p>
+<p><strong>Argument 'fadeLength':</strong>The length of fade in milliseconds</p>
+</div>

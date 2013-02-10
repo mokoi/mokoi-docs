@@ -1,0 +1,54 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>CollisionCalculate</h2>
+<p class="fundef">CollisionCalculate(id,rect,type)</p>
+<p>Generate a list of entities it's colliding with.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+<p><strong>Argument 'rect':</strong>Collision Rectangle your wish to check. -1 for all.</p>
+<p><strong>Argument 'type':</strong>Not Used.</p>
+<p>True if a collisions exist.</p>
+<h3>Example Code</h3>
+<pre>
+	if ( CollisionCalculate() )
+	{
+		new current;
+		new angle;
+		new dist;
+		new rect;
+		new _STATE:type;
+		while ( CollisionGetCurrent(SELF, current, angle, dist, rect, type) )
+		{
+			if ( type == TYPE_AWAKING )
+			{
+				EntityPublicFunction(current, "Awaking", "sn", selfid, rect);
+			}
+			else if ( type == TYPE_ENEMY || type == TYPE_DOOR )
+			{
+				EntityPublicFunction(current, "Hit", "snnnnnn", selfid, angle, dist, APLAYER, 0, dx,dy, rect);
+			}
+			else if ( type == TYPE_TRANSPORT )
+			{
+				if ( EntityPublicFunction(current, "MovePlayer", "sn", selfid, _dir_) )
+				{
+					_state_ = STANDING;
+				}
+			}
+			else if ( type == TYPE_PUSHABLE && _state_ == PUSHING )
+			{
+				EntityPublicFunction(current, "Push", "snn", selfid, rect, angle);
+			}
+			else if ( type == TYPE_SWITCH )
+			{
+				EntityPublicFunction(current, "Pressed", "s", selfid);
+			}
+			else if ( type == TYPE_ITEM )
+			{
+				if ( EntityPublicFunction(current, "Pickup", "s", selfid) )
+				{
+					_state_ = LIFTING;
+				}
+			}
+		}
+	}
+	</pre>
+</div>

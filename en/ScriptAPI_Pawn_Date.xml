@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>Date</h2>
+<p class="fundef">Date(&year,&month,&day)</p>
+<p>Get Current Date</p>
+<p><strong>Argument '&year':</strong>Variable to store the infomation.</p>
+<p><strong>Argument '&month':</strong>Variable to store the infomation.</p>
+<p><strong>Argument '&day':</strong>Variable to store the infomation.</p>
+</div>

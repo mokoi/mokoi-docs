@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>RealAbs</h2>
+<p class="fundef">RealAbs(Real:value)</p>
+<p>Returns Absolute value of 'value'.</p>
+<p><strong>Argument 'Real:value':</strong></p>
+</div>

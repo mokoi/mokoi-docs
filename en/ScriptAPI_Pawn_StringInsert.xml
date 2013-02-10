@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>StringInsert</h2>
+<p class="fundef">StringInsert(string[],substr[],index)</p>
+<p>Insert substr into string at index.</p>
+<p><strong>Argument 'string[]':</strong></p>
+<p><strong>Argument 'substr[]':</strong></p>
+<p><strong>Argument 'index':</strong></p>
+</div>

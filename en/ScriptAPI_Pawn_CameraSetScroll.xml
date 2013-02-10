@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>CameraSetScroll</h2>
+<p class="fundef">CameraSetScroll(bool:scroll)</p>
+<p>Enable Smooth scrolling.</p>
+<p><strong>Argument 'bool:scroll':</strong>Set to true to enable Smooth scrolling.</p>
+<p class="fundef"> See Also: <a href="ScriptAPI_Pawn_

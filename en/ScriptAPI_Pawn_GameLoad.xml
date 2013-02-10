@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>GameLoad</h2>
+<p class="fundef">GameLoad(slot)</p>
+<p>Load Game from Slot.</p>
+<p><strong>Argument 'slot':</strong>Save slot to use, 0-9 are available.</p>
+</div>

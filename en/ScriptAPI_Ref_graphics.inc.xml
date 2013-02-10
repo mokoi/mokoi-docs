@@ -1,0 +1,444 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _graphics_included
+  #endinput
+#endif
+#define _graphics_included
+
+//title Graphics Functions
+//description Colour arguments are a RGBA hex value such as 0xFF33BBAA, FF is red value, 33 is green, BB is blue and AA would be the alpha.
+
+#include &lt;fixed&gt;
+#include &lt;enums&gt;
+#include &lt;core&gt;
+
+const GraphicTypes: {
+	SPRITE = 's',
+	RECTANGLE = 'r',
+	LINE = 'l',
+	TEXT = 't',
+	POLYGON = 'p',
+	CIRCLE = 'c',
+	CANVAS = 'M',
+}
+
+const _DISPLAYSTYLES:{
+	STYLE_NORMAL = 0,
+	STYLE_VGRADIENT,
+	STYLE_HGRADIENT,
+	STYLE_GLOW,
+	STYLE_OUTLINE,
+	STYLE_REPLACECOLOUR,
+	STYLE_NEGATIVE
+}
+
+const _OBJECTFLAG: {
+	FLAG_SPEED = 0,
+	FLAG_ANIMLOOP = 1,
+	FLAG_ANIMREVERSE = 2,
+	FLAG_ANIMRESET = 3
+}
+
+///Misc Graphic Functions
+native GraphicsType();
+native GraphicsDraw(string[], GraphicTypes:type, x, y, z, w, h, c = WHITE, string_size = sizeof string );
+native SheetReference(sheet[], ref = 1);
+native SheetReplace(olds[], news[]);
+/***
+&lt;function name=&quot;GraphicsType&quot;&gt;
+	&lt;summary&gt;Returns the type of graphic display. Can be used to enable some effects.&lt;/summary&gt;
+	&lt;return&gt;Current Display Type&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;GraphicsDraw&quot;&gt;
+	&lt;summary&gt;Draw a Display Objects for the current frame.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of Sprite, Animation, Polygon or Text String, depending on what type of object your drawing.&lt;/param&gt;
+	&lt;param name=&quot;GraphicTypes:type&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Type of Object&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Position&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Position&lt;/param&gt;
+	&lt;param name=&quot;z&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Position&lt;/param&gt;
+	&lt;param name=&quot;w&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Dimension (or second x,y location for line).&lt;/param&gt;
+	&lt;param name=&quot;h&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Dimension (or second x,y location for line).&lt;/param&gt;
+	&lt;param name=&quot;c&quot; default=&quot;0xFFFFFFFF&quot; type=&quot;n&quot;&gt;Colour&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;SheetReference&quot;&gt;
+	&lt;summary&gt;Add or remove a reference for sprite sheet. Mainly used to keep a sprite sheet in memory.&lt;/summary&gt;
+	&lt;param name=&quot;sheet[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;ref&quot; default=&quot;1&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;SheetReplace&quot;&gt;
+	&lt;summary&gt;Changing one sheet to another.&lt;/summary&gt;
+	&lt;param name=&quot;olds[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;news[]&quot; default=&quot;1&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+***/
+
+///Animation Functions
+native AnimationGetLength(sheet[], anim[]); /* Returns milliseconds */
+native Fixed:AnimationGetLength2(sheet[], anim[]) = AnimationGetLength;
+#pragma deprecated Future Feature
+native AnimationCreate(string[], length);
+#pragma deprecated Future Feature
+native AnimationAddFrame(string[], sprite[], string_size = sizeof string, sprite_size = sizeof sprite);
+/***
+&lt;function name=&quot;AnimationGetLength&quot;&gt;
+	&lt;summary&gt;Returns length of animation in milliseconds.&lt;/summary&gt;
+	&lt;param name=&quot;sheet[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;anim[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;length of animation in milliseconds.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;AnimationGetLength2&quot;&gt;
+	&lt;summary&gt;Returns length of animation in seconds.&lt;/summary&gt;
+	&lt;param name=&quot;sheet[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;anim[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;Returns length of animation in seconds.&lt;/return&gt;
+&lt;/function&gt;
+&lt;futurefunction name=&quot;AnimationCreate&quot;&gt;
+	&lt;summary&gt;Creates new animation.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;length&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;0 for error.&lt;/return&gt;
+&lt;/futurefunction&gt;
+&lt;futurefunction name=&quot;AnimationAddFrame&quot;&gt;
+	&lt;summary&gt;Adds a frame to an animation.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;sprite[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;1 for successful, 0 for error.&lt;/return&gt;
+&lt;/futurefunction&gt;
+***/
+
+///Text Functions
+native TextSprites(able, sheet[]);
+/***
+&lt;function name=&quot;TextSprites&quot;&gt;
+	&lt;summary&gt;Ables the use of Sprites for text instead of the internal bitmap font.&lt;/summary&gt;
+	&lt;param name=&quot;able&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;sheet[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+***/
+
+///Polygon Functions
+#pragma deprecated Future Feature
+native PolygonCreate(string[]);
+#pragma deprecated Future Feature
+native PolygonAddPoint(string[], x, y, string_size = sizeof string);
+/***
+&lt;futurefunction name=&quot;PolygonCreate&quot;&gt;
+	&lt;summary&gt;Create a polygon.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;name of polygon.&lt;/param&gt;
+	&lt;return&gt;0 for error.&lt;/return&gt;
+&lt;/futurefunction&gt;
+&lt;futurefunction name=&quot;PolygonAddPoint&quot;&gt;
+	&lt;summary&gt;Add a point to existing polygon.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;name of polygon.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;new point position.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;new point position.&lt;/param&gt;
+	&lt;return&gt;1 for successful, 0 for error.&lt;/return&gt;
+&lt;/futurefunction&gt;
+***/
+
+///Display Objects Functions
+native object:ObjectCreate(string[], GraphicTypes:type, x = 0, y = 0, z = 0, w = 0, h = 0, c = 0xFFFFFFFF, pos = POSITION_MAP, string_size = sizeof string);
+native ObjectPosition(object:id, x, y, z, w, h, pos = POSITION_MAP);
+native ObjectEffect(object:id, colour = WHITE, rotate = 0, scale_w = 1000, scale_h = 1000, mirror = 0, _DISPLAYSTYLES:style = STYLE_NORMAL, colour2 = WHITE);
+native ObjectReplace(object:id, string[], GraphicTypes:type);
+native ObjectToggle(object:id, show);
+native ObjectFlag(object:id, key, value);
+native ObjectDelete(object:id);
+native ObjectInfo(object:id, &amp;w, &amp;h);
+/***
+&lt;function name=&quot;ObjectCreate&quot;&gt;
+	&lt;summary&gt; Creates a new Display Objects. 'string' can be a sprite name or some text.&lt;/summary&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Sprite/animation name or text.&lt;/param&gt;
+	&lt;param name=&quot;GraphicTypes:type&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Type of Object.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;z&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;w&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.&lt;/param&gt;
+	&lt;param name=&quot;h&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.&lt;/param&gt;
+	&lt;param name=&quot;c&quot; default=&quot;0xFFFFFFFF&quot; type=&quot;n&quot;&gt;a RGBA hex value such as 0xFF33BBAA, FF is red value, 33 is green, BB is blue and AA would be the alpha.&lt;/param&gt;
+	&lt;param name=&quot;pos&quot; default=&quot;POSITION_MAP&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;return&gt;New object ID&lt;/return&gt;
+	&lt;example&gt;
+	new helded = 0xFF00FFFF; 
+	 
+	new player = 0; 
+	new obj1 = -1; 
+	new obj2 = -1; 
+	new obj3 = -1; 
+	new x = 10, y = 10; 
+
+	public Init(...) 
+	{ 
+		new Fixed:fx, Fixed:fy, Fixed:fz;
+		EntityGetPosition(fx, fy,fz);
+		x = fround(fx)+32;
+		y = fround(fy)+32;
+	 
+		player =  EntityGetNumber(&quot;player&quot;);
+		obj1 = ObjectCreate(&quot;&quot;, RECTANGLE, 11, 10, 5, 16, 64, 0xFF0000FF);
+		obj2 = ObjectCreate(&quot;&quot;, RECTANGLE, 100, 100, 5, 64, 16, 0xFF0000FF);
+		obj3 = ObjectCreate(&quot;&quot;, RECTANGLE, 100, 10, 5, 64, 16, 0xFF0000FF);
+
+	} 
+	 
+	public Close() 
+	{ 
+		ObjectDelete(obj1); 
+		ObjectDelete(obj2); 
+		ObjectDelete(obj3); 
+	} 
+
+	main() 
+	{ 
+		new xaxis = 255; 
+		new yaxis = -255; 
+		new zaxis = 128; 
+
+		xaxis = InputAxis(0, player)/8;
+		yaxis = InputAxis(1, player)/8;
+		zaxis = InputAxis(2, player)/8;
+
+		if ( xaxis &amp;gt; 0 )
+			ObjectPosition(obj1, x, y-5, 3, xaxis, 10); 
+		else if ( xaxis &amp;lt; 0 )
+			ObjectPosition(obj1, x+xaxis, y-5, 3, 0-xaxis, 10); 
+		else
+			ObjectPosition(obj1, x-1, y-5, 3, 1, 10); 
+
+		if ( yaxis &amp;gt; 0 )
+			ObjectPosition(obj2, x-5, y, 3, 10, yaxis); 
+		else if ( yaxis &amp;lt; 0 )
+			ObjectPosition(obj2, x-5, y+yaxis, 3, 10, 0-yaxis); 
+		else 
+			ObjectPosition(obj2, x-5, y-1, 3, 10, 1);
+		if ( zaxis &amp;gt; 0 )
+			ObjectPosition(obj3, x+44, y, 3, 10, zaxis); 
+		else if ( zaxis &amp;lt; 0 )
+			ObjectPosition(obj3, x+44, y+zaxis, 3, 10, 0-zaxis); 
+		else 
+			ObjectPosition(obj3, x+44, y-1, 3, 10, 1); 
+	} 
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectPosition&quot;&gt;
+	&lt;summary&gt;Give the Display Objects a new position and dimension.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;z&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Map position of the object.&lt;/param&gt;
+	&lt;param name=&quot;w&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.&lt;/param&gt;
+	&lt;param name=&quot;h&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.&lt;/param&gt;
+	&lt;param name=&quot;pos&quot; default=&quot;POSITION_MAP&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectEffect&quot;&gt;
+	&lt;summary&gt;Change Display Objects effects.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;colour&quot; default=&quot;0xFFFFFFFF&quot; type=&quot;n&quot;&gt;Primary colour of the object.&lt;/param&gt;
+	&lt;param name=&quot;rotate&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;scale_w&quot; default=&quot;1000&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;scale_h&quot; default=&quot;1000&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;mirror&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;style&quot; default=&quot;STYLE_NORMAL&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;colour2&quot; default=&quot;0xFFFFFFFF&quot; type=&quot;n&quot;&gt;Secondary colour of the object.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectReplace&quot;&gt;
+	&lt;summary&gt;Convert Display Objects to new type.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Sprite/animation name or text.&lt;/param&gt;
+	&lt;param name=&quot;GraphicTypes:type&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Type of Object.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectToggle&quot;&gt;
+	&lt;summary&gt;Toggle the visibility of a Display Object.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;show&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectFlag&quot;&gt;
+	&lt;summary&gt;Sets Display Object flags.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;key&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectDelete&quot;&gt;
+	&lt;summary&gt;Delete a Display Objects.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ObjectInfo&quot;&gt;
+	&lt;summary&gt;Returns width and height of object.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;w&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the width. &lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;h&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the height. &lt;/param&gt;
+&lt;/function&gt;
+***/
+
+///Paths Functions
+native PathPoints( object:id, point, &amp;x, &amp;y, &amp;t);
+native ObjectFollowPath(object:id, Fixed:speed, &amp;x, &amp;y, bool:loop);
+/***
+&lt;function name=&quot;ObjectFollowPath&quot;&gt;
+	&lt;summary&gt;Makes object follow path.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;Fixed:speed&quot; default=&quot;&quot; type=&quot;n&quot;&gt;movement speed.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the dimension.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the dimension.&lt;/param&gt;
+	&lt;param name=&quot;bool:loop&quot; default=&quot;&quot; type=&quot;n&quot;&gt;loop movement.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;PathPoints&quot;&gt;
+	&lt;summary&gt;Returns Object Path point values.&lt;/summary&gt;
+	&lt;param name=&quot;object:id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Object's ID.&lt;/param&gt;
+	&lt;param name=&quot;point&quot; default=&quot;&quot; type=&quot;n&quot;&gt;requested point in path.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the dimension.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the dimension.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;t&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store the time.&lt;/param&gt;
+&lt;/function&gt;
+***/
+
+///Camera Functions
+native CameraSetScroll(bool:scroll);
+native LayerSetRotation(layer, roll, pitch, yaw);
+native LayerSetOffset(layer, Fixed:x, Fixed:y);
+native LayerColour(layer, colour = 0xFFFFFFFF );
+/***
+&lt;function name=&quot;CameraSetScroll&quot;&gt;
+	&lt;summary&gt;Enable Smooth scrolling.&lt;/summary&gt;
+	&lt;param name=&quot;bool:scroll&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Set to true to enable Smooth scrolling.&lt;/param&gt;
+	&lt;note&gt;
+	Smooth Scrolling keeps the map offset in the center of the screen and also keeps the screen on the map.
+	&lt;img src=&quot;images/CameraScroll.png&quot;/&gt;
+	Black Rectangle: Screen Area.
+	Red Line: Map offset if smooth scrolling is disable.
+	Yellow Line: Map offset if smooth scrolling is enable.
+
+	&lt;/note&gt;
+	&lt;similar&gt;
+		&lt;link name=&quot;MapSetOffset&quot;/&gt;
+	&lt;/similar&gt;
+&lt;/function&gt;
+&lt;function name=&quot;LayerSetRotation&quot;&gt;
+	&lt;summary&gt;Change the rotation of the layer. This feature is still in development and will only be available for OpenGL display system.&lt;/summary&gt;
+	&lt;param name=&quot;layer&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Layer to change. Default setting give layers 0-6.&lt;/param&gt;
+	&lt;param name=&quot;roll&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;pitch&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;yaw&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;LayerSetOffset&quot;&gt;
+	&lt;summary&gt;Change the Offset of the layer.&lt;/summary&gt;
+	&lt;param name=&quot;layer&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Layer to change. Default setting give layers 0-6.&lt;/param&gt;
+	&lt;param name=&quot;Fixed:x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;Fixed:y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;example&gt;
+	new Fixed:worldx = 0.00;
+	new Fixed:worldy = 0.00;
+	new Fixed:layer1 = 0.00;
+	new Fixed:layer2 = 0.00;
+
+	main()
+	{
+		new Fixed:q = GameFrame2() * 10.00;
+		worldx += q
+		layer1 += q;
+		layer2 += (q*2);
+
+		LayerSetOffset(-1, 0.00, worldy); // Sets All layers offsets to 0.00, worldy
+		LayerSetOffset(1, layer2, worldy); // Change Layer 1 offset
+		LayerSetOffset(2, layer1, worldy); // Change Layer 1 offset
+		MapSetOffset(worldx, worldy);
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;LayerColour&quot;&gt;
+	&lt;summary&gt;Change the base color of the layer.&lt;/summary&gt;
+	&lt;param name=&quot;layer&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Layer to change. Default setting give layers 0-6.&lt;/param&gt;
+	&lt;param name=&quot;colour&quot; default=&quot;0xFFFFFFFF &quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;notes&gt;&lt;img src=&quot;images/LayerColour.png&quot;/&gt;&lt;/notes&gt;
+	&lt;example&gt;
+	new DayNight[24] = {
+		0x4E5CAFFF,\
+		0x5964A9FF,\
+		0x606BAEFF,\
+		0x6A76BAFF,\
+		0x6E76BAFF,\
+		0x7883C6FF,\
+		0x98A3E8FF,\
+		0xB6BEEEFF,\
+		0xD6DAF3FF,\
+		0xF4F5FBFF,\
+		0xFFFFFFFF,\
+		0xFFFFFFFF,\
+		0xF7F8ECFF,\
+		0xF7F8E7FF,\
+		0xEFF2E1FF,\
+		0xEDEDD2FF,\
+		0xE8ECC8FF,\
+		0xE8E1BEFF,\
+		0xE4C47EFF,\
+		0xE5A67EFF,\
+		0xE59E96FF,\
+		0x7D7CC8FF,\
+		0x766FD8FF,\
+		0x645CBEFF\
+	};
+	new hour = 6;
+	new seconds = 0;
+	main()
+	{
+		seconds += GameFrame();
+		hour = seconds / 1000;
+
+		LayerColour(0, DayNight[hour]);
+		LayerColour(1, DayNight[hour]);
+		LayerColour(2, DayNight[hour]);
+		LayerColour(3, DayNight[hour]);
+		LayerColour(4, DayNight[hour]);
+		LayerColour(5, DayNight[hour]);
+
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+***/
+
+
+///Display Object Helper Functions
+stock ResetObjects( ... )
+{
+	new c = numargs();
+	if ( c &gt;0 )
+	{
+		for ( new i = 0; i &lt; c; i++) 
+			ObjectEffect(object:getarg(c), WHITE);
+	}
+}
+
+stock HideObjects( ... )
+{
+	new c = numargs();
+	if ( c &gt; 0 )
+	{
+		for ( new i = 0; i &lt; c; i++) 
+			ObjectToggle(object:getarg(c), 0);
+	}
+}
+
+stock ShowObjects( ... )
+{
+	new c = numargs();
+	if ( c &gt;0 )
+	{
+		for ( new i = 0; i &lt; c; i++) 
+			ObjectToggle(object:getarg(c), 1);
+	}
+}
+/***
+&lt;function name=&quot;ResetObjects&quot;&gt;
+	&lt;summary&gt;Reset effects on all objects passed.&lt;/summary&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;HideObjects&quot;&gt;
+	&lt;summary&gt;Hides all objects passed.&lt;/summary&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;ShowObjects&quot;&gt;
+	&lt;summary&gt;Shows all objects passed.&lt;/summary&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+***/</pre>
+</div>

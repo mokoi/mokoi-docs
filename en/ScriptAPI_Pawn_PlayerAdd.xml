@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>PlayerAdd</h2>
+<p class="fundef">PlayerAdd()</p>
+<p>Adds new player</p>
+<p>0 on Error.</p>
+</div>

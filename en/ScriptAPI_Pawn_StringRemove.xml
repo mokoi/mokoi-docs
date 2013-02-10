@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>StringRemove</h2>
+<p class="fundef">StringRemove(string[],start,end)</p>
+<p>Removes part the string.</p>
+<p><strong>Argument 'string[]':</strong></p>
+<p><strong>Argument 'start':</strong></p>
+<p><strong>Argument 'end':</strong></p>
+</div>

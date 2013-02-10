@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>MaskRefresh</h2>
+<p class="fundef">MaskRefresh()</p>
+<p>Updates Mask from current Map Objects.</p>
+<h3>Example Code</h3>
+<pre>
+	function Init( ... )
+	{
+	   while (n < 5)
+		  ObjectCreate("image.png:wall", SPRITE);
+	   MaskRefresh();
+	}
+</pre>
+</div>

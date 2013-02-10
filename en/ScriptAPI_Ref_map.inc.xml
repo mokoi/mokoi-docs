@@ -1,0 +1,135 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _map_included
+	#endinput
+#endif
+#define _map_included
+
+//title Map Functions
+//description Maps are split into two modes, a Grid based Section which allows map switching by moving off the map and a Independent File Mode.
+
+
+#define MAP_ERROR 0
+
+///Mask Functions 
+/***
+&lt;function name=&quot;MaskRefresh&quot;&gt;
+	&lt;summary&gt;Updates Mask from current Map Objects.&lt;/summary&gt;
+	&lt;example&gt;
+	function Init( ... )
+	{
+	   while (n &amp;lt; 5)
+		  ObjectCreate(&quot;image.png:wall&quot;, SPRITE);
+
+	   MaskRefresh();
+	}
+&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MaskGetValue&quot;&gt;
+	&lt;summary&gt;Returns Mask value.&lt;/summary&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;the point you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;the point you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;layer&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Not used&lt;/param&gt;
+	&lt;return&gt;Value of mask at that point. Value is capped between 0-255.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MaskFill&quot;&gt;
+	&lt;summary&gt;Fills area of mask.&lt;/summary&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Area of Mask to change.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Area of Mask to change.&lt;/param&gt;
+	&lt;param name=&quot;w&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Area of Mask to change.&lt;/param&gt;
+	&lt;param name=&quot;h&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Area of Mask to change.&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Set the mask are to this value.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native MaskRefresh();
+native MaskGetValue(x, y, layer = 0);
+native MaskFill(x, y, w, h, value = 0);
+
+
+///Map Functions
+/***
+&lt;function name=&quot;MapSetOffset&quot;&gt;
+	&lt;summary&gt;Set the Offset from the Top-left of the map.&lt;/summary&gt;
+	&lt;param name=&quot;Fixed:x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;Fixed:y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapGetOffset&quot;&gt;
+	&lt;summary&gt;Get the Offset from the Top-left of the map.&lt;/summary&gt;
+	&lt;param name=&quot;axis&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+***/
+native MapSetOffset(Fixed:x, Fixed:y);
+native Fixed:MapGetOffset(axis);
+
+///Map File Code
+/***
+&lt;function name=&quot;MapCreate&quot;&gt;
+	&lt;summary&gt;Create a new map.&lt;/summary&gt;
+	&lt;param name=&quot;map[]&quot; default=&quot;&quot; type=&quot;s&quot;&gt;Name of file.&lt;/param&gt;
+	&lt;param name=&quot;create_new&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;create new map.&lt;/param&gt;
+	&lt;return&gt;New map ID.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapChange&quot;&gt;
+	&lt;summary&gt;Changes to map id.&lt;/summary&gt;
+	&lt;param name=&quot;mapid&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Map ID to move to.&lt;/param&gt;
+	&lt;param name=&quot;offsetx&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Offset position.&lt;/param&gt;
+	&lt;param name=&quot;offsety&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Offset position.&lt;/param&gt;
+	&lt;return&gt;Map ID. ) if error&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapValid&quot;&gt;
+	&lt;summary&gt;Check if map id is valid.&lt;/summary&gt;
+	&lt;param name=&quot;mapid&quot; default=&quot;&quot; type=&quot;n&quot;&gt;map id to check.&lt;/param&gt;
+	&lt;return&gt;True if valid.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapCurrent&quot;&gt;
+	&lt;summary&gt;Get Current Map ID and name. Note: it will load map.&lt;/summary&gt;
+	&lt;param name=&quot;map[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Sting to store name of map.&lt;/param&gt;
+	&lt;return&gt;Map ID.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapID&quot;&gt;
+	&lt;summary&gt;Get Map ID. Note: it will load map.&lt;/summary&gt;
+	&lt;param name=&quot;map[]&quot; default=&quot;SELF&quot; type=&quot;a&quot;&gt;Name of file.&lt;/param&gt;
+	&lt;return&gt;Map ID.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;MapSave&quot;&gt;
+	&lt;summary&gt;Save the map&lt;/summary&gt;
+&lt;/function&gt;
+***/
+native MapCreate(map[], create_new = 0, maxlength=sizeof map);
+native MapChange(mapid, offsetx = -1, offsety = -1);
+native MapValid(mapid);
+native MapID(map[], maxlength=sizeof map);
+native MapCurrent(map[] = SELF, maxlength=sizeof map);
+native MapSave();
+
+
+///Map Section Function
+/***
+&lt;function name=&quot;SectionSet&quot;&gt;
+	&lt;summary&gt;Changes the Section, while keeping the same grid location.&lt;/summary&gt;
+	&lt;param name=&quot;section[]&quot; default=&quot;&quot; type=&quot;s&quot;&gt;Section name.&lt;/param&gt;
+	&lt;param name=&quot;gridx&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Grid Position&lt;/param&gt;
+	&lt;param name=&quot;gridy&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Grid Position&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;SectionGet&quot;&gt;
+	&lt;summary&gt;Get the current section name.&lt;/summary&gt;
+	&lt;param name=&quot;section[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Section name.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;gridx&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Grid Position&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;gridy&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Grid Position&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;SectionValid&quot;&gt;
+	&lt;summary&gt;Check if a grid location on a section is valid.&lt;/summary&gt;
+	&lt;param name=&quot;name[]&quot; default=&quot;&quot; type=&quot;s&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;gridx&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;gridy&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+&lt;/function&gt;
+
+***/
+native SectionSet(section[], gridx = -1, gridy = -1, maxlength = sizeof section );
+native SectionGet(section[], &amp;gridx, &amp;gridy, maxlength=sizeof section);
+native SectionValid(section[] = SELF, gridx, gridy, maxlength = sizeof section );
+
+
+
+</pre>
+</div>

@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>NumberMax</h2>
+<p class="fundef">NumberMax(value1,value2)</p>
+<p>Returns the higher number between value1 & value2</p>
+<p><strong>Argument 'value1':</strong>Values to pick between.</p>
+<p><strong>Argument 'value2':</strong>Values to pick between.</p>
+<p>The larger value.</p>
+</div>

@@ -1,0 +1,22 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="DesignNotes.xml">DesignNotes</a> &gt; Starter Packages</div>
+<p>Content Packages are specially formatted packages containing Entities, Audio &amp; Graphics, that help users start creating games and import new media.</p>
+<h3>Package Format</h3>
+
+<p>Content Packages (.package) are GZip compressed format with each files store as name length, name, file length and file data.</p>
+<p>This format was chosen for simplistically over other format like Tar and ZIP.</p>
+<h3>Available Packages</h3>
+
+<ul><li>Open Legends of Zelda http://users.openzelda.net</li></ul>
+<h3>Using Content Packages</h3>
+
+<p>Content packages uses '.package' extension, and Alchera automatically add to the New Project listing when they are copied into My Document\alchera\.mokoi directory or similar directory on non-windows system.</p>
+<p>Packages can be import at a later date via the Import option under Project Menu.</p>
+<h3>Creating Content Packages</h3>
+
+<p>Creating Content Packages works the same as creating a game, except you use the 'Export' option instead of the 'Compile'.</p>
+<p>Fill in the dialog, then you can email the package file, located in My Documents\alchera\.mokoi, to mokoigaming@gmail.com and it will be added to list.</p>
+<p>If you got any other questions feel free to ask.</p>
+
+
+</div>

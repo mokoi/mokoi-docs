@@ -1,0 +1,293 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<pre>#if defined _entities_included
+  #endinput
+#endif
+#define _entities_included
+
+//title Entity Functions
+
+#include &lt;enums&gt;
+#include &lt;fixed&gt;
+
+
+
+///Entity Position Functions
+/***
+&lt;function name=&quot;EntitySetPosition&quot;&gt;
+	&lt;summary&gt;Set Entities position on current map.&lt;/summary&gt;
+	&lt;param name=&quot;Fixed:x&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;New Position. Pass cellmin to skip update that value.&lt;/param&gt;
+	&lt;param name=&quot;Fixed:y&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;New Position. Pass cellmin to skip update that value.&lt;/param&gt;
+	&lt;param name=&quot;Fixed:z&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;New Position. Pass cellmin to skip update that value.&lt;/param&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityGetPosition&quot;&gt;
+	&lt;summary&gt;Get Entity position on current map.&lt;/summary&gt;
+	&lt;param name=&quot;&amp;amp;Fixed:x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store Position.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;Fixed:y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store Position.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;Fixed:z&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store Position.&lt;/param&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native EntitySetPosition(Fixed:x = Fixed:cellmin, Fixed:y = Fixed:cellmin, Fixed:z = Fixed:cellmin, id = SELF);
+native EntityGetPosition(&amp;Fixed:x, &amp;Fixed:y, &amp;Fixed:z, id = SELF);
+
+///Entity Functions
+/***
+&lt;function name=&quot;EntityHash&quot;&gt;
+	&lt;summary&gt;Convert Entity Name to hash&lt;/summary&gt;
+	&lt;param name=&quot;id_string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;ID to give the entity.&lt;/param&gt;
+	&lt;return&gt;Returns the Entity Hash.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityCreate&quot;&gt;
+	&lt;summary&gt;Creates a new entity.&lt;/summary&gt;
+	&lt;param name=&quot;parententity[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Entity File name.&lt;/param&gt;
+	&lt;param name=&quot;id_string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;ID to give the entity.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;position to give the the entity.&lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;position to give the the entity.&lt;/param&gt;
+	&lt;param name=&quot;z&quot; default=&quot;&quot; type=&quot;n&quot;&gt;position to give the the entity.&lt;/param&gt;
+	&lt;param name=&quot;map_id&quot; default=&quot;CURRENT_MAP&quot; type=&quot;n&quot;&gt;Map to create it on. CURRENT_MAP will created it on the current map. GLOBAL_MAP with create a global entity which always on.&lt;/param&gt;
+	&lt;param name=&quot;idlength&quot; default=&quot;sizeof(id)&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name=&quot;args[]&quot; default=&quot;&amp;quot;&amp;quot;&quot; type=&quot;a&quot;&gt;Defines the follow arguments that will be passed to the entity Init function.
+	 a - Array, last value must be CELLMIN
+	 d - Value, passed by reference
+	 n - Value, passed by value
+	 s - String
+	 &quot;snsn&quot; means that the follow argument you pass will be a string, a number, a string and a number.
+	&lt;/param&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;List of Arguments to pass to the entity Init function. &lt;/param&gt;
+	&lt;return&gt;0 on error, otherwise it returns the Entity Hash.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityDelete&quot;&gt;
+	&lt;summary&gt;Deletes a entity.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityGetSetting&quot;&gt;
+	&lt;summary&gt;Get stored setting for entity. These are set via the Runtime Options.&lt;/summary&gt;
+	&lt;param name=&quot;key[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of Setting.&lt;/param&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to store value in.&lt;/param&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityGetNumber&quot;&gt;
+	&lt;summary&gt;Returns stored setting for entity. These are set via the Runtime Options.&lt;/summary&gt;
+	&lt;param name=&quot;key[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of Setting.&lt;/param&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityPublicFunction&quot;&gt;
+	&lt;summary&gt;Calls a function from another entity.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;function[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Public Function Name.&lt;/param&gt;
+	&lt;param name=&quot;args[]&quot; default=&quot;&amp;quot;&amp;quot;&quot; type=&quot;a&quot;&gt;Defines the follow arguments that will be passed to the function.
+	 a - Array, last value must be CELLMIN
+	 d - Value, passed by reference
+	 n - Value, passed by value
+	 s - String
+	 &quot;snsn&quot; means that the follow argument you pass will be a string, a number, a string and a number.
+	&lt;/param&gt;
+	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt;List of Arguments to pass to the function.&lt;/param&gt;
+	&lt;return&gt;What the function returns. May return -1 and -2 on error. &lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityPublicVariable&quot;&gt;
+	&lt;summary&gt;Returns a public variable from entity.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;variable[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of public variable.&lt;/param&gt;
+	&lt;return&gt;the public variable value.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntityPublicVariableSet&quot;&gt;
+	&lt;summary&gt;Sets a public variable on a entity.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;variable[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Name of public variable.&lt;/param&gt;
+	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;new value.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native EntityHash(string{}=&quot;&quot;, maxlength = sizeof(string));
+native EntityCreate(parententity[], id_string[], Fixed:x, Fixed:y, {Fixed,_}:z, map_id, args{}=&quot;&quot;, {Fixed,_}:...);
+native EntityDelete(id = SELF);
+native EntityGetSetting(key[], string[], id = SELF);
+native EntityGetSettingHash(key[], id = SELF);
+native EntityGetNumber(key[], id = SELF );
+
+// Args 
+/*
+ a - Array, last value must be CELLMIN
+ d - Value, passed by reference
+ n - Value, passed by value
+ s - String
+*/
+native EntityPublicFunction(id, function[], args{}=&quot;&quot;, ...);
+native EntityPublicVariable(id, variable[]);
+native EntityPublicVariableSet(id, variable[], value);
+
+///Entity Collision Functions
+/***
+&lt;function name=&quot;CollisionFromObject&quot;&gt;
+	&lt;summary&gt;Set Collision rectangles from the sprite or animation data.&lt;/summary&gt;
+	&lt;param name=&quot;obj&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Display Object to use.&lt;/param&gt;
+	&lt;param name=&quot;type&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Collision rectangle type.&lt;/param&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;CollisionCheck&quot;&gt;
+	&lt;summary&gt;Check to see if Entity is colliding with another entity.&lt;/summary&gt;
+	&lt;param name=&quot;id1&quot; default=&quot;&quot; type=&quot;n&quot;&gt;The Hash ID of the first entity you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;id2&quot; default=&quot;&quot; type=&quot;n&quot;&gt;The Hash ID of the second entity you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;rect1&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;The collision rectangle of first entity you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;rect2&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Rhe collision rectangle of second entity you wish to check.&lt;/param&gt;
+	&lt;return&gt;True if the collision rectangle of two entities are colliding.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;CollisionSet&quot;&gt;
+	&lt;summary&gt;Set a collision for the entity.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;rect&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Collision Rectangle.&lt;/param&gt;
+	&lt;param name=&quot;type&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Collision Type.&lt;/param&gt;
+	&lt;param name=&quot;x&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Rectangle points. &lt;/param&gt;
+	&lt;param name=&quot;y&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Rectangle points. &lt;/param&gt;
+	&lt;param name=&quot;w&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Rectangle points. &lt;/param&gt;
+	&lt;param name=&quot;h&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;Rectangle points. &lt;/param&gt;
+&lt;/function&gt;
+&lt;function name=&quot;CollisionCalculate&quot;&gt;
+	&lt;summary&gt;Generate a list of entities it's colliding with.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;rect&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Collision Rectangle your wish to check. -1 for all.&lt;/param&gt;
+	&lt;param name=&quot;type&quot; default=&quot;-1&quot; type=&quot;n&quot;&gt;Not Used.&lt;/param&gt;
+	&lt;return&gt;True if a collisions exist.&lt;/return&gt;
+	&lt;example&gt;
+	if ( CollisionCalculate() )
+	{
+		new current;
+		new angle;
+		new dist;
+		new rect;
+		new _STATE:type;
+		while ( CollisionGetCurrent(SELF, current, angle, dist, rect, type) )
+		{
+			if ( type == TYPE_AWAKING )
+			{
+				EntityPublicFunction(current, &quot;Awaking&quot;, &quot;sn&quot;, selfid, rect);
+			}
+			else if ( type == TYPE_ENEMY || type == TYPE_DOOR )
+			{
+				EntityPublicFunction(current, &quot;Hit&quot;, &quot;snnnnnn&quot;, selfid, angle, dist, APLAYER, 0, dx,dy, rect);
+			}
+			else if ( type == TYPE_TRANSPORT )
+			{
+				if ( EntityPublicFunction(current, &quot;MovePlayer&quot;, &quot;sn&quot;, selfid, _dir_) )
+				{
+					_state_ = STANDING;
+				}
+			}
+			else if ( type == TYPE_PUSHABLE &amp;amp;&amp;amp; _state_ == PUSHING )
+			{
+				EntityPublicFunction(current, &quot;Push&quot;, &quot;snn&quot;, selfid, rect, angle);
+			}
+			else if ( type == TYPE_SWITCH )
+			{
+				EntityPublicFunction(current, &quot;Pressed&quot;, &quot;s&quot;, selfid);
+			}
+			else if ( type == TYPE_ITEM )
+			{
+				if ( EntityPublicFunction(current, &quot;Pickup&quot;, &quot;s&quot;, selfid) )
+				{
+					_state_ = LIFTING;
+				}
+			}
+		}
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;CollisionGetCurrent&quot;&gt;
+	&lt;summary&gt;Retrieves current collision from generated list.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;current&quot; default=&quot;&quot; type=&quot;n&quot;&gt;String to store colliding entity ID.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;angle&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store angle.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;dist&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store distance. &lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;rect&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store rectangle that being colliding with.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;type&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store type of rectangle that your colliding with.&lt;/param&gt;
+	&lt;param name=&quot;current[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to store colliding entity name.&lt;/param&gt;
+	&lt;return&gt;True if a collision exist.&lt;/return&gt;
+	&lt;example&gt;
+	if ( CollisionCalculate() )
+	{
+		new current;
+		new angle;
+		new dist;
+		new rect;
+		new _STATE:type;
+		while ( CollisionGetCurrent(SELF, current, angle, dist, rect, type) )
+		{
+			if ( type == TYPE_AWAKING )
+			{
+				EntityPublicFunction(current, &quot;Awaking&quot;, &quot;sn&quot;, selfid, rect);
+			}
+			else if ( type == TYPE_ENEMY || type == TYPE_DOOR )
+			{
+				EntityPublicFunction(current, &quot;Hit&quot;, &quot;snnnnnn&quot;, selfid, angle, dist, APLAYER, 0, dx,dy, rect);
+			}
+			else if ( type == TYPE_TRANSPORT )
+			{
+				if ( EntityPublicFunction(current, &quot;MovePlayer&quot;, &quot;sn&quot;, selfid, _dir_) )
+				{
+					_state_ = STANDING;
+				}
+			}
+			else if ( type == TYPE_PUSHABLE &amp;amp;&amp;amp; _state_ == PUSHING )
+			{
+				EntityPublicFunction(current, &quot;Push&quot;, &quot;snn&quot;, selfid, rect, angle);
+			}
+			else if ( type == TYPE_SWITCH )
+			{
+				EntityPublicFunction(current, &quot;Pressed&quot;, &quot;s&quot;, selfid);
+			}
+			else if ( type == TYPE_ITEM )
+			{
+				if ( EntityPublicFunction(current, &quot;Pickup&quot;, &quot;s&quot;, selfid) )
+				{
+					_state_ = LIFTING;
+				}
+			}
+		}
+	}
+	&lt;/example&gt;
+&lt;/function&gt;
+&lt;function name=&quot;CollisionGet&quot;&gt;
+	&lt;summary&gt;Retrieves the entity collision rectangle values.&lt;/summary&gt;
+	&lt;param name=&quot;id&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Entity ID Hash.&lt;/param&gt;
+	&lt;param name=&quot;rect&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Collision Rectangle.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;x&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Rectangle points.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;y&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Rectangle points.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;w&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Rectangle points.&lt;/param&gt;
+	&lt;param name=&quot;&amp;amp;h&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Rectangle points.&lt;/param&gt;
+&lt;/function&gt;
+***/
+native CollisionFromObject(obj, type = 0, id = SELF);
+native CollisionCheck(id1, id2, rect1 = -1, rect2 = -1);
+native CollisionSet(id, rect = 0, type = 0, x = 0, y = 0, w = 0, h = 0);
+native CollisionGet(id, rect, &amp;x, &amp;y, &amp;w, &amp;h);
+native CollisionCalculate(id = SELF, rect = -1, type = -1);
+native CollisionGetCurrent(id = SELF, &amp;current, &amp;angle, &amp;dist, &amp;rect, &amp;type, name{}=&quot;&quot;, maxlength=sizeof(name));
+
+//Map Collision Functions
+/***
+
+***/
+native MapCollisionList();
+native MapCollisionCurrent(objecta[], objectb[], &amp;angle, &amp;dist, &amp;rect, length_a = sizeof objecta, length_b = sizeof objectb);
+
+///Entity Management Functions
+/***
+&lt;function name=&quot;EntitiesList&quot;&gt;
+	&lt;summary&gt;Generate a list of entities for required map.&lt;/summary&gt;
+	&lt;param name=&quot;map&quot; default=&quot;CURRENT_MAP&quot; type=&quot;n&quot;&gt;map id you wish to check.&lt;/param&gt;
+	&lt;return&gt;Amount of entities on the list.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name=&quot;EntitiesNext&quot;&gt;
+	&lt;summary&gt;Retrieves current entity name from generated list.&lt;/summary&gt;
+	&lt;param name=&quot;&amp;amp;id&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to store the Entity ID.&lt;/param&gt;
+	&lt;param name=&quot;map_id&quot; default=&quot;CURRENT_MAP&quot; type=&quot;n&quot;&gt;map id you wish to check.&lt;/param&gt;
+	&lt;param name=&quot;string[]&quot; default=&quot;&amp;quot;&amp;quot;&quot; type=&quot;a&quot;&gt;String to store the Entity Name.&lt;/param&gt;
+	&lt;return&gt;True if there still more entities. False if no more is in the list.&lt;/return&gt;
+&lt;/function&gt;
+***/
+native EntitiesList(mapid = 0);
+native EntitiesNext(&amp;id, map_id = 0, string{}=&quot;&quot;, maxlength = sizeof(string));
+</pre>
+</div>

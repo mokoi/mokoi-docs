@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>MiscGetHeight</h2>
+<p class="fundef">MiscGetHeight(id[])</p>
+<p>Get Height of Map, Screen or Sprite.</p>
+<p><strong>Argument 'id[]':</strong>Name of sprite or "__screen" for screen, "__map" for standard map and "map" for current map.</p>
+<p>Height of Map, Screen or Sprite.</p>
+</div>

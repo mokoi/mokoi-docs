@@ -1,0 +1,10 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>StringExtract</h2>
+<p class="fundef">StringExtract(dest[],source[],start,end)</p>
+<p>Copy part of source string into dest.</p>
+<p><strong>Argument 'dest[]':</strong></p>
+<p><strong>Argument 'source[]':</strong></p>
+<p><strong>Argument 'start':</strong></p>
+<p><strong>Argument 'end':</strong></p>
+</div>

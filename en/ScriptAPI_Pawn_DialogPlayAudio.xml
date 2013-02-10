@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>DialogPlayAudio</h2>
+<p class="fundef">DialogPlayAudio(line)</p>
+<p>Play Dialog.</p>
+<p><strong>Argument 'line':</strong>the requested line.</p>
+</div>

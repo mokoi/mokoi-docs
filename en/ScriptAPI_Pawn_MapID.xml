@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>MapID</h2>
+<p class="fundef">MapID(map[])</p>
+<p>Get Map ID. Note: it will load map.</p>
+<p><strong>Argument 'map[]':</strong>Name of file.</p>
+<p>Map ID.</p>
+</div>

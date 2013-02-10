@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>getarg</h2>
+<p class="fundef">getarg(arg,index)</p>
+<p>return the value of argument.</p>
+<p><strong>Argument 'arg':</strong></p>
+<p><strong>Argument 'index':</strong></p>
+<p>Value of argument.</p>
+</div>

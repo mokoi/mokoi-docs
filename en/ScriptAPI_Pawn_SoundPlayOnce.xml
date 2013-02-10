@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>SoundPlayOnce</h2>
+<p class="fundef">SoundPlayOnce(&value,file[])</p>
+<p>Play a audio file once.</p>
+<p><strong>Argument '&value':</strong>Variable to store if audio has been played.</p>
+<p><strong>Argument 'file[]':</strong>Audio File.</p>
+</div>

@@ -1,0 +1,31 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; MapEdit</div>
+<h2>Map Editor</h2>
+
+<p><img src="./images/Image13.png" alt=""/></p>
+<h3>Shortcuts Keys</h3>
+
+0-9 keys - Change the Layer.
+F - Flip Selected Object.
+Space - Rotate Selected Object 90 degrees.
+Arrow Keys - Move Selected Object.
+Shift + Arrow Keys - Tile Selected Object.
+<p>Shift + Click - Continue adding object.</p>
+<h3>Toolbar</h3>
+
+<img src="./images/map_toolbar.png" alt=""/>
+<ul><li>Save</li><li>Background Colour</li><li>Current Layer (Also changeable with 0-9 keys)</li><li>Current Layer Display Toggle</li><li>Zoom In</li><li>Zoom Original </li><li>Zoom Out</li><li>Show/Hide Grid</li><li>Map Options</li></ul>
+<h3>Display Object Sidebar</h3>
+
+<p>Display Object groups ( include Sprite sheets ) can be change by using the combo box.</p>
+<p>Display Object can be selected by double clicking or by pressing enter.</p>
+<h3>Map Options</h3>
+
+<p>TODO Insert Image</p>
+<p>Map Options dialog window can be use to change the dimension of the map, and if the map acts as a canvas.</p>
+<h4>Runtime Options</h4>
+
+<p>Each game can have it own set of Runtime Options.</p>
+
+
+</div>

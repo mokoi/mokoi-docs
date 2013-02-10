@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>ObjectInfo</h2>
+<p class="fundef">ObjectInfo(object:id,&w,&h)</p>
+<p>Returns width and height of object.</p>
+<p><strong>Argument 'object:id':</strong>Object's ID.</p>
+<p><strong>Argument '&w':</strong>Variable to store the width. </p>
+<p><strong>Argument '&h':</strong>Variable to store the height. </p>
+</div>

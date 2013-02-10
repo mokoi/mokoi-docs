@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>EntityPublicVariable</h2>
+<p class="fundef">EntityPublicVariable(id,variable[])</p>
+<p>Returns a public variable from entity.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+<p><strong>Argument 'variable[]':</strong>Name of public variable.</p>
+<p>the public variable value.</p>
+</div>

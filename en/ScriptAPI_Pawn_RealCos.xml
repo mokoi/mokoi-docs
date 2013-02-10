@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>RealCos</h2>
+<p class="fundef">RealCos(Real:value,anglemode:mode)</p>
+<p>Return the cosine. The input angle may be in radian, degrees or grades.</p>
+<p><strong>Argument 'Real:value':</strong></p>
+<p><strong>Argument 'anglemode:mode':</strong></p>
+<p>cosine of the angle.</p>
+</div>

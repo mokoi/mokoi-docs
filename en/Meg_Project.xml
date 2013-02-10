@@ -1,0 +1,85 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; Project</div>
+
+<h2>Game Info &amp; Settings Page</h2>
+
+<p><img src="./images/Image4.png" alt=""/></p>
+<p>These this were you can change the features of the engine for suit your game. </p>
+<h3>Project Settings</h3>
+ 
+Project ID: Unique ID for the current project. Also can be use to allow access it's saved info from other games.<br/>
+Project Title: Name of the Game. <em>&quot;project.title&quot;</em><br/>
+Project Author: Your name. <em>&quot;project.author&quot;</em>
+
+Debug: enables/disable the debug mode. <strong>&quot;debug.able&quot;</strong><br/>
+Audio: enables/disable the audio system. <strong>&quot;audio.able&quot;</strong>
+
+Saving: enables/disable the saving/loading. <br/>
+Allow Save Access: Enable to allow other games to access the saved information from this games.
+
+Icon: 32x32 png image used project icon and window icon<br/>
+Banner: Banner image used on the loading screens.
+
+<h3>Display Settings</h3>
+ 
+<p><img src="./images/Image36.png" alt=""/></p>
+
+Mode: Select the display systems to use. Note: This setting is currently only used on PC platform.<br/>
+Colour Bit: Defines the size of the Colour Bit. O will auto select the value depending on the platform.
+
+Custom Display Dimension: Allow a display dimension interdependent of the Screen Dimension. Display Dimension is analogous to the window size.<br/> 
+<p>Screen Dimension: The Area that the game draws to. </p>
+
+Fullscreen: <br/>
+Scale Display: Scales the graphics from Screen Dimension to the Display Dimension.
+
+<h3>Miscellaneous Settings</h3>
+
+<p><img src="./images/Image37.png" alt=""/></p>
+<p>Map Dimension: The Dimension used for Maps.</p>
+<p>Default Language: The language file that the game will use as default.</p>
+<p>Number of Player: Number of players that are set up for the game. Maximum of 16.</p>
+
+Graphics Content: Use a pre-made graphics package. (Not implemented yet) <br/>
+Sound Effects Content: Use a pre-made sound effects package. (Not implemented yet)<br/>
+Music Content: Use a pre-made music package. (Not implemented yet)
+
+<h3>Advance Settings</h3>
+ 
+<h4>Player Controls</h4>
+
+<p><ul><li>control.set1</li><li>control.set2</li></ul><h4>Game Options</h4></p>
+<p><ul><li>display.limit</li></ul><h4>Networking</h4></p>
+<ul><li>server.ip</li><li>server.able</li><li>client.entity</li></ul>
+<h3>Custom Controls</h3>
+
+<p>Player controllers can be change by modify the &quot;control.set1&quot; setting.</p>
+<p>Control configuration are store in | separated list. They are stored in this order, Axis 1, Axis 2, Pointer, Button 0, ... , Button 15. </p>
+<h4>Axis</h4>
+
+<p>Each axis is three values between -255 and 255 representing x,y,z axis</p>
+
+Predefine Options
+<ul><li>arrows </li><li>numpad</li><li>keyboard-wasd</li><li>mouse (not supported yet)</li><li>touchscreen (not supported yet)</li><li>controlaxis </li></ul>
+<h4>Pointer</h4>
+
+<p>x/y values of the mouse, touchscreen or controller stick.</p>
+
+Predefine Options
+<ul><li>mouse</li><li>touchscreen (not supported yet)</li><li>controlaxis</li></ul>
+<h4>Button</h4>
+ 
+<p>Button is a off/on control. Unlike Axis and pointer, you use a prefix followed by number representing the input.</p>
+
+Predefine Prefix
+<ul><li>k for keyboard key.</li><li>m for mouse button.</li><li>b for controller button.</li><li>h for controller hat.</li></ul>
+<h4>Example</h4>
+
+<pre>
+arrows|none|mouse|k97|k115|k100|k113|k119|k101|k13|k273|k274|k275|k276|m1|m2|m3|m4|m5
+controlaxisA0|none|mouse|b100|b101|b102|b103|b104|b105|b106|b107|b108|b109|b110|m1|m2|m3|m4|m5
+</pre>
+<p>Note the A0 after controlaxis, that stands for controller A, axis 0.</p>
+
+
+</div>

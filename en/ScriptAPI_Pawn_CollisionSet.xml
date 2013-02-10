@@ -1,0 +1,13 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>CollisionSet</h2>
+<p class="fundef">CollisionSet(id,rect,type,x,y,w,h)</p>
+<p>Set a collision for the entity.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+<p><strong>Argument 'rect':</strong>Collision Rectangle.</p>
+<p><strong>Argument 'type':</strong>Collision Type.</p>
+<p><strong>Argument 'x':</strong>Rectangle points. </p>
+<p><strong>Argument 'y':</strong>Rectangle points. </p>
+<p><strong>Argument 'w':</strong>Rectangle points. </p>
+<p><strong>Argument 'h':</strong>Rectangle points. </p>
+</div>

@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>OnlineData</h2>
+<p class="fundef">OnlineData(callback[32],url[128],post[])</p>
+<p>Downloads URL to the callback function. If data is supported media, it will be loaded, and details pass to callback function.</p>
+<p><strong>Argument 'callback[32]':</strong></p>
+<p><strong>Argument 'url[128]':</strong></p>
+<p><strong>Argument 'post[]':</strong></p>
+</div>

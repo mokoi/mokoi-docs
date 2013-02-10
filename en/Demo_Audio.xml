@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Demos.xml">Demos</a> &gt; Audio</div>
+<h2>Audio Demo</h2>
+
+<p>Just simple audio player that can list what current in game's directory. Also show off the dialog system.</p>
+<h3>Function Used</h3>
+
+
+AudioPlayMusic 
+AudioPlaySound 
+DialogShow 
+DialogGetString 
+DialogPlayAudio 
+<p>FileGetList</p>
+
+
+</div>

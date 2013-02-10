@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt; Hello World</div>
+<h2>Tutorial: Hello World</h2>
+
+
+<h3>Step 1</h3>
+
+<p>Start Alchera and Create an New Project. Make sure you give it a Title.</p>
+<h3>Step 2</h3>
+
+<img src="./images/Image22.png" alt=""/><br/>
+Switch over to Map Editor, and open up the 'empty' map.  <br/>
+
+<h3>Step 3</h3>
+
+<img src="./images/Image28.png" alt=""/><br/>
+Switch over to the Game Script page and open up the main entity either clicking on edit button in the top section of the page or double clicking on 'main.mps' under Object in File listing
+
+It should bring up a script that looks like:
+<pre>
+main()
+{
+}
+</pre>
+The script should just contain the 'main' function and code inside the function will be ran on each frame.<br/>
+Lets Replace that script with this:
+<pre>
+//This is a comment, any text follow the 2 / on that line will be ignored 
+main()
+{
+  /* Objects drawn with Draw only last that frame */
+  GraphicsDraw(&quot;HelloWorld&quot;, TEXT, 200, 200,1,0,0, WHITE ); /* See Scripting Interface for info on Draw Function */
+}
+</pre>
+and click Save. <br/>
+For more on Scripting help see <a href="Scripting;Pawn.xml">Game Scripting</a>
+<h3>Step 4</h3>
+
+Select 'Play' from the Project Menu. You should see HelloWorld display on the screen.<br/>
+<img src="./images/Image30.png" alt=""/>
+
+<h3>Step 5</h3>
+
+<p>Experiment.</p>
+
+
+</div>

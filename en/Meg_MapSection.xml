@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; MapSection</div>
+<h2>Map Section Editor</h2>
+
+<p><img src="./images/Image12.png" alt=""/></p>
+<p>Map Sections a group of maps, which allow automatic movement between maps.</p>
+<h4>Controls</h4>
+
+Double clicking on map will open it.<br/>
+Clicking on empty grid, brings up the add map dialog.<br/>
+Right clicking will remove map from the grid.<br/>
+
+
+</div>

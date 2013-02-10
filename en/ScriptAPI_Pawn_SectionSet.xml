@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>SectionSet</h2>
+<p class="fundef">SectionSet(section[],gridx,gridy)</p>
+<p>Changes the Section, while keeping the same grid location.</p>
+<p><strong>Argument 'section[]':</strong>Section name.</p>
+<p><strong>Argument 'gridx':</strong>Grid Position</p>
+<p><strong>Argument 'gridy':</strong>Grid Position</p>
+</div>

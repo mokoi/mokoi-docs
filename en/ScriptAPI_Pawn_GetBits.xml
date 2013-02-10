@@ -1,0 +1,10 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>GetBits</h2>
+<p class="fundef">GetBits(value,position,size)</p>
+<p>Sets a range of bits.</p>
+<p><strong>Argument 'value':</strong>Variable to use.</p>
+<p><strong>Argument 'position':</strong>Bit position.</p>
+<p><strong>Argument 'size':</strong>Number of bits to use.</p>
+<p>value of bits</p>
+</div>

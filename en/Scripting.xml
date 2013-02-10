@@ -1,0 +1,45 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+
+Mokoi Games are controlled by a scripting language, this allows for quick and easy creation of games and allows the games to be portable.
+<h3>Available Scripting Languages</h3>
+
+ <ul><li><a href="Scripting;Pawn.xml">Pawn</a> (Available on all ports)</li></ul>
+<h3>Future Possible Scripting Languages</h3>
+
+ <ul><li>Squirrel [http://www.squirrel-lang.org/ www.squirrel-lang.org]</li><li>EMCA-Script [https://developers.google.com/v8/ developers.google.com/v8/]</li><li>Lua [http://www.lua.org www.lua.org]</li></ul>
+<h3>Embedding a New Language</h3>
+
+Fill in a LuxEntityCallback struct. mem_pointer is a basically a void *
+<pre>
+typedef struct {
+	bool (*Init) ( std::string entity_id, std::string entity_base, mem_pointer &amp; entity_data, Entity * entity );
+	void (*Destroy) ( mem_pointer entity_data );
+	void (*Restore) ( mem_pointer entity_data );
+	void (*Save) ( mem_pointer entity_data );
+	bool (*Run) ( mem_pointer entity_data, bool &amp; scriptcontinue );
+	int32_t (*Call) ( mem_pointer entity_data, char * function, mem_pointer stack_mem  );
+	bool (*PushArray) ( mem_pointer entity_data, int32_t array[], uint32_t size, mem_pointer stack_mem);
+	bool (*PushString) ( mem_pointer entity_data, std::string str, mem_pointer stack_mem);
+	bool (*Push) ( mem_pointer entity_data, int32_t value);
+} LuxEntityCallback;
+</pre>
+
+Pawn's Example
+<pre>
+LuxEntityCallback EntitySystemPawn = {
+	&amp;Lux_PawnEntity_Init,
+	&amp;Lux_PawnEntity_Destroy,
+	&amp;Lux_PawnEntity_Restore,
+	&amp;Lux_PawnEntity_Save,
+	&amp;Lux_PawnEntity_Run,
+	&amp;Lux_PawnEntity_Call,
+	&amp;Lux_PawnEntity_PushArray,
+	&amp;Lux_PawnEntity_PushString,
+	&amp;Lux_PawnEntity_Push
+};
+</pre>
+
+<p>Then you can modify class EntitySystem::GetSystem() to support your callback system</p>
+
+
+</div>

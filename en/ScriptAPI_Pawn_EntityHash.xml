@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>EntityHash</h2>
+<p class="fundef">EntityHash(id_string[])</p>
+<p>Convert Entity Name to hash</p>
+<p><strong>Argument 'id_string[]':</strong>ID to give the entity.</p>
+<p>Returns the Entity Hash.</p>
+</div>

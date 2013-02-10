@@ -1,0 +1,10 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>LayerSetRotation</h2>
+<p class="fundef">LayerSetRotation(layer,roll,pitch,yaw)</p>
+<p>Change the rotation of the layer. This feature is still in development and will only be available for OpenGL display system.</p>
+<p><strong>Argument 'layer':</strong>Layer to change. Default setting give layers 0-6.</p>
+<p><strong>Argument 'roll':</strong></p>
+<p><strong>Argument 'pitch':</strong></p>
+<p><strong>Argument 'yaw':</strong></p>
+</div>

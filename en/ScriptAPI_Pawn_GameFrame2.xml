@@ -1,0 +1,12 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>GameFrame2</h2>
+<p class="fundef">GameFrame2()</p>
+<p>Return the length of last frame in seconds as a fixed point number.</p>
+<p>Length of time of last frame.</p>
+<h3>Example Code</h3>
+<pre>
+	new Fixed:time = GameFrame2();
+	DebugText("Last Frame took %q seconds", time);
+	</pre>
+</div>

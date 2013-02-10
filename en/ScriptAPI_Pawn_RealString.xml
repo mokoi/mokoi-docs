@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>RealString</h2>
+<p class="fundef">RealString(string[])</p>
+<p>Converts a String into Rational number.</p>
+<p><strong>Argument 'string[]':</strong></p>
+<p>New Rational number</p>
+</div>

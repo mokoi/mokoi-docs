@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>InputButtonSet</h2>
+<p class="fundef">InputButtonSet(input,value,player)</p>
+<p>Set Button value for the Player.</p>
+<p><strong>Argument 'input':</strong>A value between 0-15.</p>
+<p><strong>Argument 'value':</strong>0 for un-pressed button, 1 for pressed button, 2 for held down button</p>
+<p><strong>Argument 'player':</strong>0 for current player otherwise the selected player.</p>
+</div>

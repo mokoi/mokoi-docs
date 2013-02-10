@@ -1,0 +1,176 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="DesignNotes">Design Notes</a> &gt; Games</div>
+
+<p>Mokoi Games are a Platform Neutral Video Games Format. Currently only one working implementation has been made (<a href="http://mokoi.info/projects/luxengine/">&quot;Lux Engine&quot;</a>), though 2 more in development (<a href="http://mokoi.info/projects/lightbulb">Lightbulb</a> and <a href="Project;HTML5.xml">&quot;HTML5&quot;</a>)</p>
+
+
+
+<h2>Distributing</h2>
+<p>Mokoi Games use a special format for game distributing. Games Directory can be also shared, to allow easy modification.</p>
+
+<h2>dot Game Format</h2>
+
+<h3>Header</h3>
+<pre>
+uint8_t[8] magic = {137, 'M', 'o', 'k', 'o', 'i', '1', 10}; // - magic[6] stores the file version
+uint8_t[256] name;
+uint32_t id;
+uint32_t logo_length; //png logo length
+uint8_t * logo; // png logo data
+uint32_t CRC;
+</pre>
+
+<h3>Files</h3>
+<pre>
+#!c
+uint16_t filename_length;
+int8_t filename;
+uint32_t file_size_length;
+uint32_t compressed_size_length;
+int8_t data;
+</pre>
+
+<h2>Game Structure &amp; File Formats</h2>
+
+<h3>Folders</h3>
+
+<p>
+<ul>
+	<li>dialog - <em>Stores Language files as text files and speech files in OGG formatted audio files</em></li>
+	<li>lang - <em>Stores Language files as text files</em>
+</li>
+	<li>maps - <em>XML Maps files</em>
+</li>
+	<li>sections 
+-<em>TSV to define each section.</em></li>
+	<li>scripts - <em>Game &amp; Map Entities</em></li>
+	<li>sprites 
+- <em>PNG Images and XML sheet info</em></li>
+</ul>
+</p>
+
+<h4>game.mokoi</h4>
+<p>
+game.mokoi is a INI-like format, that stores the game setting.
+<h5>Example</h5>
+<pre>
+[Mokoi]
+project.title=Mokoi Test Game
+project.id=testgame
+player.number=1
+map.width=512
+map.height=384
+screen.width=320
+screen.height=240
+project.language=en
+</pre>
+</p>
+<h4>Map Section</h4>
+<p>Map Section are a Tabbed Separated Values (TSV) text file, which stores map locations on a grid. </p>
+<p>Values for the TSV are 'Map', 'Grid X', 'Grid Y'
+	<h5>Example</h5>
+	<pre>
+	title    0    0
+	display    2    0
+	camera    4    0
+	input    6    0
+	collision    8    0
+	entity    10    0
+	audio     12    0
+	save     14    0
+	</pre>
+	<em>Tabs may not be visible</em>
+</p>
+
+<h4>Dialog &amp; Language</h4>
+<p>Strings are stored on a individual line. An pilcrow (¶) (Unicode: U+00B6) can be use if you require a line break.</p>
+<p>Files are name with the two letter language code, with 00.txt acting as a Key file which is also exported to a script routine.</p>
+<p>Ogg Vorbis is used for audio dialog. <strong>Note: To be replace with Opus in future version</strong></p>
+
+<h4>Entities</h4>
+
+<p>Game Entities are Pawn Scripts with 3 Public functions, for more detail see <a href="Scripting/Pawn">Pawn Scripting</a>
+</p>
+
+<h3>Maps</h3>
+
+<p>Map files are in a XML format.
+	<h5>Example of a map file</h5>
+	<pre>
+	&lt;map xmlns=&quot;http://mokoi.info/format/map&quot;&gt;
+		&lt;settings&gt;
+			&lt;dimensions width=&quot;2&quot; height=&quot;1&quot; /&gt;
+			&lt;color red=&quot;0&quot; blue=&quot;0&quot; green=&quot;0&quot; mode=&quot;0&quot; /&gt;
+			&lt;option name=&quot;name&quot; value=&quot;Test Screen&quot; /&gt;
+		&lt;/settings&gt;
+		&lt;object value=&quot;Mokoi Gaming Test Game&quot; type=&quot;text&quot; &gt;
+			&lt;position x=&quot;30&quot; y=&quot;20&quot; w=&quot;16&quot; h=&quot;16&quot; z=&quot;0&quot; /&gt;
+		&lt;/object&gt;
+		&lt;object value=&quot;__icon.png:1&quot; type=&quot;sprite&quot;&gt;
+			&lt;position x=&quot;74&quot; y=&quot;38&quot; w=&quot;16&quot; h=&quot;16&quot; z=&quot;0&quot; /&gt;
+			&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;press-me&quot; /&gt;
+		&lt;setting key=&quot;entity&quot; value=&quot;press-me.mps&quot; /&gt;
+		&lt;/object&gt;
+	&lt;/map&gt;
+	</pre>
+</p>
+
+
+<h4>Masks</h4>
+<p>Custom mask will be stored in binary portable graymap file format, 0 or black will represents transparency</p>
+
+<h4>Sprites, Animations &amp; Sheets</h4>
+
+<p>Mokoi uses sprite sheets, which are images that contain many sprites, and a XML to hold the sprite information. They also hold simple animation info.<br/>
+<br/>
+Supported Format: PNG</p>
+
+<p>
+<h5>Example sprite sheet</h5>
+<pre>
+	<sheet xmlns="http://mokoi.info/format/sheet">
+		<sprite name="process_0" hidden="hidden" mask="" entity="">
+			<position x="74" y="38" w="16" h="16" />
+		</sprite>
+		<sprite name="process_1" mask="" entity="">
+			<position x="74" y="38" w="16" h="16" />
+			<child name="process_0" position="top-left" scroll="0"/>
+			<collision id="0" x="0" y="0" w="16" h="16"/>
+		</sprite>
+		<animation name="process" hidden="hidden" mask="" entity="">
+			<frame sprite="process_0" x="0" y="0" ms="100"/>
+			<frame sprite="process_1" x="0" y="0" ms="100"/>
+			<frame sprite="process_2" x="0" y="0" ms="100"/>
+		</animation>
+	</sheet>
+</pre>
+
+<strong>Format used before 0.94</strong>
+<pre>
+#Sprite Name, Flag, Mask Value/File, Default Entity, X, Y, Width, Height
+process_0	2	0	0	0	0	32	32
+process_1	2	0	0	32	0	32	32
+process_2	2	0	0	64	0	32	32
+process_3	2	0	0	96	0	32	32
+process_4	2	0	0	128	0	32	32
+process_5	2	0	0	160	0	32	32
+process_6	2	0	0	192	0	32	32
+#Animation Name, Flag, Mask Value/File, Default Entity, Animation Keyword, Frame length in ms, [Sprites]
+process	0	0	0	ANIMATION	500	process_0	process_1	process_2	process_3	process_4	process_5	process_6
+</pre>
+</p>
+
+<h3>Music &amp; Sound Effects</h3>
+<p>
+	Supported Format (both): Ogg Vorbis <strong>Note: To be replace with Opus in future version</strong><br/>
+	Supported Format (music): it, mod<br/>
+	Supported Format (effects): wav
+</p>
+
+<h2>Game Process</h2>
+<p>Game Objects (Display Objects/Entities) are classed as either global or local objects. Global objects are always active, while local object are only active then their map is active.</p>
+
+
+</div>

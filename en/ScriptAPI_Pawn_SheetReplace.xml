@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>SheetReplace</h2>
+<p class="fundef">SheetReplace(olds[],news[])</p>
+<p>Changing one sheet to another.</p>
+<p><strong>Argument 'olds[]':</strong></p>
+<p><strong>Argument 'news[]':</strong></p>
+</div>

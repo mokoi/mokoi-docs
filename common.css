@@ -1,0 +1,28 @@
+div
+{
+	max-height: 100%;
+	padding:.5em;
+	margin:.5em;
+	background:#fff;
+	border:#999 dotted 1px;
+	overflow: none;
+	font-family: sans-serif;
+}
+
+
+.docnavbar
+{
+	text-align:center;
+}
+
+pre {
+	margin: 0 0 0.5em 0.5em;
+	background:#DDD;
+	border:#999 dotted 1px;
+}
+
+p, h1, h2, h3
+{
+	margin: 0 0 .7em 0;
+}
+

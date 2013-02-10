@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>PlayerSetAI</h2>
+<p class="fundef">PlayerSetAI(player,entity[])</p>
+<p></p>
+<p><strong>Argument 'player':</strong></p>
+<p><strong>Argument 'entity[]':</strong></p>
+</div>

@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>MapCreate</h2>
+<p class="fundef">MapCreate(map[],create_new)</p>
+<p>Create a new map.</p>
+<p><strong>Argument 'map[]':</strong>Name of file.</p>
+<p><strong>Argument 'create_new':</strong>create new map.</p>
+<p>New map ID.</p>
+</div>

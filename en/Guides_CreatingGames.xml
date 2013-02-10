@@ -1,0 +1,22 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Guides.xml">Guides</a> &gt; Creating Games</div>
+
+<p>For the time being, we recommend looking at the include demos, which is located in the 'MokoiGaming/demos' directory, and the <a href="Tutorials;Hello+World.xml">Hello World</a> example game to get the hang of how Mokoi Games work. For a list of available functions please look at <a href="Scripting;Pawn.xml">Game Scripting page</a>.</p>
+<p>If you having trouble with Mokoi or just want to leave feedback, please feel free to use the forums or the mailing list.</p>
+<h2>Tutorials</h2>
+
+ <ul><li><a href="Tutorials;Hello+World.xml">Tutorial 1: Hello World</a>
+</li><li><a href="Tutorials;Using+Graphics.xml">Tutorial 2: Using Graphics</a>
+</li><li><a href="Tutorials;Basic+Entity.xml">Tutorial 3: Basic Entity</a>
+</li><li><a href="Tutorials;Moving+Entity.xml">Tutorial 4: Moving Entity</a>
+</li></ul>
+<h2>Example Games</h2>
+
+ <ul><li><a href="Tutorials;Basic+Invaders.xml">Basic Invaders</a>
+</li></ul>
+<h2>Content Packages</h2>
+
+<p>Content Packages are specially formatted packages containing Entities, Audio &amp; Graphics, that help users start creating games and import new media.</p>
+
+
+</div>

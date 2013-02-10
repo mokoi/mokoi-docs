@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>StringFormat</h2>
+<p class="fundef">StringFormat(dest[],size,pack,format,...)</p>
+<p>Prints formatted text to string 'dest'.</p>
+<p><strong>Argument 'dest[]':</strong>Destination string.</p>
+<p><strong>Argument 'size':</strong>size of destination string.</p>
+<p><strong>Argument 'pack':</strong>Pack string contents.</p>
+<p><strong>Argument 'format':</strong>Format String</p>
+<p><strong>Argument '...':</strong> List of Arguments to used to produce the formatted text.</p>
+<h3>Example Code</h3>
+<pre>
+	new string[128];
+	strformat(string, _, true, "Text: %s, Color: %x, Number: %d, Fixed: %q\n", "Hello", 0xFFBBAAFF, 42, 50.254);
+	DebugText(string);
+	</pre>
+</div>

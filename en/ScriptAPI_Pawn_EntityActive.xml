@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>EntityActive</h2>
+<p class="fundef">EntityActive()</p>
+<p>Ables networking syncing for entity.</p>
+<p>True if active</p>
+</div>

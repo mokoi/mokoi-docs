@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>ObjectDelete</h2>
+<p class="fundef">ObjectDelete(object:id)</p>
+<p>Delete a Display Objects.</p>
+<p><strong>Argument 'object:id':</strong>Object's ID.</p>
+</div>

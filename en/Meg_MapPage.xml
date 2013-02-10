@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; MapPage</div>
+<h2>Map Page</h2>
+
+<img src="./images/Image22.png" alt=""/><br/>
+Map Editor has two areas, Map Section and Map Editing.
+
+<p>Map Sections a group of maps, which allow automatic movement between maps. </p>
+<p><a href="Alchera;MapSection.xml">More on Map Section</a>
+<a href="Alchera;MapEdit.xml">More on Map Editing</a>
+</p>
+
+
+</div>

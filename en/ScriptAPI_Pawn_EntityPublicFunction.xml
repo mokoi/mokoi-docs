@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>EntityPublicFunction</h2>
+<p class="fundef">EntityPublicFunction(id,function[],args[],...)</p>
+<p>Calls a function from another entity.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+<p><strong>Argument 'function[]':</strong>Public Function Name.</p>
+<p><strong>Argument 'args[]':</strong>Defines the follow arguments that will be passed to the function.
+	 a - Array, last value must be CELLMIN
+	 d - Value, passed by reference
+	 n - Value, passed by value
+	 s - String
+	 "snsn" means that the follow argument you pass will be a string, a number, a string and a number.
+	</p>
+<p><strong>Argument '...':</strong>List of Arguments to pass to the function.</p>
+<p>What the function returns. May return -1 and -2 on error. </p>
+</div>

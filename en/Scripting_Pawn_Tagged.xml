@@ -1,0 +1,44 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; <a href="Pawn.xml">Pawn</a> &gt; Tagged</div>
+Due the fact the Pawn language has only one type, an variable, constant or function result can be tagged to promote stronger compile-time error checking.
+<p></p>
+<h3>Fixed</h3>
+
+<h3>Float</h3>
+
+<h3>bool</h3>
+
+<h3>object</h3>
+
+<p>See <a href="Scripting;DisplayObjects.xml">Scripting;DisplayObjects</a>
+</p>
+
+<h3>Graphics Types</h3>
+
+<p>See <a href="Scripting;GraphicsTypes.xml">Scripting;GraphicsTypes</a>
+</p>
+
+<h3>Display Styles</h3>
+
+<p>See <a href="Scripting;DisplayStyles.xml">Scripting;DisplayStyles</a>
+</p>
+
+<h3>_DIRECTION</h3>
+
+Each direction increment by 45 degrees starting at 0 or WEST
+<ul><li>WEST</li><li>NORTHWEST</li><li>NORTH</li><li>NORTHEAST</li><li>EAST</li><li>SOUTHEAST</li><li>SOUTH</li><li>SOUTHWEST</li></ul>
+<h3>AudioDevice</h3>
+
+<p>See <a href="Scripting;AudioDevice.xml">Scripting;AudioDevice</a>
+</p>
+
+<h3>DisplayDevice</h3>
+
+<ul><li>UNKNOWN,</li><li>SOFTWARE (Rotating, scaling &amp; colouring are done via Software.)</li><li>HARDWARE (Uses OpenGL/Direct3D SDL 2.0 backends. )</li><li>OPENGL (If supported, Rotating, scaling &amp; colouring are done via the Video Card.)</li></ul>
+<h3>round_method</h3>
+
+<ul><li>round_normal </li><li>round_floor</li><li>round_ceil</li><li>round_tozero</li><li>round_unbiased</li></ul>
+<h3>anglemode</h3>
+
+<ul><li>radian</li><li>degrees</li><li>grades</li></ul>
+</div>

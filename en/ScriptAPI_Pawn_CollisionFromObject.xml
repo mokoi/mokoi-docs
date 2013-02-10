@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>CollisionFromObject</h2>
+<p class="fundef">CollisionFromObject(obj,type,id)</p>
+<p>Set Collision rectangles from the sprite or animation data.</p>
+<p><strong>Argument 'obj':</strong>Display Object to use.</p>
+<p><strong>Argument 'type':</strong>Collision rectangle type.</p>
+<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+</div>

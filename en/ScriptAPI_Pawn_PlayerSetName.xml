@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<h2>PlayerSetName</h2>
+<p class="fundef">PlayerSetName(player,str[])</p>
+<p>Set the name of player</p>
+<p><strong>Argument 'player':</strong></p>
+<p><strong>Argument 'str[]':</strong></p>
+</div>
