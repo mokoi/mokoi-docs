@@ -1,5 +1,5 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
-<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; Patch</div>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="Meg.xml">Meg</a> &gt; Patch</div>
 <h2>Patch Creation Page</h2>
 
 <p>Patches allow for added content and improved game code after it has been release. The Patch Creation Page will attempt to scan for the differences in files and create a patch file.</p>

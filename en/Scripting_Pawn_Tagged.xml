@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; <a href="Pawn.xml">Pawn</a> &gt; Tagged</div>
 Due the fact the Pawn language has only one type, an variable, constant or function result can be tagged to promote stronger compile-time error checking.
 <p></p>

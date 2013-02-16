@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Guides.xml">Guides</a> &gt; Creating Games</div>
 
 <p>For the time being, we recommend looking at the include demos, which is located in the 'MokoiGaming/demos' directory, and the <a href="Tutorials;Hello+World.xml">Hello World</a> example game to get the hang of how Mokoi Games work. For a list of available functions please look at <a href="Scripting;Pawn.xml">Game Scripting page</a>.</p>

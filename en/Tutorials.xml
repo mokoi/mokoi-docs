@@ -1,10 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 
-1. <a href="Tutorials;Hello+World.xml">Hello World</a>
-  1. <a href="Tutorials;Using+Graphics.xml">Using Graphics</a>
-  1. <a href="Tutorials;Basic+Entity.xml">Basic Entity</a>
-<p>  1. <a href="Tutorials;Moving+Entity.xml">Moving Entity</a>
-</p>
-
-
+<ol>
+	<li><a href="Tutorials_1HelloWorld.xml">Hello World</a></li>
+	<li><a href="Tutorials_2UsingGraphics.xml">Using Graphics</a></li>
+	<li><a href="Tutorials_3BasicEntity.xml">Basic Entity</a></li>
+	<li><a href="Tutorials_4MovingEntity.xml">Moving Entity</a></li>
+</ol>
 </div>

@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; Entities</div>
 <p>Entities are the main part of Mokoi Games as they control everything. Currently Entities are written in <a href="Scripting;Pawn.xml">Pawn</a> but other languages may be added down the track.</p>
 <h2>Entity Entry Points</h2>

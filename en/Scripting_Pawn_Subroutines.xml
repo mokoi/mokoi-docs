@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; <a href="Pawn.xml">Pawn</a> &gt; Subroutines</div>
 <p>Routines are shared code for entities.</p>
 

@@ -1,5 +1,5 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
-<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; Language</div>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="Meg.xml">Meg</a> &gt; Language</div>
 <h2>Language Editor</h2>
 
 <p>The language editor allow you to manage the Dialog text and Code strings for your game in multiple languages. </p>

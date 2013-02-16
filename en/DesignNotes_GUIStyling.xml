@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="DesignNotes.xml">DesignNotes</a> &gt; GUIStyling</div>
 <p><strong>In-development for Mokoi Gaming 0.91</strong></p>
 <p>CSS-like styling for the GUI component.</p>

@@ -1,5 +1,5 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
-<div class="navbar"><a href="Alchera.xml">Alchera</a> &gt; Spritesheet</div>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="Meg.xml">Meg</a> &gt; Spritesheet</div>
 <h2>Sprite Sheet Editor</h2>
  
 <p>Sprite sheets are collection of sprites on a image file, which allows for easy management and editing via 3rd party project.</p>

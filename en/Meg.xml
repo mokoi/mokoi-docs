@@ -1,6 +1,8 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 
 <p>As of Mokoi Gaming 0.94, Alchera will merge with loader_mokoi and be known as meg.</p>
+
+<ul>
 <a href="Alchera;Audio.xml">Alchera;Audio</a>
 <br/>
 <a href="Alchera;Entities.xml">Alchera;Entities</a>
@@ -21,6 +23,6 @@
 <br/>
 <a href="Alchera;Spritesheet.xml">Alchera;Spritesheet</a>
 <br/>
-
+<ul>
 
 </div>

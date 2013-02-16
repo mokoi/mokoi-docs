@@ -1,12 +1,11 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-
 <p>Congratulation, you're on the way to creating your own game.</p>
 
 <h2>Getting Around The Editor</h2>
 <p><img src="../images/toolbar.png" alt=""/></p>
 
-<p>All the major components in Meg can be access by this toolbar. The Project menu gives you links to Play (Ctrl-p), Save and Compile the Game, you can also Import and Export project content. </p>
+<p>All the major components in Alchera can be access by this toolbar. The Project menu gives you links to Play (Ctrl-p), Save and Compile the Game, you can also Import and Export project content. </p>
 
 
 <h2>Game Creation Tutorials</h2>

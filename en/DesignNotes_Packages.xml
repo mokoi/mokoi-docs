@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="DesignNotes.xml">DesignNotes</a> &gt; Starter Packages</div>
 <p>Content Packages are specially formatted packages containing Entities, Audio &amp; Graphics, that help users start creating games and import new media.</p>
 <h3>Package Format</h3>

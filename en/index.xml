@@ -1,0 +1,45 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>Scripting</h2>
+	<p>Mokoi Games are controlled by a scripting language, this allows for quick and easy creation of games and allows the games to be portable.</p>
+	<ul>
+		<li><a class="wiki" href="Scripting_Pawn">Default Scripting Language: Pawn</a> (Available on all ports)</li>
+		<li><a class="wiki" href="Scripting_Quest">Quest Content Pack</a> (Available for Pawn)</li>
+		<li><a class="wiki" href="Scripting_Jump">Jump Content Pack</a> (Available for Pawn)</li>
+	</ul>
+	<h2>Tutorials</h2>
+	<ol>
+		<li><a class="wiki" href="Tutorials_1HelloWorld">Hello World</a></li>
+		<li><a class="wiki" href="Tutorials_2UsingGraphics">Using Graphics</a></li>
+		<li><a class="wiki" href="Tutorials_3BasicEntity">Basic Entity</a></li>
+		<li><a class="wiki" href="Tutorials_4MovingEntity">Moving Entity</a></li>
+	</ol>
+	<h2>Guides</h2>
+	<ul>
+		<li><a class="wiki" href="Guides_CreatingGames">Creating Games</a></li>
+		<li><a class="wiki" href="Guides_CreatingGenres">Creating Genres</a></li>
+		<li><a class="wiki" href="Building">Building Mokoi Gaming</a></li>
+	</ul>
+	<h2>Alchera</h2>
+	<p>As of Mokoi Gaming 0.94, Alchera will merge with loader_mokoi and be known as meg.</p>
+
+	<h2>Meg</h2>
+	<ul>
+		<li><a class="wiki" href="welcome">Welcome Page</a></li>
+		<li><a class="wiki" href="Meg_Project">Game Info &amp; Settings</a></li>
+		<li><a class="wiki" href="Meg_Spritesheet">Sprite Sheet</a></li>
+		<li><a class="wiki" href="Meg_Language">Language</a></li>
+		<li><a class="wiki" href="Meg_MapPage">Map Page</a></li>
+		<li><a class="wiki" href="Meg_MapEdit">Map Editor</a></li>
+		<li><a class="wiki" href="Meg_MapSection">Map Section</a></li>
+		<li><a class="wiki" href="Meg_Audio">Audio</a></li>
+		<li><a class="wiki" href="Meg_Entities">Game Scripts</a></li>
+		<li><a class="wiki" href="Meg_Patch">Patch</a></li>
+	</ul>
+	<h2>Designs notes</h2>
+	<ul>
+		<li><a class="wiki" href="DesignNotes_Games">Mokoi Games</a></li>
+		<li><a class="wiki" href="DesignNotes_Entities">Entities</a></li>
+		<li><a class="wiki" href="DesignNotes_Packages">Content Packages</a></li>
+	</ul>
+</div>

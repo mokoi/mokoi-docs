@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml"><?xml-stylesheet href="../common.css"?>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; <a href="Pawn.xml">Pawn</a> &gt; Syntax</div>
 This is the boring part, therefore I'll go over it as quickly as humanly impossible while trying to keep it informative. <br/>
 First, I'll have to make one thing clear, 'A' is not 'a', 'Main()' would give you an error, 'main()' would not. <br/>
