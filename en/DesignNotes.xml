@@ -1,10 +1,11 @@
-<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
 
-<h2>Design Notes</h2>
-
- <ul><li><a href="DesignNotes;Games.xml">Mokoi Games</a>
-</li><li><a href="DesignNotes;Entities.xml">Entities</a>
-</li><li><a href="DesignNotes;Roadmap.xml">Roadmap</a>
-</li><li><a href="DesignNotes;Starter+Packages.xml">Content Packages</a>
-</li></ul>
+	<h2>Design Notes</h2>
+	<ul>
+		<li><a href="DesignNotes_Formats.xml">Formats</a></li>
+		<li><a href="DesignNotes_GameProcess.xml">Game Process</a></li>
+		<li><a href="DesignNotes_GUIStyle.xml">GUI Styling</a></li>
+		<li><a href="DesignNotes_Packages.xml">Content Packages</a></li>
+	</ul>
 </div>
