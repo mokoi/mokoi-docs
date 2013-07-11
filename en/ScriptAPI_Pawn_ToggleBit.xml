@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ToggleBit</h2>
-<p class="fundef">ToggleBit(&v,position)</p>
-<p>Toggles a  bit value</p>
-<p><strong>Argument '&v':</strong>Variable to use.</p>
-<p><strong>Argument 'position':</strong>Bit Position to change.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ToggleBit</h2>
+	<p class="fundef">ToggleBit(&amp;v,position)</p>
+	<p>Toggles a  bit value</p>
+	<p>
+		<strong>Argument '&amp;v':</strong>Variable to use.</p>
+	<p>
+		<strong>Argument 'position':</strong>Bit Position to change.</p>
 </div>
+

@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>LanguageSet</h2>
-<p class="fundef">LanguageSet(lang[])</p>
-<p>Loads a new language set. note: previous strings may have updated.</p>
-<p><strong>Argument 'lang[]':</strong>Two letter language code </p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>LanguageSet</h2>
+	<p class="fundef">LanguageSet(lang[])</p>
+	<p>Loads a new language set. note: previous strings may have updated.</p>
+	<p>
+		<strong>Argument 'lang[]':</strong>Two letter language code </p>
 </div>
+

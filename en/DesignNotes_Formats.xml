@@ -80,10 +80,17 @@ save     14    0
 	</pre>
 	
 
-	<h4>Dialog &amp; Language</h4>
-	<p>Strings are stored on a individual line. An pilcrow (¶) (Unicode: U+00B6) can be use if you require a line break.</p>
+	<h3>Dialog &amp; Language</h3>
+	<p>Strings are stored on a individual line. An '\n' can be use if you require a line break.</p>
 	<p>Files are name with the two letter language code, with 00.txt acting as a Key file which is also exported to a script routine.</p>
-	<p>Ogg Vorbis is used for audio dialog. <strong>Note: To be replace with Opus in future version</strong></p>
+	<p>Ogg Vorbis is used for audio dialog.</p>
+	<h4>Special Characters</h4>
+	<h5>Controller Button</h5>
+	<p>❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿ ➀ ➁ ➂ ➃ ➄ ➅</p>
+	<h5>Controller Axis</h5>
+	<p><strong>y</strong> ▲/▼ △/▽</p>
+	<p><strong>x</strong> ◀/▶ ◁/▷</p>
+	<p><strong>z</strong> ◐/◑ ◒/◓</p>
 
 	<h3>Entities</h3>
 	<p></p>
@@ -111,42 +118,27 @@ save     14    0
 	&lt;object value=&quot;planetcute.png:1&quot; type=&quot;sprite&quot;&gt;
 		&lt;position x=&quot;248&quot; y=&quot;32&quot; w=&quot;48&quot; h=&quot;80&quot; z=&quot;2000&quot; l=&quot;2&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
 		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
-		&lt;setting key=&quot;id&quot; value=&quot;&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;global&quot; value=&quot;false&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;entity&quot; value=&quot;random-colour.mps&quot; type=&quot;hidden&quot;/&gt;
-		&lt;entity value=&quot;random-colour&quot; /&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
 	&lt;/object&gt;
 	&lt;object value=&quot;&quot; type=&quot;rect&quot;&gt;
 		&lt;position x=&quot;96&quot; y=&quot;40&quot; w=&quot;46&quot; h=&quot;47&quot; z=&quot;1000&quot; l=&quot;1&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
 		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
-		&lt;setting key=&quot;id&quot; value=&quot;*&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;global&quot; value=&quot;false&quot; type=&quot;hidden&quot;/&gt;
-		&lt;entity value=&quot;random-colour&quot; /&gt;
-		&lt;setting key=&quot;entity&quot; value=&quot;random-colour.mps&quot; type=&quot;hidden&quot;/&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
 	&lt;/object&gt;
 	&lt;object value=&quot;&quot; type=&quot;line&quot;&gt;
 		&lt;position x=&quot;24&quot; y=&quot;40&quot; w=&quot;54&quot; h=&quot;87&quot; z=&quot;0&quot; l=&quot;0&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
 		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
-		&lt;setting key=&quot;id&quot; value=&quot;&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;global&quot; value=&quot;false&quot; type=&quot;hidden&quot;/&gt;
-		&lt;entity value=&quot;random-colour&quot; /&gt;
-		&lt;setting key=&quot;entity&quot; value=&quot;random-colour.mps&quot; type=&quot;hidden&quot;/&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
 	&lt;/object&gt;
 	&lt;object value=&quot;&quot; type=&quot;circle&quot;&gt;
 		&lt;position x=&quot;352&quot; y=&quot;32&quot; w=&quot;33&quot; h=&quot;47&quot; z=&quot;0&quot; l=&quot;0&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
 		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
-		&lt;setting key=&quot;id&quot; value=&quot;&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;global&quot; value=&quot;false&quot; type=&quot;hidden&quot;/&gt;
-		&lt;entity value=&quot;random-colour&quot; /&gt;
-		&lt;setting key=&quot;entity&quot; value=&quot;random-colour.mps&quot; type=&quot;hidden&quot;/&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
 	&lt;/object&gt;
-	&lt;object value=&quot;player1.png:front&quot; type=&quot;sprite&quot;&gt;
+	&lt;object value=&quot;player1.png:front&quot; type=&quot;sprite&quot; id=&quot;movingpbject&quot;&gt;
 		&lt;position x=&quot;404&quot; y=&quot;134&quot; w=&quot;32&quot; h=&quot;40&quot; z=&quot;1000&quot; l=&quot;1&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
 		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
-		&lt;setting key=&quot;id&quot; value=&quot;&quot; type=&quot;hidden&quot;/&gt;
-		&lt;entity value=&quot;follow_path&quot; /&gt;
-		&lt;setting key=&quot;entity&quot; value=&quot;follow_path.mps&quot; type=&quot;hidden&quot;/&gt;
-		&lt;setting key=&quot;global&quot; value=&quot;false&quot; type=&quot;hidden&quot;/&gt;
+		&lt;entity value=&quot;follow_path&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
 		&lt;path&gt;
 			&lt;point x=&quot;404&quot; y=&quot;134&quot; ms=&quot;10&quot;/&gt;
 			&lt;point x=&quot;600&quot; y=&quot;24&quot; ms=&quot;10&quot;/&gt;
@@ -201,10 +193,10 @@ save     14    0
 
 	<h3>Music &amp; Sound Effects</h3>
 	<p>
-		Supported Format (both): Ogg Vorbis <strong>Note: To be replace with Opus in future version</strong><br/>
+		Supported Format (both): Ogg Vorbis<br/>
 		Supported Format (music): it, mod<br/>
 		Supported Format (effects): wav
 	</p>
 
-
+	<script src="../highlight.pack.js"></script>
 </div>

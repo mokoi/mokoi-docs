@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>EntitiesNext</h2>
-<p class="fundef">EntitiesNext(&id,map_id,string[])</p>
-<p>Retrieves current entity name from generated list.</p>
-<p><strong>Argument '&id':</strong>String to store the Entity ID.</p>
-<p><strong>Argument 'map_id':</strong>map id you wish to check.</p>
-<p><strong>Argument 'string[]':</strong>String to store the Entity Name.</p>
-<p>True if there still more entities. False if no more is in the list.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>EntitiesNext</h2>
+	<p class="fundef">EntitiesNext(&amp;id,map_id,string[])</p>
+	<p>Retrieves current entity name from generated list.</p>
+	<p>
+		<strong>Argument '&amp;id':</strong>String to store the Entity ID.</p>
+	<p>
+		<strong>Argument 'map_id':</strong>map id you wish to check.</p>
+	<p>
+		<strong>Argument 'string[]':</strong>String to store the Entity Name.</p>
+	<p>
+		<strong>Returns: </strong>True if there still more entities. False if no more is in the list.</p>
 </div>
+

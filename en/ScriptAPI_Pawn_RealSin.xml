@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>RealSin</h2>
-<p class="fundef">RealSin(Real:value,anglemode:mode)</p>
-<p>Return the sine. The input angle may be in radian, degrees or grades.</p>
-<p><strong>Argument 'Real:value':</strong></p>
-<p><strong>Argument 'anglemode:mode':</strong></p>
-<p>sine of the angle.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>RealSin</h2>
+	<p class="fundef">RealSin(Real:value,anglemode:mode)</p>
+	<p>Return the sine. The input angle may be in radian, degrees or grades.</p>
+	<p>
+		<strong>Argument 'Real:value':</strong></p>
+	<p>
+		<strong>Argument 'anglemode:mode':</strong></p>
+	<p>
+		<strong>Returns: </strong>sine of the angle.</p>
 </div>
+

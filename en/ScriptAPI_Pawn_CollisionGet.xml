@@ -1,12 +1,19 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>CollisionGet</h2>
-<p class="fundef">CollisionGet(id,rect,&x,&y,&w,&h)</p>
-<p>Retrieves the entity collision rectangle values.</p>
-<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
-<p><strong>Argument 'rect':</strong>Collision Rectangle.</p>
-<p><strong>Argument '&x':</strong>Rectangle points.</p>
-<p><strong>Argument '&y':</strong>Rectangle points.</p>
-<p><strong>Argument '&w':</strong>Rectangle points.</p>
-<p><strong>Argument '&h':</strong>Rectangle points.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>CollisionGet</h2>
+	<p class="fundef">CollisionGet(id,rect,&amp;x,&amp;y,&amp;w,&amp;h)</p>
+	<p>Retrieves the entity collision rectangle values.</p>
+	<p>
+		<strong>Argument 'id':</strong>Entity ID Hash.</p>
+	<p>
+		<strong>Argument 'rect':</strong>Collision Rectangle.</p>
+	<p>
+		<strong>Argument '&amp;x':</strong>Rectangle points.</p>
+	<p>
+		<strong>Argument '&amp;y':</strong>Rectangle points.</p>
+	<p>
+		<strong>Argument '&amp;w':</strong>Rectangle points.</p>
+	<p>
+		<strong>Argument '&amp;h':</strong>Rectangle points.</p>
 </div>
+

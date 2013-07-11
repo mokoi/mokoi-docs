@@ -1,9 +1,0 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
-<?xml-stylesheet href="../common.css"?>
-<h2>CountTimer</h2>
-<p class="fundef">CountTimer(&time,reset)</p>
-<p>Returns true when time value is 0, then resets time.</p>
-<p><strong>Argument '&time':</strong></p>
-<p><strong>Argument 'reset':</strong>reset value.</p>
-<p>True when time reaches 0.</p>
-</div>

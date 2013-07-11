@@ -1,14 +1,17 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>GameLog</h2>
-<p class="fundef">GameLog(text[],...)</p>
-<p>Prints formatted text to a text file.</p>
-<p><strong>Argument 'text[]':</strong>Format string.%c print a character at this position. %d print a number at this position in decimal radix. %f print a floating point number at this position. %q print a fixed point number at this position. %s print a character string at this position. %x print a number at this position in hexadecimal radix</p>
-<p><strong>Argument '...':</strong>List of Arguments to used to produce the formatted text</p>
-<h3>Example Code</h3>
-<pre>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>GameLog</h2>
+	<p class="fundef">GameLog(text[],...)</p>
+	<p>Prints formatted text to a text file.</p>
+	<p>
+		<strong>Argument 'text[]':</strong>Format string.%c print a character at this position. %d print a number at this position in decimal radix. %f print a floating point number at this position. %q print a fixed point number at this position. %s print a character string at this position. %x print a number at this position in hexadecimal radix</p>
+	<p>
+		<strong>Argument '...':</strong>List of Arguments to used to produce the formatted text</p>
+	<h3>Example Code</h3>
+	<pre>
 	GameLog("Doing Something :)");
 	GameLog("Text: %s, Color: %x, Number: %d, Fixed: %q\n", "Hello", 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: FFBBAAFF, Number: 42, Fixed: 50.254
 	GameLog("Text: %s, Color: %d, Number: %05d, Fixed: %.1q\n", "Hello", 0xFFBBAAFF, 42, 50.254); // Outputs Text: Hello, Color: -4478209, Number: 00042, Fixed: 50.3
 	</pre>
 </div>
+

@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>AnimationCreate</h2>
-<p class="fundef">AnimationCreate(string[],length)</p>
-<p>Creates new animation.</p>
-<p><strong>Argument 'string[]':</strong></p>
-<p><strong>Argument 'length':</strong></p>
-<p>0 for error.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>AnimationCreate</h2>
+	<p class="fundef">AnimationCreate(string[],length)</p>
+	<p>Creates new animation.</p>
+	<p>
+		<strong>Argument 'string[]':</strong></p>
+	<p>
+		<strong>Argument 'length':</strong></p>
+	<p>
+		<strong>Returns: </strong>0 for error.</p>
 </div>
+

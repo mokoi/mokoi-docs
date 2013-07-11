@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>numargs</h2>
-<p class="fundef">numargs()</p>
-<p>Get the number of arguments.</p>
-<p>Number of arguments</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>numargs</h2>
+	<p class="fundef">numargs()</p>
+	<p>Get the number of arguments.</p>
+	<p>
+		<strong>Returns: </strong>Number of arguments</p>
 </div>
+

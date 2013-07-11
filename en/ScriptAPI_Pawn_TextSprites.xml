@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>TextSprites</h2>
-<p class="fundef">TextSprites(able,sheet[])</p>
-<p>Ables the use of Sprites for text instead of the internal bitmap font.</p>
-<p><strong>Argument 'able':</strong></p>
-<p><strong>Argument 'sheet[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>TextSprites</h2>
+	<p class="fundef">TextSprites(able,sheet[])</p>
+	<p>Ables the use of Sprites for text instead of the internal bitmap font.</p>
+	<p>
+		<strong>Argument 'able':</strong></p>
+	<p>
+		<strong>Argument 'sheet[]':</strong></p>
 </div>
+

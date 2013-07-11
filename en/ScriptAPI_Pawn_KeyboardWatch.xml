@@ -1,11 +1,12 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>KeyboardWatch</h2>
-<p class="fundef">KeyboardWatch(able)</p>
-<p>Send Keyboard input to KeyboardInput function in the current entity.</p>
-<p><strong>Argument 'able':</strong></p>
-<h3>Example Code</h3>
-<pre>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>KeyboardWatch</h2>
+	<p class="fundef">KeyboardWatch(able)</p>
+	<p>Send Keyboard input to KeyboardInput function in the current entity.</p>
+	<p>
+		<strong>Argument 'able':</strong></p>
+	<h3>Example Code</h3>
+	<pre>
 	forward public KeyboardInput( unicode );
 	public KeyboardInput( unicode )
 	{
@@ -17,3 +18,4 @@
 	}
 	</pre>
 </div>
+

@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>StringFind</h2>
-<p class="fundef">StringFind(string[],sub[])</p>
-<p>Returns the starting position of the sub string or -1 if it's not found.</p>
-<p><strong>Argument 'string[]':</strong></p>
-<p><strong>Argument 'sub[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>StringFind</h2>
+	<p class="fundef">StringFind(string[],sub[])</p>
+	<p>Returns the starting position of the sub string or -1 if it's not found.</p>
+	<p>
+		<strong>Argument 'string[]':</strong></p>
+	<p>
+		<strong>Argument 'sub[]':</strong></p>
 </div>
+

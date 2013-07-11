@@ -1,12 +1,14 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>GameFrame</h2>
-<p class="fundef">GameFrame()</p>
-<p>Return the length of last frame in milliseconds.</p>
-<p>Length of time of last frame.</p>
-<h3>Example Code</h3>
-<pre>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>GameFrame</h2>
+	<p class="fundef">GameFrame()</p>
+	<p>Return the length of last frame in milliseconds.</p>
+	<p>
+		<strong>Returns: </strong>Length of time of last frame.</p>
+	<h3>Example Code</h3>
+	<pre>
 	new time = GameFrame();
 	DebugText("Last Frame took %d milliseconds", time);
 	</pre>
 </div>
+

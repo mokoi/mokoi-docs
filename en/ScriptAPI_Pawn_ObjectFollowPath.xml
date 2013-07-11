@@ -1,11 +1,17 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ObjectFollowPath</h2>
-<p class="fundef">ObjectFollowPath(object:id,Fixed:speed,&x,&y,bool:loop)</p>
-<p>Makes object follow path.</p>
-<p><strong>Argument 'object:id':</strong>Object's ID.</p>
-<p><strong>Argument 'Fixed:speed':</strong>movement speed.</p>
-<p><strong>Argument '&x':</strong>Variable to store the dimension.</p>
-<p><strong>Argument '&y':</strong>Variable to store the dimension.</p>
-<p><strong>Argument 'bool:loop':</strong>loop movement.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ObjectFollowPath</h2>
+	<p class="fundef">ObjectFollowPath(object:id,Fixed:speed,&amp;x,&amp;y,bool:loop)</p>
+	<p>Makes object follow path.</p>
+	<p>
+		<strong>Argument 'object:id':</strong>Object's ID.</p>
+	<p>
+		<strong>Argument 'Fixed:speed':</strong>movement speed.</p>
+	<p>
+		<strong>Argument '&amp;x':</strong>Variable to store the dimension.</p>
+	<p>
+		<strong>Argument '&amp;y':</strong>Variable to store the dimension.</p>
+	<p>
+		<strong>Argument 'bool:loop':</strong>loop movement.</p>
 </div>
+

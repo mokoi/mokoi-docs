@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#if defined _network_included
+	<pre>#if defined _network_included
 	#endinput
 #endif
 #define _network_included
@@ -10,13 +10,13 @@
 
 ///Network Connection Functions
 /***
-&lt;function name=&quot;EntityActive&quot;&gt;
+&lt;function name="EntityActive"&gt;
 	&lt;summary&gt;Ables networking syncing for entity.&lt;/summary&gt;
 	&lt;return&gt;True if active&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;EntityNetworkSync&quot;&gt;
+&lt;function name="EntityNetworkSync"&gt;
 	&lt;summary&gt;Send network sync message.&lt;/summary&gt;
-	&lt;param name=&quot;bool:reliable&quot; default=&quot;true&quot; type=&quot;n&quot;&gt;Use an reliable message.&lt;/param&gt;
+	&lt;param name="bool:reliable" default="true" type="n"&gt;Use an reliable message.&lt;/param&gt;
 &lt;/function&gt;
 ***/
 native EntityActive();
@@ -24,26 +24,26 @@ native EntityNetworkSync(bool:reliable = true);
 
 
 /***
-&lt;function name=&quot;NetworkConnect&quot;&gt;
+&lt;function name="NetworkConnect"&gt;
 	&lt;summary&gt;Connect to Server.&lt;/summary&gt;
-	&lt;param name=&quot;name[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;password[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;email[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="name[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="password[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="email[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NetworkDisconnect&quot;&gt;
+&lt;function name="NetworkDisconnect"&gt;
 	&lt;summary&gt;Disconnect from Server.&lt;/summary&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NetworkMessage&quot;&gt;
+&lt;function name="NetworkMessage"&gt;
 	&lt;summary&gt;Sends a message to entity with the same unique id.&lt;/summary&gt;
-	&lt;param name=&quot;reliable&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;serveronly&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;message[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;length&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="reliable" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="serveronly" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="message[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="length" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NetworkPlayerName&quot;&gt;
+&lt;function name="NetworkPlayerName"&gt;
 	&lt;summary&gt;Gets network player name.&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;name[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="name[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 native NetworkConnect(name[], password[], email[]);
@@ -53,22 +53,22 @@ native NetworkPlayerName(player, name[], l = sizeof(name) );
 
 ///Online Functions
 /***
-&lt;function name=&quot;OnlineUpdate&quot;&gt;
-	&lt;summary&gt;&quot;Future Function&quot; Downloads latest game patches.&lt;/summary&gt;
+&lt;function name="OnlineUpdate"&gt;
+	&lt;summary&gt;"Future Function" Downloads latest game patches.&lt;/summary&gt;
 &lt;/function&gt;
-&lt;function name=&quot;OnlineSubmitScore&quot;&gt;
-	&lt;summary&gt;Future Function&quot; Sumbit score to online scoreboard.&lt;/summary&gt;
-	&lt;param name=&quot;data[4]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;function name="OnlineSubmitScore"&gt;
+	&lt;summary&gt;Future Function" Sumbit score to online scoreboard.&lt;/summary&gt;
+	&lt;param name="data[4]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;OnlineSave&quot;&gt;
-	&lt;summary&gt;&quot;Future Function&quot; Online save.&lt;/summary&gt;
-	&lt;param name=&quot;data[64]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+&lt;function name="OnlineSave"&gt;
+	&lt;summary&gt;"Future Function" Online save.&lt;/summary&gt;
+	&lt;param name="data[64]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;OnlineData&quot;&gt;
+&lt;function name="OnlineData"&gt;
 	&lt;summary&gt;Downloads URL to the callback function. If data is supported media, it will be loaded, and details pass to callback function.&lt;/summary&gt;
-	&lt;param name=&quot;callback[32]&quot; default=&quot;&amp;quot;ReceivedData&amp;quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;url[128]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;post[]&quot; default=&quot;&amp;quot;&amp;quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="callback[32]" default="&amp;quot;ReceivedData&amp;quot;" type="a"&gt;&lt;/param&gt;
+	&lt;param name="url[128]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="post[]" default="&amp;quot;&amp;quot;" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 #pragma deprecated Future Feature
@@ -77,5 +77,6 @@ native OnlineUpdate();
 native OnlineSubmitScore(data[4]);
 #pragma deprecated Future Feature
 native OnlineSave(data[64]);
-native OnlineData(callback{32} = &quot;ReceivedData&quot;, url[128], post{} = &quot;&quot;);</pre>
+native OnlineData(callback{32} = "ReceivedData", url[128], post{} = "");</pre>
 </div>
+

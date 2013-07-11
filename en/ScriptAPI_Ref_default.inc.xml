@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#include &lt;mokoi&gt;
+	<pre>#include &lt;mokoi&gt;
 #include &lt;graphics&gt;
 #include &lt;entities&gt;
 #include &lt;fixed&gt;
@@ -8,9 +8,12 @@
 #include &lt;map&gt;
 
 #tryinclude &lt;game_default&gt;
+#include &lt;controller&gt;
+
 
 forward public Init(...);
 forward public UpdatePosition();
 forward public Close();
 </pre>
 </div>
+

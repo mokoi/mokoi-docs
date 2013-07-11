@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>EntityGetSetting</h2>
-<p class="fundef">EntityGetSetting(key[],string[],id)</p>
-<p>Get stored setting for entity. These are set via the Runtime Options.</p>
-<p><strong>Argument 'key[]':</strong>Name of Setting.</p>
-<p><strong>Argument 'string[]':</strong>String to store value in.</p>
-<p><strong>Argument 'id':</strong>Entity ID Hash.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>EntityGetSetting</h2>
+	<p class="fundef">EntityGetSetting(key[],string[],id)</p>
+	<p>Get stored setting for entity. These are set via the Runtime Options.</p>
+	<p>
+		<strong>Argument 'key[]':</strong>Name of Setting.</p>
+	<p>
+		<strong>Argument 'string[]':</strong>String to store value in.</p>
+	<p>
+		<strong>Argument 'id':</strong>Entity ID Hash.</p>
 </div>
+

@@ -1,7 +1,0 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
-<?xml-stylesheet href="../common.css"?>
-<h2>PlayerMaxCount</h2>
-<p class="fundef">PlayerMaxCount()</p>
-<p>Returns the amount of available players allow in the game.</p>
-<p>Returns maxuimum amount of players.</p>
-</div>

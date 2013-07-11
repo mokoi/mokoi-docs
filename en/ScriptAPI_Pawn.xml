@@ -1,0 +1,337 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>Scripting</h2>
+	<dl>
+		<dt class="fundef">numargs()</dt>
+		<dd>Get the number of arguments.</dd>
+		<dt class="fundef">getarg(arg,index)</dt>
+		<dd>return the value of argument.</dd>
+		<dt class="fundef">setarg(arg,index,value)</dt>
+		<dd>Get the number of argument</dd>
+		<dt class="fundef">FunctionID(name[])</dt>
+		<dd>Return the id of the function.</dd>
+		<dt class="fundef">FunctionCall(id)</dt>
+		<dd>Calls a local function base on it's ID.</dd>
+		<dt class="fundef">CharLower(c)</dt>
+		<dd>Returns lower case of c.</dd>
+		<dt class="fundef">CharUpper(c)</dt>
+		<dd>Returns upper case of c.</dd>
+		<dt class="fundef">CharSwap(c)</dt>
+		<dd>Returns the swapped case of c.</dd>
+		<dt class="fundef">NumberRandom(max)</dt>
+		<dd>Returns a random number between 0 and max - 1</dd>
+		<dt class="fundef">NumberMin(value1,value2)</dt>
+		<dd>Returns the lower number between value1 &amp; value2</dd>
+		<dt class="fundef">NumberMax(value1,value2)</dt>
+		<dd>Returns the higher number between value1 &amp; value2</dd>
+		<dt class="fundef">NumberClamp(value,min,max)</dt>
+		<dd>Return value thats has been limited between min and max.</dd>
+		<dt class="fundef">NumberString(string[],index)</dt>
+		<dd>Converts a String into whole number.</dd>
+		<dt class="fundef">EntitySetPosition(Fixed:x,Fixed:y,Fixed:z,id)</dt>
+		<dd>Set Entities position on current map.</dd>
+		<dt class="fundef">EntityGetPosition(&amp;Fixed:x,&amp;Fixed:y,&amp;Fixed:z,id)</dt>
+		<dd>Get Entity position on current map.</dd>
+		<dt class="fundef">EntityHash(id_string[])</dt>
+		<dd>Convert Entity Name to hash</dd>
+		<dt class="fundef">EntityCreate(parententity[],id_string[],x,y,z,map_id,args[],...)</dt>
+		<dd>Creates a new entity.</dd>
+		<dt class="fundef">EntityDelete(id)</dt>
+		<dd>Deletes a entity.</dd>
+		<dt class="fundef">EntityGetSetting(key[],string[],id)</dt>
+		<dd>Get stored setting for entity. These are set via the Runtime Options.</dd>
+		<dt class="fundef">EntityGetNumber(key[],id)</dt>
+		<dd>Returns stored setting for entity. These are set via the Runtime Options.</dd>
+		<dt class="fundef">EntityGetObject()</dt>
+		<dd>Returns "object-id" value for entity, tagged as object. </dd>
+		<dt class="fundef">EntityPublicFunction(id,function[],args[],...)</dt>
+		<dd>Calls a function from another entity.</dd>
+		<dt class="fundef">EntityPublicVariable(id,variable[])</dt>
+		<dd>Returns a public variable from entity.</dd>
+		<dt class="fundef">EntityPublicVariableSet(id,variable[],value)</dt>
+		<dd>Sets a public variable on a entity.</dd>
+		<dt class="fundef">CollisionFromObject(obj,type,id)</dt>
+		<dd>Set Collision rectangles from the sprite or animation data.</dd>
+		<dt class="fundef">CollisionCheck(id1,id2,rect1,rect2)</dt>
+		<dd>Check to see if Entity is colliding with another entity.</dd>
+		<dt class="fundef">CollisionSet(id,rect,type,x,y,w,h)</dt>
+		<dd>Set a collision for the entity.</dd>
+		<dt class="fundef">CollisionCalculate(id,rect,type)</dt>
+		<dd>Generate a list of entities it's colliding with.</dd>
+		<dt class="fundef">CollisionGetCurrent(id,&amp;current,&amp;angle,&amp;dist,&amp;rect,&amp;type)</dt>
+		<dd>Retrieves current collision from generated list.</dd>
+		<dt class="fundef">CollisionGet(id,rect,&amp;x,&amp;y,&amp;w,&amp;h)</dt>
+		<dd>Retrieves the entity collision rectangle values.</dd>
+		<dt class="fundef">EntitiesList(map)</dt>
+		<dd>Generate a list of entities for required map.</dd>
+		<dt class="fundef">EntitiesNext(&amp;id,map_id,string[])</dt>
+		<dd>Retrieves current entity name from generated list.</dd>
+		<dt class="fundef">RealString(string[])</dt>
+		<dd>Converts a String into Rational number.</dd>
+		<dt class="fundef">RealRound(Real:value,round_method)</dt>
+		<dd>Converts a Rational number into a Whole number</dd>
+		<dt class="fundef">RealSqroot(Real:value)</dt>
+		<dd>Returns the square root of a value.</dd>
+		<dt class="fundef">RealPower(Real:value,exponent)</dt>
+		<dd>Returns the value raised to the power of exponent.</dd>
+		<dt class="fundef">RealAbs(Real:value)</dt>
+		<dd>Returns Absolute value of 'value'.</dd>
+		<dt class="fundef">RealLog(Real:value,Real:base)</dt>
+		<dd>Return the logarithm </dd>
+		<dt class="fundef">RealSin(Real:value,anglemode:mode)</dt>
+		<dd>Return the sine. The input angle may be in radian, degrees or grades.</dd>
+		<dt class="fundef">RealCos(Real:value,anglemode:mode)</dt>
+		<dd>Return the cosine. The input angle may be in radian, degrees or grades.</dd>
+		<dt class="fundef">RealTan(Real:value,anglemode:mode)</dt>
+		<dd>Return the tangent. The input angle may be in radian, degrees or grades.</dd>
+		<dt class="fundef">RealAtan2(Real:value,anglemode:mode)</dt>
+		<dd>Return the arctangent of x/y. The input angle may be in radian, degrees or grades.</dd>
+		<dt class="fundef">RealClamp(Real:value,Real:min,Real:max)</dt>
+		<dd>Return value thats has been limited between min and max.</dd>
+		<dt class="fundef">GraphicsType()</dt>
+		<dd>Returns the type of graphic display. Can be used to enable some effects.</dd>
+		<dt class="fundef">GraphicsDraw(string[],GraphicTypes:type,x,y,z,w,h,c)</dt>
+		<dd>Draw a Display Objects for the current frame.</dd>
+		<dt class="fundef">SheetReference(sheet[],ref)</dt>
+		<dd>Add or remove a reference for sprite sheet. Mainly used to keep a sprite sheet in memory.</dd>
+		<dt class="fundef">SheetReplace(olds[],news[])</dt>
+		<dd>Changing one sheet to another.</dd>
+		<dt class="fundef">AnimationGetLength(sheet[],anim[])</dt>
+		<dd>Returns length of animation in milliseconds.</dd>
+		<dt class="fundef">AnimationGetLength2(sheet[],anim[])</dt>
+		<dd>Returns length of animation in seconds.</dd>
+		<dt class="fundef">AnimationCreate(string[],length)</dt>
+		<dd>Creates new animation.</dd>
+		<dt class="fundef">AnimationAddFrame(string[],sprite[])</dt>
+		<dd>Adds a frame to an animation.</dd>
+		<dt class="fundef">TextSprites(able,sheet[])</dt>
+		<dd>Ables the use of Sprites for text instead of the internal bitmap font.</dd>
+		<dt class="fundef">PolygonCreate(string[])</dt>
+		<dd>Create a polygon.</dd>
+		<dt class="fundef">PolygonAddPoint(string[],x,y)</dt>
+		<dd>Add a point to existing polygon.</dd>
+		<dt class="fundef">ObjectCreate(string[],GraphicTypes:type,x,y,z,w,h,c,pos)</dt>
+		<dd> Creates a new Display Objects. 'string' can be a sprite name or some text.</dd>
+		<dt class="fundef">ObjectPosition(object:id,x,y,z,w,h,pos)</dt>
+		<dd>Give the Display Objects a new position and dimension.</dd>
+		<dt class="fundef">ObjectEffect(object:id,colour,rotate,scale_w,scale_h,mirror,style,colour2)</dt>
+		<dd>Change Display Objects effects.</dd>
+		<dt class="fundef">ObjectReplace(object:id,string[],GraphicTypes:type)</dt>
+		<dd>Convert Display Objects to new type.</dd>
+		<dt class="fundef">ObjectToggle(object:id,show)</dt>
+		<dd>Toggle the visibility of a Display Object.</dd>
+		<dt class="fundef">ObjectFlag(object:id,key,value)</dt>
+		<dd>Sets Display Object flags.</dd>
+		<dt class="fundef">ObjectDelete(object:id)</dt>
+		<dd>Delete a Display Objects.</dd>
+		<dt class="fundef">ObjectInfo(object:id,&amp;w,&amp;h)</dt>
+		<dd>Returns width and height of object.</dd>
+		<dt class="fundef">ObjectFollowPath(object:id,Fixed:speed,&amp;x,&amp;y,bool:loop)</dt>
+		<dd>Makes object follow path.</dd>
+		<dt class="fundef">PathPoints(object:id,point,&amp;x,&amp;y,&amp;t)</dt>
+		<dd>Returns Object Path point values.</dd>
+		<dt class="fundef">CameraSetScroll(bool:scroll)</dt>
+		<dd>Enable Smooth scrolling.</dd>
+		<dt class="fundef">LayerSetRotation(layer,roll,pitch,yaw)</dt>
+		<dd>Change the rotation of the layer. This feature is still in development and will only be available for OpenGL display system.</dd>
+		<dt class="fundef">LayerSetOffset(layer,Fixed:x,Fixed:y)</dt>
+		<dd>Change the Offset of the layer.</dd>
+		<dt class="fundef">LayerColour(layer,colour)</dt>
+		<dd>Change the base color of the layer.</dd>
+		<dt class="fundef">ResetObjects(...)</dt>
+		<dd>Reset effects on all objects passed.</dd>
+		<dt class="fundef">HideObjects(...)</dt>
+		<dd>Hides all objects passed.</dd>
+		<dt class="fundef">ShowObjects(...)</dt>
+		<dd>Shows all objects passed.</dd>
+		<dt class="fundef">TimerCountdown(&amp;time)</dt>
+		<dd>Returns true when time value is 0.</dd>
+		<dt class="fundef">TimerCountdownWithReset(&amp;time,reset)</dt>
+		<dd>Returns true when time value is 0, then resets time.</dd>
+		<dt class="fundef">TimerGetRandomValue(randomness,&amp;random_value,&amp;time,timer_reset)</dt>
+		<dd>Generates a Random number after a set time.</dd>
+		<dt class="fundef">SoundPlayOnce(&amp;value,file[])</dt>
+		<dd>Play a audio file once.</dd>
+		<dt class="fundef">SoundPlayRepeat(&amp;value,file[])</dt>
+		<dd>Trys to repeat playing audio file.</dd>
+		<dt class="fundef">SetBit(&amp;v,position)</dt>
+		<dd>Changes a bit value</dd>
+		<dt class="fundef">ClearBit(&amp;v,position)</dt>
+		<dd>Clears a bit value</dd>
+		<dt class="fundef">ToggleBit(&amp;v,position)</dt>
+		<dd>Toggles a  bit value</dd>
+		<dt class="fundef">TestBit(&amp;v,position)</dt>
+		<dd>Return the bit value</dd>
+		<dt class="fundef">SetBits(&amp;v,value,position,size)</dt>
+		<dd>Sets a range of bits.</dd>
+		<dt class="fundef">GetBits(value,position,size)</dt>
+		<dd>Sets a range of bits.</dd>
+		<dt class="fundef">MaskRefresh()</dt>
+		<dd>Updates Mask from current Map Objects.</dd>
+		<dt class="fundef">MaskGetValue(x,y,layer)</dt>
+		<dd>Returns Mask value.</dd>
+		<dt class="fundef">MaskFill(x,y,w,h,value)</dt>
+		<dd>Fills area of mask.</dd>
+		<dt class="fundef">MapSetOffset(Fixed:x,Fixed:y)</dt>
+		<dd>Set the Offset from the Top-left of the map.</dd>
+		<dt class="fundef">MapGetOffset(axis)</dt>
+		<dd>Get the Offset from the Top-left of the map.</dd>
+		<dt class="fundef">MapCreate(map[],create_new)</dt>
+		<dd>Create a new map.</dd>
+		<dt class="fundef">MapChange(mapid,offsetx,offsety)</dt>
+		<dd>Changes to map id.</dd>
+		<dt class="fundef">MapValid(mapid)</dt>
+		<dd>Check if map id is valid.</dd>
+		<dt class="fundef">MapCurrent(map[])</dt>
+		<dd>Get Current Map ID and name. Note: it will load map.</dd>
+		<dt class="fundef">MapID(map[])</dt>
+		<dd>Get Map ID. Note: it will load map.</dd>
+		<dt class="fundef">MapSave()</dt>
+		<dd>Save the map</dd>
+		<dt class="fundef">SectionSet(section[],gridx,gridy)</dt>
+		<dd>Changes the Section, while keeping the same grid location.</dd>
+		<dt class="fundef">SectionGet(section[],&amp;gridx,&amp;gridy)</dt>
+		<dd>Get the current section name.</dd>
+		<dt class="fundef">SectionValid(name[],gridx,gridy)</dt>
+		<dd>Check if a grid location on a section is valid.</dd>
+		<dt class="fundef">SectionLoad(name[])</dt>
+		<dd>Loads a section</dd>
+		<dt class="fundef">KeyboardWatch(able)</dt>
+		<dd>Send Keyboard input to KeyboardInput function in the current entity.</dd>
+		<dt class="fundef">GameState(newstate)</dt>
+		<dd>Get/Set Global State.</dd>
+		<dt class="fundef">GameFrame()</dt>
+		<dd>Return the length of last frame in milliseconds.</dd>
+		<dt class="fundef">GameFrame2()</dt>
+		<dd>Return the length of last frame in seconds as a fixed point number.</dd>
+		<dt class="fundef">GameLog(text[],...)</dt>
+		<dd>Prints formatted text to a text file.</dd>
+		<dt class="fundef">DebugText(text[],...)</dt>
+		<dd>Prints formatted text to the debug console.</dd>
+		<dt class="fundef">GameSave(slot,detail[64])</dt>
+		<dd>Save Current Game.</dd>
+		<dt class="fundef">GameLoad(slot)</dt>
+		<dd>Load Game from Slot.</dd>
+		<dt class="fundef">GameSaveHibernate()</dt>
+		<dd>Hibernate a game</dd>
+		<dt class="fundef">GameGetDetails(slot,array[64])</dt>
+		<dd>Get Save Game Details.</dd>
+		<dt class="fundef">GameDetails(gameid,slot,array[64])</dt>
+		<dd>Get another game save details.</dd>
+		<dt class="fundef">GameHasSave(slot)</dt>
+		<dd>Check if file exist.</dd>
+		<dt class="fundef">GameRemoveSave(slot)</dt>
+		<dd>Remove Save Game.</dd>
+		<dt class="fundef">InputButton(input,player)</dt>
+		<dd>Returns Button value for Player.</dd>
+		<dt class="fundef">InputAxis(axis,player)</dt>
+		<dd>Returns Axis value for Player.</dd>
+		<dt class="fundef">InputPointer(axis,player)</dt>
+		<dd>Returns Pointer value for Player.</dd>
+		<dt class="fundef">InputButtonSet(input,value,player)</dt>
+		<dd>Set Button value for the Player.</dd>
+		<dt class="fundef">InputAxisSet(axis,value,player)</dt>
+		<dd>Set Axis value for the Player.</dd>
+		<dt class="fundef">InputPointerSet(axis,value,player)</dt>
+		<dd>Set Pointer value for the Player.</dd>
+		<dt class="fundef">MiscGetWidth(id[])</dt>
+		<dd>Get Width of Map, Screen or Sprite.</dd>
+		<dt class="fundef">MiscGetHeight(id[])</dt>
+		<dd>Get Height of Map, Screen or Sprite.</dd>
+		<dt class="fundef">LanguageString(line,returnstring[])</dt>
+		<dd>Get String from Language File.</dd>
+		<dt class="fundef">LanguageSet(lang[])</dt>
+		<dd>Loads a new language set. note: previous strings may have updated.</dd>
+		<dt class="fundef">DialogShow(line,callback[])</dt>
+		<dd>Shows Dialog box.</dd>
+		<dt class="fundef">DialogGetString(line,returnstring[])</dt>
+		<dd>Get String from Dialog File.</dd>
+		<dt class="fundef">DialogPlayAudio(line)</dt>
+		<dd>Play Dialog.</dd>
+		<dt class="fundef">AudioVolume(AudioDevice:device,level)</dt>
+		<dd>Sets Audio device volume.</dd>
+		<dt class="fundef">AudioPlaySound(file[],x,y)</dt>
+		<dd>Play Sound Effect. Also return length of file in seconds.</dd>
+		<dt class="fundef">AudioPlayMusic(file[],loop,fadeLength)</dt>
+		<dd>Play Music.</dd>
+		<dt class="fundef">ConfigGetString(config[],value[])</dt>
+		<dd>Get Engine config as a string.</dd>
+		<dt class="fundef">ConfigGetNumber(config[])</dt>
+		<dd>Get Engine config as a number.</dd>
+		<dt class="fundef">ConfigSetString(config[],value[])</dt>
+		<dd>Update Engine config.</dd>
+		<dt class="fundef">FileGetList(strings[][],directory[])</dt>
+		<dd>List File in a directory.</dd>
+		<dt class="fundef">EntityActive()</dt>
+		<dd>Ables networking syncing for entity.</dd>
+		<dt class="fundef">EntityNetworkSync(bool:reliable)</dt>
+		<dd>Send network sync message.</dd>
+		<dt class="fundef">NetworkConnect(name[],password[],email[])</dt>
+		<dd>Connect to Server.</dd>
+		<dt class="fundef">NetworkDisconnect()</dt>
+		<dd>Disconnect from Server.</dd>
+		<dt class="fundef">NetworkMessage(reliable,serveronly,message[],length)</dt>
+		<dd>Sends a message to entity with the same unique id.</dd>
+		<dt class="fundef">NetworkPlayerName(player,name[])</dt>
+		<dd>Gets network player name.</dd>
+		<dt class="fundef">OnlineUpdate()</dt>
+		<dd>"Future Function" Downloads latest game patches.</dd>
+		<dt class="fundef">OnlineSubmitScore(data[4])</dt>
+		<dd>Future Function" Sumbit score to online scoreboard.</dd>
+		<dt class="fundef">OnlineSave(data[64])</dt>
+		<dd>"Future Function" Online save.</dd>
+		<dt class="fundef">OnlineData(callback[32],url[128],post[])</dt>
+		<dd>Downloads URL to the callback function. If data is supported media, it will be loaded, and details pass to callback function.</dd>
+		<dt class="fundef">PlayerAdd()</dt>
+		<dd>Adds new player</dd>
+		<dt class="fundef">PlayerRemove(num)</dt>
+		<dd>Removes a players</dd>
+		<dt class="fundef">PlayerCount()</dt>
+		<dd>Returns the amount of active players.</dd>
+		<dt class="fundef">PlayerUpdateControl(player,controlset)</dt>
+		<dd></dd>
+		<dt class="fundef">PlayerSetAI(player,entity)</dt>
+		<dd></dd>
+		<dt class="fundef">PlayerSetEntity(player,entity)</dt>
+		<dd></dd>
+		<dt class="fundef">PlayerSetName(player,str[])</dt>
+		<dd>Set the name of player</dd>
+		<dt class="fundef">PlayerGetName(player,str[])</dt>
+		<dd>Gets the name of player</dd>
+		<dt class="fundef">StringLength(string[])</dt>
+		<dd>Returns the length of the the string</dd>
+		<dt class="fundef">StringPack(dest[],source[])</dt>
+		<dd>Packs the source string into dest.</dd>
+		<dt class="fundef">StringUnpack(dest[],source[])</dt>
+		<dd>Unpacks the source string into dest.</dd>
+		<dt class="fundef">StringCopy(dest[],source[])</dt>
+		<dd>Copies the source string into dest.</dd>
+		<dt class="fundef">StringConcatenate(dest[],source[])</dt>
+		<dd>Appends the source string on to dest.</dd>
+		<dt class="fundef">StringExtract(dest[],source[],start,end)</dt>
+		<dd>Copy part of source string into dest.</dd>
+		<dt class="fundef">StringInsert(string[],substr[],index)</dt>
+		<dd>Insert substr into string at index.</dd>
+		<dt class="fundef">StringRemove(string[],start,end)</dt>
+		<dd>Removes part the string.</dd>
+		<dt class="fundef">StringFind(string[],sub[])</dt>
+		<dd>Returns the starting position of the sub string or -1 if it's not found.</dd>
+		<dt class="fundef">StringNumber(dest[],value)</dt>
+		<dd>Converts a whole number into string 'dest'.</dd>
+		<dt class="fundef">StringIsPacked(string[])</dt>
+		<dd>Check if string is packed.</dd>
+		<dt class="fundef">StringFormat(dest[],size,pack,format,...)</dt>
+		<dd>Prints formatted text to string 'dest'.</dd>
+		<dt class="fundef">StringEqual(string1[],string2[],ignorecase)</dt>
+		<dd>Check if the two string are the same.</dd>
+		<dt class="fundef">Time(&amp;hour,&amp;minute,&amp;second)</dt>
+		<dd>Get Current time</dd>
+		<dt class="fundef">Date(&amp;year,&amp;month,&amp;day)</dt>
+		<dd>Get Current Date</dd>
+		<dt class="fundef">TimestampCurrent()</dt>
+		<dd>Returns the seconds from 1970. Also known as Unix Time</dd>
+		<dt class="fundef">TimestampDetails(seconds1970,&amp;year,&amp;month,&amp;day,&amp;hour,&amp;minute,&amp;second)</dt>
+		<dd>Converts a Unix Timestamp to a time and date.</dd>
+	</dl>
+</div>
+

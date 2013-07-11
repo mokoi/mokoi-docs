@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ConfigSetString</h2>
-<p class="fundef">ConfigSetString(config[],value[])</p>
-<p>Update Engine config.</p>
-<p><strong>Argument 'config[]':</strong></p>
-<p><strong>Argument 'value[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ConfigSetString</h2>
+	<p class="fundef">ConfigSetString(config[],value[])</p>
+	<p>Update Engine config.</p>
+	<p>
+		<strong>Argument 'config[]':</strong></p>
+	<p>
+		<strong>Argument 'value[]':</strong></p>
 </div>
+

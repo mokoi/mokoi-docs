@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>DialogGetString</h2>
-<p class="fundef">DialogGetString(line,returnstring[])</p>
-<p>Get String from Dialog File.</p>
-<p><strong>Argument 'line':</strong>the requested line.</p>
-<p><strong>Argument 'returnstring[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>DialogGetString</h2>
+	<p class="fundef">DialogGetString(line,returnstring[])</p>
+	<p>Get String from Dialog File.</p>
+	<p>
+		<strong>Argument 'line':</strong>the requested line.</p>
+	<p>
+		<strong>Argument 'returnstring[]':</strong></p>
 </div>
+

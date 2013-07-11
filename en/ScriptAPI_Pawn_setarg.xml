@@ -1,8 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>setarg</h2>
-<p class="fundef">setarg(&v,position)</p>
-<p>Get the number of argument</p>
-<p><strong>Argument '&v':</strong>Variable to use.</p>
-<p><strong>Argument 'position':</strong>Bit Position to change.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>setarg</h2>
+	<p class="fundef">setarg(arg,index,value)</p>
+	<p>Get the number of argument</p>
+	<p>
+		<strong>Argument 'arg':</strong></p>
+	<p>
+		<strong>Argument 'index':</strong></p>
+	<p>
+		<strong>Argument 'value':</strong></p>
+	<p>
+		<strong>Returns: </strong></p>
 </div>
+

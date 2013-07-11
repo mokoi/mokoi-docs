@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>MapValid</h2>
-<p class="fundef">MapValid(mapid)</p>
-<p>Check if map id is valid.</p>
-<p><strong>Argument 'mapid':</strong>map id to check.</p>
-<p>True if valid.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>MapValid</h2>
+	<p class="fundef">MapValid(mapid)</p>
+	<p>Check if map id is valid.</p>
+	<p>
+		<strong>Argument 'mapid':</strong>map id to check.</p>
+	<p>
+		<strong>Returns: </strong>True if valid.</p>
 </div>
+

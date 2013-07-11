@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>AudioPlaySound</h2>
-<p class="fundef">AudioPlaySound(file[],x,y)</p>
-<p>Play Sound Effect. Also return length of file in seconds.</p>
-<p><strong>Argument 'file[]':</strong>filename of the sound effect.</p>
-<p><strong>Argument 'x':</strong>X-axis screen position of the sound.</p>
-<p><strong>Argument 'y':</strong>y-axis screen position of the sound.</p>
-<p>Length of the audio file.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>AudioPlaySound</h2>
+	<p class="fundef">AudioPlaySound(file[],x,y)</p>
+	<p>Play Sound Effect. Also return length of file in seconds.</p>
+	<p>
+		<strong>Argument 'file[]':</strong>filename of the sound effect.</p>
+	<p>
+		<strong>Argument 'x':</strong>X-axis screen position of the sound.</p>
+	<p>
+		<strong>Argument 'y':</strong>y-axis screen position of the sound.</p>
+	<p>
+		<strong>Returns: </strong>Length of the audio file.</p>
 </div>
+

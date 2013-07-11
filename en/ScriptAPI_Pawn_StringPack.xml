@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>StringPack</h2>
-<p class="fundef">StringPack(dest[],source[])</p>
-<p>Packs the source string into dest.</p>
-<p><strong>Argument 'dest[]':</strong></p>
-<p><strong>Argument 'source[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>StringPack</h2>
+	<p class="fundef">StringPack(dest[],source[])</p>
+	<p>Packs the source string into dest.</p>
+	<p>
+		<strong>Argument 'dest[]':</strong></p>
+	<p>
+		<strong>Argument 'source[]':</strong></p>
 </div>
+

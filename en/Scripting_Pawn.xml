@@ -3,279 +3,33 @@
 <div xmlns="http://www.w3.org/1999/xhtml">
 <div class="navbar"><a href="Scripting.xml">Scripting</a> &gt; Pawn</div>
 
-<h2>Scripting Basics</h2>
+<h2>Scripting Language Basics</h2>
 
 <p>Mokoi Games are written in the Pawn Language http://www.compuphase.com/pawn/.</p>
 <ul>
 	<li><a href="Scripting_Pawn_Syntax.xml">Syntax</a></li>
 	<li><a href="Scripting_Pawn_Functions.xml">Functions</a></li>
-	<li><a href="Scripting_Pawn_Variables.xml">Variables</a>
-</li>
-	<li><a href="Scripting_Pawn_ErrorCodes.xml">Error Codes</a>
-</li>
-	<li><a href="Scripting_Pawn_Operators.xml">Operators and Expressions</a>
-</li>
-	<li><a href="Scripting_Pawn_Statements.xml">Statements</a>
-</li>
-	<li><a href="Scripting_Pawn_Subroutines.xml">Subroutines</a>
-</li>
-	<li><a href="Scripting_Entities.xml">Entities</a></li>
-	<li><a href="Scripting_ManagedEntities.xml">Managed Entities</a></li>
+	<li><a href="Scripting_Pawn_Variables.xml">Variables</a></li>
+	<li><a href="Scripting_Pawn_ErrorCodes.xml">Error Codes</a></li>
+	<li><a href="Scripting_Pawn_Operators.xml">Operators and Expressions</a></li>
+	<li><a href="Scripting_Pawn_Statements.xml">Statements</a></li>
+	<li><a href="Scripting_Pawn_Routines.xml">Routines</a></li>
 </ul>
 
-<h2>Internal Types</h2>
-<ul>
-	<li><a href="Scripting_GraphicsTypes.xml">Graphics Types</a></li>
-	<li><a href="Scripting_DisplayObjects.xml">Display Objects</a></li>
-	<li><a href="Scripting_AudioDevice.xml">Audio Device</a></li>
-</ul>
 
 <h2>List of Functions</h2>
+<p><a href="ScriptAPI_Pawn.xml">See ScriptAPI/Pawn</a></p>
 
-<p>Please note that some of these functions are in development versions and may not be available in current release.</p>
-
-<h3>Native Functions</h3>
-
-<h4><a name="Argument_Functions"></a>Argument Functions</h4>
-
-<p><a href="ScriptAPI_Pawn_numargs.xml">numargs</a>() <br/>- Get the number of arguments. </p>
-<p><a href="ScriptAPI_Pawn_getarg.xml">getarg</a>(arg,index) <br/>- return the value of argument. </p>
-<p><a href="ScriptAPI_Pawn_setarg.xml">setarg</a>(&amp;v,position) <br/>- Get the number of argument </p>
-
-<h4><a name="Functions_related_functions"></a>Functions related functions</h4>
-
-<p><a href="ScriptAPI_Pawn_FunctionID.xml">FunctionID</a>(name[]) <br/>- Return the id of the function. </p>
-<p><a href="ScriptAPI_Pawn_FunctionCall.xml">FunctionCall</a>(id) <br/>- Calls a local function base on it's ID. </p>
-
-<h4><a name="ASCII_Character_functions"></a>ASCII Character functions</h4>
-<p><a href="ScriptAPI_Pawn_CharLower.xml">CharLower</a>(c) <br/>- Returns lower case of c. </p>
-<p><a href="ScriptAPI_Pawn_CharUpper.xml">CharUpper</a>(c) <br/>- Returns upper case of c. </p>
-<p><a href="ScriptAPI_Pawn_CharSwap.xml">CharSwap</a>(c) <br/>- Returns the swapped case of c. </p>
-
-<h4><a name="Whole_Number_functions"></a>Whole Number functions</h4>
-<p><a href="ScriptAPI_Pawn_NumberRandom.xml">NumberRandom</a>(max) <br/>- Returns a random number between 0 and max - 1 </p>
-<p><a href="ScriptAPI_Pawn_NumberMin.xml">NumberMin</a>(value1,value2) <br/>- Returns the lower number between value1 &amp; value2 </p>
-<p><a href="ScriptAPI_Pawn_NumberMax.xml">NumberMax</a>(value1,value2) <br/>- Returns the higher number between value1 &amp; value2 </p>
-<p><a href="ScriptAPI_Pawn_NumberClamp.xml">NumberClamp</a>(value,min,max) <br/>- Return value thats has been limited between min and max. </p>
-<p><a href="ScriptAPI_Pawn_NumberString.xml">NumberString</a>(string[],index) <br/>- Converts a String into whole number. </p>
-
-<h3> Entity Functions</h3>
-<h4><a name="Entity_Position_Functions"></a>Entity Position Functions</h4>
-<p><a href="ScriptAPI_Pawn_EntitySetPosition.xml">EntitySetPosition</a>(Fixed:x,Fixed:y,Fixed:z,id[]) <br/>- Set Entities position on current map. </p>
-<p><a href="ScriptAPI_Pawn_EntityGetPosition.xml">EntityGetPosition</a>(&amp;Fixed:x,&amp;Fixed:y,&amp;Fixed:z,id[]) <br/>- Get Entity position on current map. </p>
-
-<h4><a name="Entity_Functions"></a>Entity Functions</h4>
-<p><a href="ScriptAPI_Pawn_EntityCreate.xml">EntityCreate</a>(parententity[],id[],x,y,z,map_id,idlength,args[],...) <br/>- Creates a new entity. </p>
-<p><a href="ScriptAPI_Pawn_EntityDelete.xml">EntityDelete</a>(id[]) <br/>- Deletes a entity. </p>
-<p><a href="ScriptAPI_Pawn_EntityGetSetting.xml">EntityGetSetting</a>(key[],string[],id[]) <br/>- Get stored setting for entity. These are set via the Runtime Options. </p>
-<p><a href="ScriptAPI_Pawn_EntityGetNumber.xml">EntityGetNumber</a>(key[],id[]) <br/>- Returns stored setting for entity. These are set via the Runtime Options. </p>
-<p><a href="ScriptAPI_Pawn_EntityPublicFunction.xml">EntityPublicFunction</a>(id[],function[],args[],...) <br/>- Calls a function from another entity. </p>
-<p><a href="ScriptAPI_Pawn_EntityPublicVariable.xml">EntityPublicVariable</a>(id[],variable[]) <br/>- Returns a public variable from entity. </p>
-<p><a href="ScriptAPI_Pawn_EntityPublicVariableSet.xml">EntityPublicVariableSet</a>(id[],variable[],value) <br/>- Sets a public variable on a entity. </p>
-
-<h4><a name="Entity_Collision_Functions"></a>Entity Collision Functions</h4>
-<p><a href="ScriptAPI_Pawn_CollisionFromObject.xml">CollisionFromObject</a>(obj,type,id[]) <br/>- Set Collision rectangles from the sprite or animation data. </p>
-<p><a href="ScriptAPI_Pawn_CollisionCheck.xml">CollisionCheck</a>(id1[],id2[],rect1,rect2) <br/>- Check to see if Entity is colliding with another entity. </p>
-<p><a href="ScriptAPI_Pawn_CollisionSet.xml">CollisionSet</a>(id[],rect,type,x,y,w,h) <br/>- Set a collision for the entity. </p>
-<p><a href="ScriptAPI_Pawn_CollisionCalculate.xml">CollisionCalculate</a>(id[],rect,type) <br/>- Generate a list of entities it's colliding with. </p>
-<p><a href="ScriptAPI_Pawn_CollisionGetCurrent.xml">CollisionGetCurrent</a>(id[],current[],&amp;angle,&amp;dist,&amp;rect,&amp;type) <br/>- Retrieves current collision from generated list. </p>
-<p><a href="ScriptAPI_Pawn_CollisionGet.xml">CollisionGet</a>(id[],rect,&amp;x,&amp;y,&amp;w,&amp;h) <br/>- Retrieves the entity collision rectangle values. </p>
-
-<h4><a name="Entity_Management_Functions"></a>Entity Management Functions</h4>
-
-<p><a href="ScriptAPI_Pawn_EntitiesList.xml">EntitiesList</a>(map) <br/>- Generate a list of entities for required map. </p>
-<p><a href="ScriptAPI_Pawn_EntitiesNext.xml">EntitiesNext</a>(string[],map_id) <br/>- Retrieves current entity name from generated list. </p>
-
-<h3>Rational Number Support</h3>
-<p>Fixed point numbers are the supported rational number system and allows for 3 decimal places. Floating point numbers are also support.</p>
-<p><a href="ScriptAPI_Pawn_RealString.xml">RealString</a>(string[]) <br/>- Converts a String into Rational number. </p>
-<p><a href="ScriptAPI_Pawn_RealRound.xml">RealRound</a>(Real:value,round_method) <br/>- Converts a Rational number into a Whole number </p>
-<p><a href="ScriptAPI_Pawn_RealSqroot.xml">RealSqroot</a>(Real:value) <br/>- Returns the square root of a value. </p>
-<p><a href="ScriptAPI_Pawn_RealPower.xml">RealPower</a>(Real:value,exponent) <br/>- Returns the value raised to the power of exponent. </p>
-<p><a href="ScriptAPI_Pawn_RealAbs.xml">RealAbs</a>(Real:value) <br/>- Returns Absolute value of 'value'. </p>
-<p><a href="ScriptAPI_Pawn_RealLog.xml">RealLog</a>(Real:value,Real:base) <br/>- Return the logarithm  </p>
-<p><a href="ScriptAPI_Pawn_RealSin.xml">RealSin</a>(Real:value,anglemode:mode) <br/>- Return the sine. The input angle may be in radian, degrees or grades. </p>
-<p><a href="ScriptAPI_Pawn_RealCos.xml">RealCos</a>(Real:value,anglemode:mode) <br/>- Return the cosine. The input angle may be in radian, degrees or grades. </p>
-<p><a href="ScriptAPI_Pawn_RealTan.xml">RealTan</a>(Real:value,anglemode:mode) <br/>- Return the tangent. The input angle may be in radian, degrees or grades. </p>
-<p><a href="ScriptAPI_Pawn_RealAtan2.xml">RealAtan2</a>(Real:value,anglemode:mode) <br/>- Return the arctangent of x/y. The input angle may be in radian, degrees or grades. </p>
-<p><a href="ScriptAPI_Pawn_RealClamp.xml">RealClamp</a>(Real:value,Real:min,Real:max) <br/>- Return value thats has been limited between min and max. </p>
-
-<h3>Graphics Functions</h3>
-<p>Colour arguments are a RGBA hex value such as 0xFF33BBAA, FF is red value, 33 is green, BB is blue and AA would be the alpha.</p>
-<h4><a name="Misc_Graphic_Functions"></a>Misc Graphic Functions</h4>
-<p><a href="ScriptAPI_Pawn_GraphicsType.xml">GraphicsType</a>() <br/>- Returns the type of graphic display. Can be used to enable some effects. </p>
-<p><a href="ScriptAPI_Pawn_GraphicsDraw.xml">GraphicsDraw</a>(string[],GraphicTypes:type,x,y,z,w,h,c) <br/>- Draw a Display Objects for the current frame. </p>
-<p><a href="ScriptAPI_Pawn_SheetReference.xml">SheetReference</a>(sheet[],ref) <br/>- Add or remove a reference for sprite sheet. Mainly used to keep a sprite sheet in memory. </p>
-<p><a href="ScriptAPI_Pawn_SheetReplace.xml">SheetReplace</a>(olds[],news[]) <br/>- Changing one sheet to another. </p>
-
-<h4><a name="Animation_Functions"></a>Animation Functions</h4>
-<p><a href="ScriptAPI_Pawn_AnimationGetLength.xml">AnimationGetLength</a>(sheet[],anim[]) <br/>- Returns length of animation in milliseconds. </p>
-<p><a href="ScriptAPI_Pawn_AnimationGetLength2.xml">AnimationGetLength2</a>(sheet[],anim[]) <br/>- Returns length of animation in seconds. </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_AnimationCreate.xml">AnimationCreate</a>(string[],length) <br/>- Creates new animation. </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_AnimationAddFrame.xml">AnimationAddFrame</a>(string[],sprite[]) <br/>- Adds a frame to an animation. </p>
-
-<h4><a name="Text_Functions"></a>Text Functions</h4>
-<p><a href="ScriptAPI_Pawn_TextSprites.xml">TextSprites</a>(able,sheet[]) <br/>- Ables the use of Sprites for text instead of the internal bitmap font. </p>
-
-<h4><a name="Polygon_Functions"></a>Polygon Functions</h4>
-
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PolygonCreate.xml">PolygonCreate</a>(string[]) <br/>- Create a polygon. </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PolygonAddPoint.xml">PolygonAddPoint</a>(string[],x,y) <br/>- Add a point to existing polygon. </p>
-
-<h4><a name="Display_Objects_Functions"></a>Display Objects Functions</h4>
-
-<p><a href="ScriptAPI_Pawn_ObjectCreate.xml">ObjectCreate</a>(string[],GraphicTypes:type,x,y,z,w,h,c,pos) <br/>-  Creates a new Display Objects. 'string' can be a sprite name or some text. </p>
-<p><a href="ScriptAPI_Pawn_ObjectPosition.xml">ObjectPosition</a>(object:id,x,y,z,w,h,pos) <br/>- Give the Display Objects a new position and dimension. </p>
-<p><a href="ScriptAPI_Pawn_ObjectEffect.xml">ObjectEffect</a>(object:id,colour,rotate,scale_w,scale_h,mirror,style,colour2) <br/>- Change Display Objects effects. </p>
-<p><a href="ScriptAPI_Pawn_ObjectReplace.xml">ObjectReplace</a>(object:id,string[],GraphicTypes:type) <br/>- Convert Display Objects to new type. </p>
-<p><a href="ScriptAPI_Pawn_ObjectToggle.xml">ObjectToggle</a>(object:id,show) <br/>- Toggle the visibility of a Display Object. </p>
-<p><a href="ScriptAPI_Pawn_ObjectFlag.xml">ObjectFlag</a>(object:id,key,value) <br/>- Sets Display Object flags. </p>
-<p><a href="ScriptAPI_Pawn_ObjectDelete.xml">ObjectDelete</a>(object:id) <br/>- Delete a Display Objects. </p>
-<p><a href="ScriptAPI_Pawn_ObjectInfo.xml">ObjectInfo</a>(object:id,&amp;w,&amp;h) <br/>- Returns width and height of object. </p>
-
-<h4><a name="Paths_Functions"></a>Paths Functions</h4>
-<p><a href="ScriptAPI_Pawn_ObjectFollowPath.xml">ObjectFollowPath</a>(object:id,Fixed:speed,&amp;x,&amp;y,bool:loop) <br/>- Makes object follow path. </p>
-<p><a href="ScriptAPI_Pawn_PathPoints.xml">PathPoints</a>(object:id,point,&amp;x,&amp;y,&amp;t) <br/>- Returns Object Path point values. </p>
-
-<h4><a name="Camera_Functions"></a>Camera Functions</h4>
-<p><a href="ScriptAPI_Pawn_CameraSetScroll.xml">CameraSetScroll</a>(bool:scroll) <br/>- Enable Smooth scrolling. </p>
-<p><a href="ScriptAPI_Pawn_LayerSetRotation.xml">LayerSetRotation</a>(layer,roll,pitch,yaw) <br/>- Change the rotation of the layer. This feature is still in development and will only be available for OpenGL display system. </p>
-<p><a href="ScriptAPI_Pawn_LayerSetOffset.xml">LayerSetOffset</a>(layer,Fixed:x,Fixed:y) <br/>- Change the Offset of the layer. </p>
-<p><a href="ScriptAPI_Pawn_LayerColour.xml">LayerColour</a>(layer,colour) <br/>- Change the base color of the layer. </p>
-
-<h4><a name="Display_Object_Helper_Functions"></a>Display Object Helper Functions</h4>
-<p><a href="ScriptAPI_Pawn_ResetObjects.xml">ResetObjects</a>(...) <br/>- Reset effects on all objects passed. </p>
-<p><a href="ScriptAPI_Pawn_HideObjects.xml">HideObjects</a>(...) <br/>- Hides all objects passed. </p>
-<p><a href="ScriptAPI_Pawn_ShowObjects.xml">ShowObjects</a>(...) <br/>- Shows all objects passed. </p>
-
-<h3> Helper Functions</h3>
-<p>These are define in the helper.inc header, so to use these functions, #include &lt;helper&gt; must be include at the top of the script.</p>
-<h4><a name="Timer_Functions"></a>Timer Functions</h4>
-<p><a href="ScriptAPI_Pawn_Countdown.xml">Countdown</a>(&amp;time) <br/>- Returns true when time value is 0. </p>
-<p><a href="ScriptAPI_Pawn_CountTimer.xml">CountTimer</a>(&amp;time,reset) <br/>- Returns true when time value is 0, then resets time. </p>
-
-<h4><a name="Sound_Helper_Functions"></a>Sound Helper Functions</h4>
-<p><a href="ScriptAPI_Pawn_SoundPlayOnce.xml">SoundPlayOnce</a>(&amp;value,file[]) <br/>- Play a audio file once. </p>
-<p><a href="ScriptAPI_Pawn_SoundPlayRepeat.xml">SoundPlayRepeat</a>(&amp;value,file[]) <br/>- Trys to repeat playing audio file. </p>
-
-<h4><a name="Bits_Functions"></a>Bits Functions</h4>
-<p><a href="ScriptAPI_Pawn_SetBit.xml">SetBit</a>(&amp;v,position) <br/>- Changes a bit value </p>
-<p><a href="ScriptAPI_Pawn_ClearBit.xml">ClearBit</a>(&amp;v,position) <br/>- Clears a bit value </p>
-<p><a href="ScriptAPI_Pawn_ToggleBit.xml">ToggleBit</a>(&amp;v,position) <br/>- Toggles a  bit value </p>
-<p><a href="ScriptAPI_Pawn_TestBit.xml">TestBit</a>(&amp;v,position) <br/>- Return the bit value </p>
-<p><a href="ScriptAPI_Pawn_SetBits.xml">SetBits</a>(&amp;v,value,position,size) <br/>- Sets a range of bits. </p>
-<p><a href="ScriptAPI_Pawn_GetBits.xml">GetBits</a>(value,position,size) <br/>- Sets a range of bits. </p>
-
-<h3> Map Functions</h3>
-<p>Maps are split into two modes, a Grid based Section which allows map switching by moving off the map and a Independent File Mode.</p>
-<h4><a name="Mask_Functions_"></a>Mask Functions </h4>
-<p><a href="ScriptAPI_Pawn_MaskRefresh.xml">MaskRefresh</a>() <br/>- Updates Mask from current Map Objects. </p>
-<p><a href="ScriptAPI_Pawn_MaskGetValue.xml">MaskGetValue</a>(x,y,layer) <br/>- Returns Mask value. </p>
-<p><a href="ScriptAPI_Pawn_MaskFill.xml">MaskFill</a>(x,y,w,h,value) <br/>- Fills area of mask. </p>
-
-<h4><a name="Map_Functions"></a>Map Functions</h4>
-<p><a href="ScriptAPI_Pawn_MapSetOffset.xml">MapSetOffset</a>(Fixed:x,Fixed:y) <br/>- Set the Offset from the Top-left of the map. </p>
-<p><a href="ScriptAPI_Pawn_MapGetOffset.xml">MapGetOffset</a>(axis) <br/>- Get the Offset from the Top-left of the map. </p>
-
-<h4><a name="Map_File_Code"></a>Map File Code</h4>
-<p><a href="ScriptAPI_Pawn_MapCreate.xml">MapCreate</a>(map[],create_new) <br/>- Create a new map. </p>
-<p><a href="ScriptAPI_Pawn_MapChange.xml">MapChange</a>(mapid,offsetx,offsety) <br/>- Changes to map id. </p>
-<p><a href="ScriptAPI_Pawn_MapValid.xml">MapValid</a>(mapid) <br/>- Check if map id is valid. </p>
-<p><a href="ScriptAPI_Pawn_MapCurrent.xml">MapCurrent</a>(map[]) <br/>- Get Current Map ID and nmae. Note: it will load map. </p>
-<p><a href="ScriptAPI_Pawn_MapID.xml">MapID</a>(map[]) <br/>- Get Map ID. Note: it will load map. </p>
-<p><a href="ScriptAPI_Pawn_MapSave.xml">MapSave</a>() <br/>- Save the map </p>
-
-<h4><a name="Map_Section_Function"></a>Map Section Function</h4>
-<p><a href="ScriptAPI_Pawn_SectionSet.xml">SectionSet</a>(section[],gridx,gridy) <br/>- Changes the Section, while keeping the same grid location. </p>
-<p><a href="ScriptAPI_Pawn_SectionGet.xml">SectionGet</a>(section[],&amp;gridx,&amp;gridy) <br/>- Get the current section name. </p>
-<p><a href="ScriptAPI_Pawn_SectionValid.xml">SectionValid</a>(name[],gridx,gridy) <br/>- Check if a grid location on a section is valid. </p>
-
-<h3> Main Functions</h3>
-<h4><a name="Engine_Functions_"></a>Engine Functions </h4>
-<p><a href="ScriptAPI_Pawn_KeyboardWatch.xml">KeyboardWatch</a>(able) <br/>- Send Keyboard input to KeyboardInput function in the current entity. </p>
-<p><a href="ScriptAPI_Pawn_GameState.xml">GameState</a>(newstate) <br/>- Get/Set Global State. </p>
-<p><a href="ScriptAPI_Pawn_GameFrame.xml">GameFrame</a>() <br/>- Return the length of last frame in milliseconds. </p>
-<p><a href="ScriptAPI_Pawn_GameFrame2.xml">GameFrame2</a>() <br/>- Return the length of last frame in seconds as a fixed point number. </p>
-
-<h4><a name="Log_Functions"></a>Log Functions</h4>
-<p><a href="ScriptAPI_Pawn_GameLog.xml">GameLog</a>(text[],...) <br/>- Prints formatted text to a text file. </p>
-<p><a href="ScriptAPI_Pawn_DebugText.xml">DebugText</a>(text[],...) <br/>- Prints formatted text to the debug console. </p>
-
-<h4><a name="Save_Functions"></a>Save Functions</h4>
-<p><a href="ScriptAPI_Pawn_GameSave.xml">GameSave</a>(slot,detail[64]) <br/>- Save Current Game. </p>
-<p><a href="ScriptAPI_Pawn_GameLoad.xml">GameLoad</a>(slot) <br/>- Load Game from Slot. </p>
-<p><a href="ScriptAPI_Pawn_GameSetDetails.xml">GameSetDetails</a>(slot,array[64]) <br/>- Set Save Game Details. </p>
-<p><a href="ScriptAPI_Pawn_GameGetDetails.xml">GameGetDetails</a>(slot,array[64]) <br/>- Get Save Game Details. </p>
-<p><a href="ScriptAPI_Pawn_GameDetails.xml">GameDetails</a>(gameid,slot,array[64]) <br/>- Get another game save details. </p>
-
-<h4><a name="Input_Functions"></a>Input Functions</h4>
-<p><a href="ScriptAPI_Pawn_InputButton.xml">InputButton</a>(input,player) <br/>- Returns Button value for Player. </p>
-<p><a href="ScriptAPI_Pawn_InputAxis.xml">InputAxis</a>(axis,player) <br/>- Returns Axis value for Player. </p>
-<p><a href="ScriptAPI_Pawn_InputPointer.xml">InputPointer</a>(axis,player) <br/>- Returns Pointer value for Player. </p>
-<p><a href="ScriptAPI_Pawn_InputButtonSet.xml">InputButtonSet</a>(input,value,player) <br/>- Set Button value for the Player. </p>
-<p><a href="ScriptAPI_Pawn_InputAxisSet.xml">InputAxisSet</a>(axis,value,player) <br/>- Set Axis value for the Player. </p>
-<p><a href="ScriptAPI_Pawn_InputPointerSet.xml">InputPointerSet</a>(axis,value,player) <br/>- Set Pointer value for the Player. </p>
-
-<h4><a name="Misc_Functions_"></a>Misc Functions </h4>
-<p><a href="ScriptAPI_Pawn_MiscGetWidth.xml">MiscGetWidth</a>(id[]) <br/>- Get Width of Map, Screen or Sprite. </p>
-<p><a href="ScriptAPI_Pawn_MiscGetHeight.xml">MiscGetHeight</a>(id[]) <br/>- Get Height of Map, Screen or Sprite. </p>
-
-<h4><a name="Language_Functions"></a>Language Functions</h4>
-<p><a href="ScriptAPI_Pawn_LanguageString.xml">LanguageString</a>(line,returnstring[]) <br/>- Get String from Language File. </p>
-<p><a href="ScriptAPI_Pawn_LanguageSet.xml">LanguageSet</a>(lang[]) <br/>- Loads a new language set. note: previous strings may have updated. </p>
-
-<h4><a name="Dialog_Functions"></a>Dialog Functions</h4>
-<p><a href="ScriptAPI_Pawn_DialogShow.xml">DialogShow</a>(line,callback[]) <br/>- Shows Dialog box. </p>
-<p><a href="ScriptAPI_Pawn_DialogGetString.xml">DialogGetString</a>(line,returnstring[]) <br/>- Get String from Dialog File. </p>
-<p><a href="ScriptAPI_Pawn_DialogPlayAudio.xml">DialogPlayAudio</a>(line) <br/>- Play Dialog. </p>
-
-<h4><a name="Audio_Functions_"></a>Audio Functions </h4>
-<p><a href="ScriptAPI_Pawn_AudioVolume.xml">AudioVolume</a>(AudioDevice:device,level) <br/>- Sets Audio device volume. </p>
-<p><a href="ScriptAPI_Pawn_AudioPlaySound.xml">AudioPlaySound</a>(file[],x,y) <br/>- Play Sound Effect. Also return length of file in seconds. </p>
-<p><a href="ScriptAPI_Pawn_AudioPlayMusic.xml">AudioPlayMusic</a>(file[],loop,fadeLength) <br/>- Play Music. </p>
-
-<h4><a name="Config_Functions"></a>Config Functions</h4>
-<p><a href="ScriptAPI_Pawn_ConfigGetString.xml">ConfigGetString</a>(config[],value[]) <br/>- Get Engine config as a string. </p>
-<p><a href="ScriptAPI_Pawn_ConfigGetNumber.xml">ConfigGetNumber</a>(config[]) <br/>- Get Engine config as a number. </p>
-<p><a href="ScriptAPI_Pawn_ConfigSetString.xml">ConfigSetString</a>(config[],value[]) <br/>- Update Engine config. </p>
-
-<h4><a name="File_Listing_Functions"></a>File Listing Functions</h4>
-<p><a href="ScriptAPI_Pawn_FileGetList.xml">FileGetList</a>(strings[][],directory[]) <br/>- List File in a directory. </p>
-
-<h3>Network Functions</h3>
-<p>These are define in the network.inc header, so to use these functions, #include &lt;network&gt; must be include at the top of the script.</p>
-<h4><a name="Network_Connection_Functions"></a>Network Connection Functions</h4>
-<p><a href="ScriptAPI_Pawn_EntityActive.xml">EntityActive</a>() <br/>- Ables networking syncing for entity. </p>
-<p><a href="ScriptAPI_Pawn_EntityNetworkSync.xml">EntityNetworkSync</a>(bool:reliable) <br/>- Send network sync message. </p>
-<p><a href="ScriptAPI_Pawn_NetworkConnect.xml">NetworkConnect</a>(name[],password[],email[]) <br/>- Connect to Server. </p>
-<p><a href="ScriptAPI_Pawn_NetworkDisconnect.xml">NetworkDisconnect</a>() <br/>- Disconnect from Server. </p>
-<p><a href="ScriptAPI_Pawn_NetworkMessage.xml">NetworkMessage</a>(reliable,serveronly,message[],length) <br/>- Sends a message to entity with the same unique id. </p>
-<p><a href="ScriptAPI_Pawn_NetworkPlayerName.xml">NetworkPlayerName</a>(player,name[]) <br/>- Gets network player name. </p>
-
-<h4><a name="Online_Functions"></a>Online Functions</h4>
-<p><a href="ScriptAPI_Pawn_OnlineUpdate.xml">OnlineUpdate</a>() <br/>- &quot;Future Function&quot; Downloads latest game patches. </p>
-<p><a href="ScriptAPI_Pawn_OnlineSubmitScore.xml">OnlineSubmitScore</a>(data[4]) <br/>- Future Function&quot; Sumbit score to online scoreboard. </p>
-<p><a href="ScriptAPI_Pawn_OnlineSave.xml">OnlineSave</a>(data[64]) <br/>- &quot;Future Function&quot; Online save. </p>
-<p><a href="ScriptAPI_Pawn_OnlineData.xml">OnlineData</a>(callback[32],url[128],post[]) <br/>- Downloads URL to the callback function. If data is supported media, it will be loaded, and details pass to callback function. </p>
-
-<h4><a name="Player_Functions"></a>Player Functions</h4>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PlayerAdd.xml">PlayerAdd</a>() <br/>- Adds new player </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PlayerRemove.xml">PlayerRemove</a>(num) <br/>- Removes a players </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PlayerCount.xml">PlayerCount</a>() <br/>- Returns the amount of active players. </p>
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PlayerMaxCount.xml">PlayerMaxCount</a>() <br/>- Returns the amount of available players allow in the game. </p>
-
-<p><strong>Future Feature</strong> <a href="ScriptAPI_Pawn_PlayerSetControl.xml">PlayerSetControl</a>(player) <br/>- </p>
 
 <h3>Reference pages</h3>
 <ul>
-	<li><a href="ScriptAPI_Ref_bit.inc.xml">bit.inc</a></li>
 	<li><a href="ScriptAPI_Ref_core.inc.xml">core.inc</a></li>
 	<li><a href="ScriptAPI_Ref_default.inc.xml">default.inc</a></li>
 	<li><a href="ScriptAPI_Ref_entities.inc.xml">entities.inc</a></li>
 	<li><a href="ScriptAPI_Ref_enums.inc.xml">enums.inc</a></li>
 	<li><a href="ScriptAPI_Ref_fixed.inc.xml">fixed.inc</a></li>
-	<li><a href="ScriptAPI_Ref_functions.inc.xml">functions.inc</a></li>
 	<li><a href="ScriptAPI_Ref_graphics.inc.xml">graphics.inc</a></li>
+	<li><a href="ScriptAPI_Ref_helper.inc.xml">helper.inc</a></li>
 	<li><a href="ScriptAPI_Ref_mokoi.inc.xml">mokoi.inc</a>
 </li>
 	<li><a href="ScriptAPI_Ref_map.inc.xml">map.inc</a>

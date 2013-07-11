@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>TestBit</h2>
-<p class="fundef">TestBit(&v,position)</p>
-<p>Return the bit value</p>
-<p><strong>Argument '&v':</strong>Variable to use.</p>
-<p><strong>Argument 'position':</strong>Bit Position to change.</p>
-<p>bit value</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>TestBit</h2>
+	<p class="fundef">TestBit(&amp;v,position)</p>
+	<p>Return the bit value</p>
+	<p>
+		<strong>Argument '&amp;v':</strong>Variable to use.</p>
+	<p>
+		<strong>Argument 'position':</strong>Bit Position to change.</p>
+	<p>
+		<strong>Returns: </strong>bit value</p>
 </div>
+

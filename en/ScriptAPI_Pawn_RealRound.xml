@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>RealRound</h2>
-<p class="fundef">RealRound(Real:value,round_method)</p>
-<p>Converts a Rational number into a Whole number</p>
-<p><strong>Argument 'Real:value':</strong></p>
-<p><strong>Argument 'round_method':</strong></p>
-<p>new whole number.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>RealRound</h2>
+	<p class="fundef">RealRound(Real:value,round_method)</p>
+	<p>Converts a Rational number into a Whole number</p>
+	<p>
+		<strong>Argument 'Real:value':</strong></p>
+	<p>
+		<strong>Argument 'round_method':</strong></p>
+	<p>
+		<strong>Returns: </strong>new whole number.</p>
 </div>
+

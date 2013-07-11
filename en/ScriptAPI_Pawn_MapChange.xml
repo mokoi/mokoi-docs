@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>MapChange</h2>
-<p class="fundef">MapChange(mapid,offsetx,offsety)</p>
-<p>Changes to map id.</p>
-<p><strong>Argument 'mapid':</strong>Map ID to move to.</p>
-<p><strong>Argument 'offsetx':</strong>Offset position.</p>
-<p><strong>Argument 'offsety':</strong>Offset position.</p>
-<p>Map ID. ) if error</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>MapChange</h2>
+	<p class="fundef">MapChange(mapid,offsetx,offsety)</p>
+	<p>Changes to map id.</p>
+	<p>
+		<strong>Argument 'mapid':</strong>Map ID to move to.</p>
+	<p>
+		<strong>Argument 'offsetx':</strong>Offset position.</p>
+	<p>
+		<strong>Argument 'offsety':</strong>Offset position.</p>
+	<p>
+		<strong>Returns: </strong>Map ID. ) if error</p>
 </div>
+

@@ -1,22 +1,16 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#if defined _enum_included
+	<pre>#if defined _enum_included
   #endinput
 #endif
 #define _enum_included
 
-native MapIdent(); // Use CURRENT_MAP instead.
 
-#define GLOBAL_MAP 0
-#define CURRENT_MAP MapIdent()
-
-
-#define __MAP__ 0xDEADBEEF
-#define __MAIN__ 0xDEADBEEF
 
 #define SELF 0
-#define SSELF &quot;&quot;
+#define SELF_STRING ""
 
+#define OBJECT_NONE object:-1
 
 #define XAXIS 0
 #define YAXIS 1
@@ -35,18 +29,6 @@ const _DIRECTION: {
 	WEST,		//270 deg
 	SOUTHWEST	//315 deg
 }
-/*
-const _DIRECTION: {
-	WEST = 0, //0 deg
-	NORTHWEST, //45 deg
-	NORTH,//90 deg
-	NORTHEAST,//135 deg
-	EAST, //180 deg
-	SOUTHEAST, //225 deg
-	SOUTH,//270 deg
-	SOUTHWEST // 315
-}
-*/
 
 const AudioDevice:{
 	SOUNDFX = 0,
@@ -68,3 +50,4 @@ const DisplayDevice: {
 #define GREEN 0x00FF00FF
 </pre>
 </div>
+

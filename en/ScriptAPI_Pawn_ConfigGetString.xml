@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ConfigGetString</h2>
-<p class="fundef">ConfigGetString(config[],value[])</p>
-<p>Get Engine config as a string.</p>
-<p><strong>Argument 'config[]':</strong></p>
-<p><strong>Argument 'value[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ConfigGetString</h2>
+	<p class="fundef">ConfigGetString(config[],value[])</p>
+	<p>Get Engine config as a string.</p>
+	<p>
+		<strong>Argument 'config[]':</strong></p>
+	<p>
+		<strong>Argument 'value[]':</strong></p>
 </div>
+

@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>OnlineSubmitScore</h2>
-<p class="fundef">OnlineSubmitScore(data[4])</p>
-<p>Future Function" Sumbit score to online scoreboard.</p>
-<p><strong>Argument 'data[4]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>OnlineSubmitScore</h2>
+	<p class="fundef">OnlineSubmitScore(data[4])</p>
+	<p>Future Function" Sumbit score to online scoreboard.</p>
+	<p>
+		<strong>Argument 'data[4]':</strong></p>
 </div>
+

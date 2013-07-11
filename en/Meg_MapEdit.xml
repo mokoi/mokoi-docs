@@ -2,7 +2,7 @@
 <div class="navbar"><a href="Meg.xml">Meg</a> &gt; MapEdit</div>
 <h2>Map Editor</h2>
 
-<p><img src="./images/Image13.png" alt=""/></p>
+<p><img src="../images/Image13.png" alt=""/></p>
 <h3>Shortcuts Keys</h3>
 
 0-9 keys - Change the Layer.
@@ -13,7 +13,7 @@ Shift + Arrow Keys - Tile Selected Object.
 <p>Shift + Click - Continue adding object.</p>
 <h3>Toolbar</h3>
 
-<img src="./images/map_toolbar.png" alt=""/>
+<img src="../images/map_toolbar.png" alt=""/>
 <ul><li>Save</li><li>Background Colour</li><li>Current Layer (Also changeable with 0-9 keys)</li><li>Current Layer Display Toggle</li><li>Zoom In</li><li>Zoom Original </li><li>Zoom Out</li><li>Show/Hide Grid</li><li>Map Options</li></ul>
 <h3>Display Object Sidebar</h3>
 

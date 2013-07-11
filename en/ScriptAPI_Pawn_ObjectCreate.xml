@@ -1,20 +1,30 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ObjectCreate</h2>
-<p class="fundef">ObjectCreate(string[],GraphicTypes:type,x,y,z,w,h,c,pos)</p>
-<p> Creates a new Display Objects. 'string' can be a sprite name or some text.</p>
-<p><strong>Argument 'string[]':</strong>Sprite/animation name or text.</p>
-<p><strong>Argument 'GraphicTypes:type':</strong>Type of Object.</p>
-<p><strong>Argument 'x':</strong>Map position of the object.</p>
-<p><strong>Argument 'y':</strong>Map position of the object.</p>
-<p><strong>Argument 'z':</strong>Map position of the object.</p>
-<p><strong>Argument 'w':</strong>Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.</p>
-<p><strong>Argument 'h':</strong>Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.</p>
-<p><strong>Argument 'c':</strong>a RGBA hex value such as 0xFF33BBAA, FF is red value, 33 is green, BB is blue and AA would be the alpha.</p>
-<p><strong>Argument 'pos':</strong></p>
-<p>New object ID</p>
-<h3>Example Code</h3>
-<pre>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ObjectCreate</h2>
+	<p class="fundef">ObjectCreate(string[],GraphicTypes:type,x,y,z,w,h,c,pos)</p>
+	<p> Creates a new Display Objects. 'string' can be a sprite name or some text.</p>
+	<p>
+		<strong>Argument 'string[]':</strong>Sprite/animation name or text.</p>
+	<p>
+		<strong>Argument 'GraphicTypes:type':</strong>Type of Object.</p>
+	<p>
+		<strong>Argument 'x':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'y':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'z':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'w':</strong>Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.</p>
+	<p>
+		<strong>Argument 'h':</strong>Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.</p>
+	<p>
+		<strong>Argument 'c':</strong>a RGBA hex value such as 0xFF33BBAA, FF is red value, 33 is green, BB is blue and AA would be the alpha.</p>
+	<p>
+		<strong>Argument 'pos':</strong></p>
+	<p>
+		<strong>Returns: </strong>New object ID</p>
+	<h3>Example Code</h3>
+	<pre>
 	new helded = 0xFF00FFFF; 
 	 
 	new player = 0; 
@@ -49,24 +59,25 @@
 		xaxis = InputAxis(0, player)/8;
 		yaxis = InputAxis(1, player)/8;
 		zaxis = InputAxis(2, player)/8;
-		if ( xaxis > 0 )
+		if ( xaxis &gt; 0 )
 			ObjectPosition(obj1, x, y-5, 3, xaxis, 10); 
-		else if ( xaxis < 0 )
+		else if ( xaxis &lt; 0 )
 			ObjectPosition(obj1, x+xaxis, y-5, 3, 0-xaxis, 10); 
 		else
 			ObjectPosition(obj1, x-1, y-5, 3, 1, 10); 
-		if ( yaxis > 0 )
+		if ( yaxis &gt; 0 )
 			ObjectPosition(obj2, x-5, y, 3, 10, yaxis); 
-		else if ( yaxis < 0 )
+		else if ( yaxis &lt; 0 )
 			ObjectPosition(obj2, x-5, y+yaxis, 3, 10, 0-yaxis); 
 		else 
 			ObjectPosition(obj2, x-5, y-1, 3, 10, 1);
-		if ( zaxis > 0 )
+		if ( zaxis &gt; 0 )
 			ObjectPosition(obj3, x+44, y, 3, 10, zaxis); 
-		else if ( zaxis < 0 )
+		else if ( zaxis &lt; 0 )
 			ObjectPosition(obj3, x+44, y+zaxis, 3, 10, 0-zaxis); 
 		else 
 			ObjectPosition(obj3, x+44, y-1, 3, 10, 1); 
 	} 
 	</pre>
 </div>
+

@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>NumberString</h2>
-<p class="fundef">NumberString(string[],index)</p>
-<p>Converts a String into whole number.</p>
-<p><strong>Argument 'string[]':</strong>String to convert.</p>
-<p><strong>Argument 'index':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>NumberString</h2>
+	<p class="fundef">NumberString(string[],index)</p>
+	<p>Converts a String into whole number.</p>
+	<p>
+		<strong>Argument 'string[]':</strong>String to convert.</p>
+	<p>
+		<strong>Argument 'index':</strong></p>
 </div>
+

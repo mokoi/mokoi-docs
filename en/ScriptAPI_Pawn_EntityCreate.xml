@@ -1,22 +1,31 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>EntityCreate</h2>
-<p class="fundef">EntityCreate(parententity[],id_string[],x,y,z,map_id,idlength,args[],...)</p>
-<p>Creates a new entity.</p>
-<p><strong>Argument 'parententity[]':</strong>Entity File name.</p>
-<p><strong>Argument 'id_string[]':</strong>ID to give the entity.</p>
-<p><strong>Argument 'x':</strong>position to give the the entity.</p>
-<p><strong>Argument 'y':</strong>position to give the the entity.</p>
-<p><strong>Argument 'z':</strong>position to give the the entity.</p>
-<p><strong>Argument 'map_id':</strong>Map to create it on. CURRENT_MAP will created it on the current map. GLOBAL_MAP with create a global entity which always on.</p>
-<p><strong>Argument 'idlength':</strong></p>
-<p><strong>Argument 'args[]':</strong>Defines the follow arguments that will be passed to the entity Init function.
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>EntityCreate</h2>
+	<p class="fundef">EntityCreate(parententity[],id_string[],x,y,z,map_id,args[],...)</p>
+	<p>Creates a new entity.</p>
+	<p>
+		<strong>Argument 'parententity[]':</strong>Entity File name.</p>
+	<p>
+		<strong>Argument 'id_string[]':</strong>ID to give the entity.</p>
+	<p>
+		<strong>Argument 'x':</strong>position to give the the entity.</p>
+	<p>
+		<strong>Argument 'y':</strong>position to give the the entity.</p>
+	<p>
+		<strong>Argument 'z':</strong>position to give the the entity.</p>
+	<p>
+		<strong>Argument 'map_id':</strong>Map to create it on. CURRENT_MAP will created it on the current map. GLOBAL_MAP with create a global entity which always on.</p>
+	<p>
+		<strong>Argument 'args[]':</strong>Defines the follow arguments that will be passed to the entity Init function.
 	 a - Array, last value must be CELLMIN
 	 d - Value, passed by reference
 	 n - Value, passed by value
 	 s - String
 	 "snsn" means that the follow argument you pass will be a string, a number, a string and a number.
 	</p>
-<p><strong>Argument '...':</strong>List of Arguments to pass to the entity Init function. </p>
-<p>0 on error, otherwise it returns the Entity Hash.</p>
+	<p>
+		<strong>Argument '...':</strong>List of Arguments to pass to the entity Init function. </p>
+	<p>
+		<strong>Returns: </strong>0 on error, otherwise it returns the Entity Hash.</p>
 </div>
+

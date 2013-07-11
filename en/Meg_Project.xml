@@ -3,7 +3,7 @@
 
 <h2>Game Info &amp; Settings Page</h2>
 
-<p><img src="./images/Image4.png" alt=""/></p>
+<p><img src="../images/Image4.png" alt=""/></p>
 <p>These this were you can change the features of the engine for suit your game. </p>
 <h3>Project Settings</h3>
  
@@ -22,7 +22,7 @@ Banner: Banner image used on the loading screens.
 
 <h3>Display Settings</h3>
  
-<p><img src="./images/Image36.png" alt=""/></p>
+<p><img src="../images/Image36.png" alt=""/></p>
 
 Mode: Select the display systems to use. Note: This setting is currently only used on PC platform.<br/>
 Colour Bit: Defines the size of the Colour Bit. O will auto select the value depending on the platform.
@@ -35,7 +35,7 @@ Scale Display: Scales the graphics from Screen Dimension to the Display Dimensio
 
 <h3>Miscellaneous Settings</h3>
 
-<p><img src="./images/Image37.png" alt=""/></p>
+<p><img src="../images/Image37.png" alt=""/></p>
 <p>Map Dimension: The Dimension used for Maps.</p>
 <p>Default Language: The language file that the game will use as default.</p>
 <p>Number of Player: Number of players that are set up for the game. Maximum of 16.</p>

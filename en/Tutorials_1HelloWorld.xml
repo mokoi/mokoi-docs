@@ -5,15 +5,15 @@
 
 <h3>Step 1</h3>
 
-<p>Start Alchera and Create an New Project. Make sure you give it a Title.</p>
+<p>Start Meg and Create an New Project. Make sure you give it a Title.</p>
 <h3>Step 2</h3>
 
-<img src="./images/Image22.png" alt=""/><br/>
+<img src="../images/Image22.png" alt=""/><br/>
 Switch over to Map Editor, and open up the 'empty' map.  <br/>
 
 <h3>Step 3</h3>
 
-<img src="./images/Image28.png" alt=""/><br/>
+<img src="../images/Image28.png" alt=""/><br/>
 Switch over to the Game Script page and open up the main entity either clicking on edit button in the top section of the page or double clicking on 'main.mps' under Object in File listing
 
 It should bring up a script that looks like:
@@ -37,7 +37,7 @@ For more on Scripting help see <a href="Scripting;Pawn.xml">Game Scripting</a>
 <h3>Step 4</h3>
 
 Select 'Play' from the Project Menu. You should see HelloWorld display on the screen.<br/>
-<img src="./images/Image30.png" alt=""/>
+<img src="../images/Image30.png" alt=""/>
 
 <h3>Step 5</h3>
 

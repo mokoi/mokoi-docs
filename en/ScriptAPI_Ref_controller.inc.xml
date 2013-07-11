@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>/* Default Controller setup
+	<pre>/* Default Controller setup
  * To use your own names with your game, 
  * create a game_controller.inc in the 
  * the routines directory.
@@ -45,5 +45,13 @@
 #define BUTTON_CANCEL 17
 #define BUTTON_POINTER_PRESS 18
 
-</pre>
+
+#define AXIS_X1 0
+#define AXIS_Y1 1
+#define AXIS_Z1 2
+
+#define AXIS_X2 3
+#define AXIS_Y2 4
+#define AXIS_Z2 5</pre>
 </div>
+

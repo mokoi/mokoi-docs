@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>AnimationGetLength2</h2>
-<p class="fundef">AnimationGetLength2(sheet[],anim[])</p>
-<p>Returns length of animation in seconds.</p>
-<p><strong>Argument 'sheet[]':</strong></p>
-<p><strong>Argument 'anim[]':</strong></p>
-<p>Returns length of animation in seconds.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>AnimationGetLength2</h2>
+	<p class="fundef">AnimationGetLength2(sheet[],anim[])</p>
+	<p>Returns length of animation in seconds.</p>
+	<p>
+		<strong>Argument 'sheet[]':</strong></p>
+	<p>
+		<strong>Argument 'anim[]':</strong></p>
+	<p>
+		<strong>Returns: </strong>Returns length of animation in seconds.</p>
 </div>
+

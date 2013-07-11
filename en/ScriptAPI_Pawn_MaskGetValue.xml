@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>MaskGetValue</h2>
-<p class="fundef">MaskGetValue(x,y,layer)</p>
-<p>Returns Mask value.</p>
-<p><strong>Argument 'x':</strong>the point you wish to check.</p>
-<p><strong>Argument 'y':</strong>the point you wish to check.</p>
-<p><strong>Argument 'layer':</strong>Not used</p>
-<p>Value of mask at that point. Value is capped between 0-255.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>MaskGetValue</h2>
+	<p class="fundef">MaskGetValue(x,y,layer)</p>
+	<p>Returns Mask value.</p>
+	<p>
+		<strong>Argument 'x':</strong>the point you wish to check.</p>
+	<p>
+		<strong>Argument 'y':</strong>the point you wish to check.</p>
+	<p>
+		<strong>Argument 'layer':</strong>Not used</p>
+	<p>
+		<strong>Returns: </strong>Value of mask at that point. Value is capped between 0-255.</p>
 </div>
+

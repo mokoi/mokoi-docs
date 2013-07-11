@@ -2,17 +2,17 @@
 <div class="navbar"><a href="Meg.xml">Meg</a> &gt; Entities</div>
 <h2>Game Scripts</h2>
  
-<p><img src="./images/Image28.png" alt=""/></p>
+<p><img src="../images/Image28.png" alt=""/></p>
 <p>Game Scripts, also known Entities, controls how the objects are handle within the game. These scripts are written in Pawn Language which you can <a href="Scripting;Pawn.xml">&quot;read more about along with interface here&quot;</a>.</p>
 <h3>Entity Editor</h3>
 
-<p><img src="./images/Image23.png" alt=""/></p>
+<p><img src="../images/Image23.png" alt=""/></p>
 <ul><li>Hover over the gutter (line numbers) when the line is red to see the error message.</li><li>Highlight a function name and you can right click and select search help and the function will get display in the Help Section.</li><li>Ctrl + space brings up function auto-complete.</li></ul>
 <h4>Insert Function</h4>
 
-<p><img src="./images/Image24.png" alt=""/></p>
+<p><img src="../images/Image24.png" alt=""/></p>
 <p>When in the Entity Editor, the Insert Function dialog window can be brought up by right clicking.</p>
-<p><img src="./images/Image26.png" alt=""/></p>
+<p><img src="../images/Image26.png" alt=""/></p>
 
 
 </div>

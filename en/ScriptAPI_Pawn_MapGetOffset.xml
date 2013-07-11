@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>MapGetOffset</h2>
-<p class="fundef">MapGetOffset(axis)</p>
-<p>Get the Offset from the Top-left of the map.</p>
-<p><strong>Argument 'axis':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>MapGetOffset</h2>
+	<p class="fundef">MapGetOffset(axis)</p>
+	<p>Get the Offset from the Top-left of the map.</p>
+	<p>
+		<strong>Argument 'axis':</strong></p>
 </div>
+

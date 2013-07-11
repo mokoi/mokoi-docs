@@ -1,13 +1,21 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>ObjectPosition</h2>
-<p class="fundef">ObjectPosition(object:id,x,y,z,w,h,pos)</p>
-<p>Give the Display Objects a new position and dimension.</p>
-<p><strong>Argument 'object:id':</strong>Object's ID.</p>
-<p><strong>Argument 'x':</strong>Map position of the object.</p>
-<p><strong>Argument 'y':</strong>Map position of the object.</p>
-<p><strong>Argument 'z':</strong>Map position of the object.</p>
-<p><strong>Argument 'w':</strong>Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.</p>
-<p><strong>Argument 'h':</strong>Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.</p>
-<p><strong>Argument 'pos':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>ObjectPosition</h2>
+	<p class="fundef">ObjectPosition(object:id,x,y,z,w,h,pos)</p>
+	<p>Give the Display Objects a new position and dimension.</p>
+	<p>
+		<strong>Argument 'object:id':</strong>Object's ID.</p>
+	<p>
+		<strong>Argument 'x':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'y':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'z':</strong>Map position of the object.</p>
+	<p>
+		<strong>Argument 'w':</strong>Width of the object. Sprites and Animations repeat until they fit into the Width , also Width can be zero.</p>
+	<p>
+		<strong>Argument 'h':</strong>Height of the object. Sprites and Animations repeat until they fit into the  Height, also Height can be zero.</p>
+	<p>
+		<strong>Argument 'pos':</strong></p>
 </div>
+

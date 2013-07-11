@@ -1,11 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>RealAtan2</h2>
-<p class="fundef">RealAtan2(Real:value,anglemode:mode)</p>
-<p>Return the arctangent of x/y. The input angle may be in radian, degrees or grades.</p>
-<p><strong>Argument 'Real:value':</strong></p>
-<p><strong>Argument 'anglemode:mode':</strong></p>
-<p><notes>Uses fatan2 for Fixed Point Number. Uses floatatan2 for Floating Point Number. </notes>
-</p>
-<p>arc tangent of x/y.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>RealAtan2</h2>
+	<p class="fundef">RealAtan2(Real:value,anglemode:mode)</p>
+	<p>Return the arctangent of x/y. The input angle may be in radian, degrees or grades.</p>
+	<p>
+		<strong>Argument 'Real:value':</strong></p>
+	<p>
+		<strong>Argument 'anglemode:mode':</strong></p>
+	<h3>Notes</h3>
+	<p/>
+	<p>
+		<strong>Returns: </strong>arc tangent of x/y.</p>
 </div>
+

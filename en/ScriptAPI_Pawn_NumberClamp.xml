@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>NumberClamp</h2>
-<p class="fundef">NumberClamp(value,min,max)</p>
-<p>Return value thats has been limited between min and max.</p>
-<p><strong>Argument 'value':</strong>The Number to check.</p>
-<p><strong>Argument 'min':</strong>Minimum limit.</p>
-<p><strong>Argument 'max':</strong>Maximum limit.</p>
-<p>The new value.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>NumberClamp</h2>
+	<p class="fundef">NumberClamp(value,min,max)</p>
+	<p>Return value thats has been limited between min and max.</p>
+	<p>
+		<strong>Argument 'value':</strong>The Number to check.</p>
+	<p>
+		<strong>Argument 'min':</strong>Minimum limit.</p>
+	<p>
+		<strong>Argument 'max':</strong>Maximum limit.</p>
+	<p>
+		<strong>Returns: </strong>The new value.</p>
 </div>
+

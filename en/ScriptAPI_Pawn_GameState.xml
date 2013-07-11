@@ -1,12 +1,14 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>GameState</h2>
-<p class="fundef">GameState(newstate)</p>
-<p>Get/Set Global State.</p>
-<p><strong>Argument 'newstate':</strong>Set new engine state, -1 to skip.</p>
-<p>Current state of the engine.</p>
-<h3>Example Code</h3>
-<pre>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>GameState</h2>
+	<p class="fundef">GameState(newstate)</p>
+	<p>Get/Set Global State.</p>
+	<p>
+		<strong>Argument 'newstate':</strong>Set new engine state, -1 to skip.</p>
+	<p>
+		<strong>Returns: </strong>Current state of the engine.</p>
+	<h3>Example Code</h3>
+	<pre>
 	if ( GameState() == 0 )
 	{
 		if ( InputButton(0) )
@@ -20,3 +22,4 @@
 	}
 	</pre>
 </div>
+

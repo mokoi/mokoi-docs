@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>StringIsPacked</h2>
-<p class="fundef">StringIsPacked(string[])</p>
-<p>Check if string is packed.</p>
-<p><strong>Argument 'string[]':</strong>String to check.</p>
-<p>True if string has been packed.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>StringIsPacked</h2>
+	<p class="fundef">StringIsPacked(string[])</p>
+	<p>Check if string is packed.</p>
+	<p>
+		<strong>Argument 'string[]':</strong>String to check.</p>
+	<p>
+		<strong>Returns: </strong>True if string has been packed.</p>
 </div>
+

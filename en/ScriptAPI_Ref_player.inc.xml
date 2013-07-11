@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#if defined _player_included
+	<pre>#if defined _player_included
 	#endinput
 #endif
 #define _player_included
@@ -8,50 +8,43 @@
 #include &lt;controller&gt;
 /// Player Functions 
 /***
-&lt;futurefunction name=&quot;PlayerAdd&quot;&gt;
+&lt;futurefunction name="PlayerAdd"&gt;
 	&lt;summary&gt;Adds new player&lt;/summary&gt;
 	&lt;return&gt;0 on Error.&lt;/return&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerRemove&quot;&gt;
+&lt;futurefunction name="PlayerRemove"&gt;
 	&lt;summary&gt;Removes a players&lt;/summary&gt;
-	&lt;param name=&quot;num&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="num" default="" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;0 on Error.&lt;/return&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerCount&quot;&gt;
+&lt;futurefunction name="PlayerCount"&gt;
 	&lt;summary&gt;Returns the amount of active players.&lt;/summary&gt;
 	&lt;return&gt;Returns the amount of active players.&lt;/return&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerMaxCount&quot;&gt;
-	&lt;summary&gt;Returns the amount of available players allow in the game.&lt;/summary&gt;
-	&lt;return&gt;Returns maxuimum amount of players.&lt;/return&gt;
-&lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerSetControl&quot;&gt;
+&lt;futurefunction name="PlayerUpdateControl"&gt;
 	&lt;summary&gt;&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot; &quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="controlset" default="1" type="n"&gt;&lt;/param&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerGetControl&quot;&gt;
+&lt;futurefunction name="PlayerSetAI"&gt;
 	&lt;summary&gt;&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot; &quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="entity" default="" type="n"&gt;&lt;/param&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerSetAI&quot;&gt;
+&lt;futurefunction name="PlayerSetEntity"&gt;
 	&lt;summary&gt;&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;entity[]&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="entity" default="" type="n"&gt;&lt;/param&gt;
 &lt;/futurefunction&gt;
-&lt;futurefunction name=&quot;PlayerSetEntity&quot;&gt;
-	&lt;summary&gt;&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;entity[]&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-&lt;/futurefunction&gt;
-&lt;function name=&quot;PlayerSetName&quot;&gt;
+&lt;function name="PlayerSetName"&gt;
 	&lt;summary&gt;Set the name of player&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;str[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="str[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;PlayerGetName&quot;&gt;
+&lt;function name="PlayerGetName"&gt;
 	&lt;summary&gt;Gets the name of player&lt;/summary&gt;
-	&lt;param name=&quot;player&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;str[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="player" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="str[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 
@@ -62,16 +55,15 @@ native PlayerRemove(num);
 #pragma deprecated Future Feature
 native PlayerCount();
 #pragma deprecated Future Feature
-native PlayerMaxCount();
+native PlayerSetAI(player, entity);
 #pragma deprecated Future Feature
-native PlayerSetControl(player);
-#pragma deprecated Future Feature
-native PlayerGetControl(player);
-#pragma deprecated Future Feature
-native PlayerSetAI(player, entity[]);
-#pragma deprecated Future Feature
-native PlayerSetEntity(player, entity[]);
-native PlayerSetName(player, str[], s = sizeof(str));
+native PlayerSetEntity(player, entity);
+
+
+native PlayerUpdateControl(player, controlset);
+native PlayerSetName(player, str[] );
 native PlayerGetName(player, str[], s = sizeof(str));
+native PlayerSetColour(player, colour);
 </pre>
 </div>
+

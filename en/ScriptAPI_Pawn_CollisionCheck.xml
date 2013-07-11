@@ -1,11 +1,17 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>CollisionCheck</h2>
-<p class="fundef">CollisionCheck(id1,id2,rect1,rect2)</p>
-<p>Check to see if Entity is colliding with another entity.</p>
-<p><strong>Argument 'id1':</strong>The Hash ID of the first entity you wish to check.</p>
-<p><strong>Argument 'id2':</strong>The Hash ID of the second entity you wish to check.</p>
-<p><strong>Argument 'rect1':</strong>The collision rectangle of first entity you wish to check.</p>
-<p><strong>Argument 'rect2':</strong>Rhe collision rectangle of second entity you wish to check.</p>
-<p>True if the collision rectangle of two entities are colliding.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>CollisionCheck</h2>
+	<p class="fundef">CollisionCheck(id1,id2,rect1,rect2)</p>
+	<p>Check to see if Entity is colliding with another entity.</p>
+	<p>
+		<strong>Argument 'id1':</strong>The Hash ID of the first entity you wish to check.</p>
+	<p>
+		<strong>Argument 'id2':</strong>The Hash ID of the second entity you wish to check.</p>
+	<p>
+		<strong>Argument 'rect1':</strong>The collision rectangle of first entity you wish to check.</p>
+	<p>
+		<strong>Argument 'rect2':</strong>Rhe collision rectangle of second entity you wish to check.</p>
+	<p>
+		<strong>Returns: </strong>True if the collision rectangle of two entities are colliding.</p>
 </div>
+

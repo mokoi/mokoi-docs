@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#if defined _core_included
+	<pre>#if defined _core_included
   #endinput
 #endif
 #define _core_included
@@ -23,20 +23,22 @@ native getarg(arg, index=0);
 native setarg(arg, index=0, value);
 
 /***
-&lt;function name=&quot;numargs&quot;&gt;
+&lt;function name="numargs"&gt;
 	&lt;summary&gt;Get the number of arguments.&lt;/summary&gt;
 	&lt;return&gt;Number of arguments&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;getarg&quot;&gt;
+&lt;function name="getarg"&gt;
 	&lt;summary&gt;return the value of argument.&lt;/summary&gt;
-	&lt;param name=&quot;arg&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;index&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="arg" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="index" default="0" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;Value of argument.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;setarg&quot;&gt;
+&lt;function name="setarg"&gt;
 	&lt;summary&gt;Get the number of argument&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit Position to change.&lt;/param&gt;
+	&lt;param name="arg" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="index" default="0" type="n"&gt;&lt;/param&gt;
+	&lt;param name="value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;return&gt;&lt;/return&gt;
 &lt;/function&gt;
 ***/
 /* Api match names */
@@ -45,13 +47,13 @@ native FunctionID(const name[]) = funcidx;
 native FunctionCall(function);
 
 /***
-&lt;function name=&quot;FunctionID&quot;&gt;
+&lt;function name="FunctionID"&gt;
 	&lt;summary&gt;Return the id of the function.&lt;/summary&gt;
-	&lt;param name=&quot;name[]&quot; default=&quot;&quot; type=&quot;s&quot;&gt;&lt;/param&gt;
+	&lt;param name="name[]" default="" type="s"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;FunctionCall&quot;&gt;
+&lt;function name="FunctionCall"&gt;
 	&lt;summary&gt;Calls a local function base on it's ID.&lt;/summary&gt;
-	&lt;param name=&quot;id&quot; default=&quot;&quot; type=&quot;n&quot;&gt;The Function ID&lt;/param&gt;
+	&lt;param name="id" default="" type="n"&gt;The Function ID&lt;/param&gt;
 	&lt;return&gt;What the function returns.&lt;/return&gt;
 &lt;/function&gt;
 ***/
@@ -61,17 +63,17 @@ native CharLower(c) = tolower;
 native CharUpper(c) = toupper;
 native CharSwap(c) = swapchars;
 /***
-&lt;function name=&quot;CharLower&quot;&gt;
+&lt;function name="CharLower"&gt;
 	&lt;summary&gt;Returns lower case of c.&lt;/summary&gt;
-	&lt;param name=&quot;c&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="c" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;CharUpper&quot;&gt;
+&lt;function name="CharUpper"&gt;
 	&lt;summary&gt;Returns upper case of c.&lt;/summary&gt;
-	&lt;param name=&quot;c&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="c" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;CharSwap&quot;&gt;
+&lt;function name="CharSwap"&gt;
 	&lt;summary&gt;Returns the swapped case of c.&lt;/summary&gt;
-	&lt;param name=&quot;c&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="c" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 
@@ -82,35 +84,41 @@ native NumberMin(value1, value2) = min;
 native NumberMax(value1, value2) = max;
 native NumberClamp(value, min=cellmin, max=cellmax) = clamp;
 native NumberString(const string[], index=0) = strval;
+stock NumberAbs( value )
+{
+	return (value &lt; 0 ? -value : value);
+}
+
 /***
-&lt;function name=&quot;NumberRandom&quot;&gt;
+&lt;function name="NumberRandom"&gt;
 	&lt;summary&gt;Returns a random number between 0 and max - 1&lt;/summary&gt;
-	&lt;param name=&quot;max&quot; default=&quot;&quot; type=&quot;n&quot;&gt;max value.&lt;/param&gt;
+	&lt;param name="max" default="" type="n"&gt;max value.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NumberMin&quot;&gt;
+&lt;function name="NumberMin"&gt;
 	&lt;summary&gt;Returns the lower number between value1 &amp;amp; value2&lt;/summary&gt;
-	&lt;param name=&quot;value1&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Values to pick between.&lt;/param&gt;
-	&lt;param name=&quot;value2&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Values to pick between.&lt;/param&gt;
+	&lt;param name="value1" default="" type="n"&gt;Values to pick between.&lt;/param&gt;
+	&lt;param name="value2" default="" type="n"&gt;Values to pick between.&lt;/param&gt;
 	&lt;return&gt;The smaller value.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NumberMax&quot;&gt;
+&lt;function name="NumberMax"&gt;
 	&lt;summary&gt;Returns the higher number between value1 &amp;amp; value2&lt;/summary&gt;
-	&lt;param name=&quot;value1&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Values to pick between.&lt;/param&gt;
-	&lt;param name=&quot;value2&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Values to pick between.&lt;/param&gt;
+	&lt;param name="value1" default="" type="n"&gt;Values to pick between.&lt;/param&gt;
+	&lt;param name="value2" default="" type="n"&gt;Values to pick between.&lt;/param&gt;
 	&lt;return&gt;The larger value.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NumberClamp&quot;&gt;
+&lt;function name="NumberClamp"&gt;
 	&lt;summary&gt;Return value thats has been limited between min and max.&lt;/summary&gt;
-	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;The Number to check.&lt;/param&gt;
-	&lt;param name=&quot;min&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Minimum limit.&lt;/param&gt;
-	&lt;param name=&quot;max&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Maximum limit.&lt;/param&gt;
+	&lt;param name="value" default="" type="n"&gt;The Number to check.&lt;/param&gt;
+	&lt;param name="min" default="" type="n"&gt;Minimum limit.&lt;/param&gt;
+	&lt;param name="max" default="" type="n"&gt;Maximum limit.&lt;/param&gt;
 	&lt;return&gt;The new value.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;NumberString&quot;&gt;
+&lt;function name="NumberString"&gt;
 	&lt;summary&gt;Converts a String into whole number.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to convert.&lt;/param&gt;
-	&lt;param name=&quot;index&quot; default=&quot;0&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;String to convert.&lt;/param&gt;
+	&lt;param name="index" default="0" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 </pre>
 </div>
+

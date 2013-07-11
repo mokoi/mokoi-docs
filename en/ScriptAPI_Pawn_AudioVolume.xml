@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>AudioVolume</h2>
-<p class="fundef">AudioVolume(AudioDevice:device,level)</p>
-<p>Sets Audio device volume.</p>
-<p><strong>Argument 'AudioDevice:device':</strong>The Audio device you wish to change.</p>
-<p><strong>Argument 'level':</strong>Requested Volume level.</p>
-<p>Current volume level</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>AudioVolume</h2>
+	<p class="fundef">AudioVolume(AudioDevice:device,level)</p>
+	<p>Sets Audio device volume.</p>
+	<p>
+		<strong>Argument 'AudioDevice:device':</strong>The Audio device you wish to change.</p>
+	<p>
+		<strong>Argument 'level':</strong>Requested Volume level.</p>
+	<p>
+		<strong>Returns: </strong>Current volume level</p>
 </div>
+

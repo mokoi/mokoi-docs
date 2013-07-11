@@ -1,0 +1,7 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>EntityGetObject</h2>
+	<p class="fundef">EntityGetObject()</p>
+	<p>Returns "object-id" value for entity, tagged as object. </p>
+</div>
+

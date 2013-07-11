@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>/* Fixed point arithmetic
+	<pre>/* Fixed point arithmetic
  *
  * (c) Copyright 1998-2007, ITB CompuPhase
  * This file is provided as is (no warranties).
@@ -50,7 +50,7 @@ stock Fixed:operator--(Fixed:oper)
     return oper - fixed(1);
 
 stock Fixed:operator*(Fixed:oper1, oper2)
-    return Fixed: (_:oper1 * oper2);            /* &quot;*&quot; is commutative */
+    return Fixed: (_:oper1 * oper2);            /* "*" is commutative */
 
 stock Fixed:operator/(Fixed:oper1, oper2)
     return oper1 / fixed(oper2);
@@ -59,7 +59,7 @@ stock Fixed:operator/(oper1, Fixed:oper2)
     return fdiv(fixed(oper1), oper2);
 
 stock Fixed:operator+(Fixed:oper1, oper2)
-    return oper1 + fixed(oper2);                /* &quot;+&quot; is commutative */
+    return oper1 + fixed(oper2);                /* "+" is commutative */
 
 stock Fixed:operator-(Fixed:oper1, oper2)
     return oper1 - fixed(oper2);
@@ -91,80 +91,92 @@ stock bool:operator&lt;=(Fixed:oper1, oper2)
 stock bool:operator&lt;=(oper1, Fixed:oper2)
     return fixed(oper1) &lt;= oper2;
 
-stock bool:operator==(Fixed:oper1, oper2)       /* &quot;==&quot; is commutative */
+stock bool:operator==(Fixed:oper1, oper2)       /* "==" is commutative */
     return oper1 == fixed(oper2);
 
-stock bool:operator!=(Fixed:oper1, oper2)       /* &quot;!=&quot; is commutative */
+stock bool:operator!=(Fixed:oper1, oper2)       /* "!=" is commutative */
     return oper1 != fixed(oper2);
 
 /* forbidden operations */
+/*
 forward operator%(Fixed:oper1, Fixed:oper2);
 forward operator%(Fixed:oper1, oper2);
 forward operator%(oper1, Fixed:oper2);
+*/
+
+stock operator%(Fixed:oper1, Fixed:oper2)
+	return fround(oper1*1000)%fround(oper2*1000);
+stock operator%(Fixed:oper1, oper2)
+	return fround(oper1*1000)%(oper2*1000);
+stock operator%(oper1, Fixed:oper2)
+	return (oper1*1000)%fround(oper2*1000);
+
+
 
 /***
-&lt;function name=&quot;RealString&quot;&gt;
+&lt;function name="RealString"&gt;
 	&lt;summary&gt;Converts a String into Rational number.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;&lt;/param&gt;
 	&lt;return&gt;New Rational number&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealRound&quot;&gt;
+&lt;function name="RealRound"&gt;
 	&lt;summary&gt;Converts a Rational number into a Whole number&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;round_method&quot; default=&quot;round_normal&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="round_method" default="round_normal" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;new whole number.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealSqroot&quot;&gt;
+&lt;function name="RealSqroot"&gt;
 	&lt;summary&gt;Returns the square root of a value.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;square root of a value.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealPower&quot;&gt;
+&lt;function name="RealPower"&gt;
 	&lt;summary&gt;Returns the value raised to the power of exponent.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;exponent&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="exponent" default="" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;the value raised to the power of exponent&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealAbs&quot;&gt;
+&lt;function name="RealAbs"&gt;
 	&lt;summary&gt;Returns Absolute value of 'value'.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealLog&quot;&gt;
+&lt;function name="RealLog"&gt;
 	&lt;summary&gt;Return the logarithm &lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;Real:base&quot; default=&quot;10.0&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="Real:base" default="10.0" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealSin&quot;&gt;
+&lt;function name="RealSin"&gt;
 	&lt;summary&gt;Return the sine. The input angle may be in radian, degrees or grades.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;anglemode:mode&quot; default=&quot;radian&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="anglemode:mode" default="radian" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;sine of the angle.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealCos&quot;&gt;
+&lt;function name="RealCos"&gt;
 	&lt;summary&gt;Return the cosine. The input angle may be in radian, degrees or grades.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;anglemode:mode&quot; default=&quot;radian&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="anglemode:mode" default="radian" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;cosine of the angle.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealTan&quot;&gt;
+&lt;function name="RealTan"&gt;
 	&lt;summary&gt;Return the tangent. The input angle may be in radian, degrees or grades.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;anglemode:mode&quot; default=&quot;radian&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="anglemode:mode" default="radian" type="n"&gt;&lt;/param&gt;
 	&lt;return&gt;tangent of the angle.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealAtan2&quot;&gt;
+&lt;function name="RealAtan2"&gt;
 	&lt;summary&gt;Return the arctangent of x/y. The input angle may be in radian, degrees or grades.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;anglemode:mode&quot; default=&quot;radian&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="anglemode:mode" default="radian" type="n"&gt;&lt;/param&gt;
 	&lt;notes&gt;Uses fatan2 for Fixed Point Number. Uses floatatan2 for Floating Point Number. &lt;/notes&gt;
 	&lt;return&gt;arc tangent of x/y.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;RealClamp&quot;&gt;
+&lt;function name="RealClamp"&gt;
 	&lt;summary&gt;Return value thats has been limited between min and max.&lt;/summary&gt;
-	&lt;param name=&quot;Real:value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;Real:min&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;Real:max&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="Real:value" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="Real:min" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="Real:max" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
 
 ***/</pre>
 </div>
+

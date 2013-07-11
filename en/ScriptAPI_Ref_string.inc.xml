@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>/* String functions
+	<pre>/* String functions
  *
  * (c) Copyright 2005-2007, ITB CompuPhase
  * This file is provided as is (no warranties).
@@ -58,83 +58,84 @@ stock bool: StringEqual(const string1[], const string2[], bool:ignorecase=false,
 }
 
 /***
-&lt;function name=&quot;StringLength&quot;&gt;
+&lt;function name="StringLength"&gt;
 	&lt;summary&gt;Returns the length of the the string&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringPack&quot;&gt;
+&lt;function name="StringPack"&gt;
 	&lt;summary&gt;Packs the source string into dest.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;source[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="source[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringUnpack&quot;&gt;
+&lt;function name="StringUnpack"&gt;
 	&lt;summary&gt;Unpacks the source string into dest.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;source[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="source[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringCopy&quot;&gt;
+&lt;function name="StringCopy"&gt;
 	&lt;summary&gt;Copies the source string into dest.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;source[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="source[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringConcatenate&quot;&gt;
+&lt;function name="StringConcatenate"&gt;
 	&lt;summary&gt;Appends the source string on to dest.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;source[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="source[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringExtract&quot;&gt;
+&lt;function name="StringExtract"&gt;
 	&lt;summary&gt;Copy part of source string into dest.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;source[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;start&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;end&quot; default=&quot;cellmax&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="source[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="start" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="end" default="cellmax" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringInsert&quot;&gt;
+&lt;function name="StringInsert"&gt;
 	&lt;summary&gt;Insert substr into string at index.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;substr[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;index&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="substr[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="index" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringRemove&quot;&gt;
+&lt;function name="StringRemove"&gt;
 	&lt;summary&gt;Removes part the string.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;start&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;end&quot; default=&quot;cellmax&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="start" default="" type="n"&gt;&lt;/param&gt;
+	&lt;param name="end" default="cellmax" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringFind&quot;&gt;
+&lt;function name="StringFind"&gt;
 	&lt;summary&gt;Returns the starting position of the sub string or -1 if it's not found.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;sub[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="sub[]" default="" type="a"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringNumber&quot;&gt;
+&lt;function name="StringNumber"&gt;
 	&lt;summary&gt;Converts a whole number into string 'dest'.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="value" default="" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringIsPacked&quot;&gt;
+&lt;function name="StringIsPacked"&gt;
 	&lt;summary&gt;Check if string is packed.&lt;/summary&gt;
-	&lt;param name=&quot;string[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;String to check.&lt;/param&gt;
+	&lt;param name="string[]" default="" type="a"&gt;String to check.&lt;/param&gt;
 	&lt;return&gt;True if string has been packed.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringFormat&quot;&gt;
+&lt;function name="StringFormat"&gt;
 	&lt;summary&gt;Prints formatted text to string 'dest'.&lt;/summary&gt;
-	&lt;param name=&quot;dest[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Destination string.&lt;/param&gt;
-	&lt;param name=&quot;size&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;size of destination string.&lt;/param&gt;
-	&lt;param name=&quot;pack&quot; default=&quot;_&quot; type=&quot;n&quot;&gt;Pack string contents.&lt;/param&gt;
-	&lt;param name=&quot;format&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Format String&lt;/param&gt;
-	&lt;param name=&quot;...&quot; default=&quot;&quot; type=&quot;v&quot;&gt; List of Arguments to used to produce the formatted text.&lt;/param&gt;
+	&lt;param name="dest[]" default="" type="a"&gt;Destination string.&lt;/param&gt;
+	&lt;param name="size" default="_" type="n"&gt;size of destination string.&lt;/param&gt;
+	&lt;param name="pack" default="_" type="n"&gt;Pack string contents.&lt;/param&gt;
+	&lt;param name="format" default="" type="a"&gt;Format String&lt;/param&gt;
+	&lt;param name="..." default="" type="v"&gt; List of Arguments to used to produce the formatted text.&lt;/param&gt;
 	&lt;example&gt;
 	new string[128];
-	strformat(string, _, true, &quot;Text: %s, Color: %x, Number: %d, Fixed: %q\n&quot;, &quot;Hello&quot;, 0xFFBBAAFF, 42, 50.254);
+	strformat(string, _, true, "Text: %s, Color: %x, Number: %d, Fixed: %q\n", "Hello", 0xFFBBAAFF, 42, 50.254);
 	DebugText(string);
 	&lt;/example&gt;
 &lt;/function&gt;
-&lt;function name=&quot;StringEqual&quot;&gt;
+&lt;function name="StringEqual"&gt;
 	&lt;summary&gt;Check if the two string are the same.&lt;/summary&gt;
-	&lt;param name=&quot;string1[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;string2[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;ignorecase&quot; default=&quot;false&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="string1[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="string2[]" default="" type="a"&gt;&lt;/param&gt;
+	&lt;param name="ignorecase" default="false" type="n"&gt;&lt;/param&gt;
 &lt;/function&gt;
 ***/
 </pre>
 </div>
+

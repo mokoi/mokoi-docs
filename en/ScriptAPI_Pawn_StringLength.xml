@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>StringLength</h2>
-<p class="fundef">StringLength(string[])</p>
-<p>Returns the length of the the string</p>
-<p><strong>Argument 'string[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>StringLength</h2>
+	<p class="fundef">StringLength(string[])</p>
+	<p>Returns the length of the the string</p>
+	<p>
+		<strong>Argument 'string[]':</strong></p>
 </div>
+

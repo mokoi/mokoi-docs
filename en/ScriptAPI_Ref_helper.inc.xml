@@ -1,6 +1,6 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-<pre>#if defined _helper_included
+	<pre>#if defined _helper_included
   #endinput
 #endif
 #define _helper_included
@@ -14,25 +14,33 @@
 
 ///Timer Functions
 /***
-&lt;function name=&quot;Countdown&quot;&gt;
+&lt;function name="TimerCountdown"&gt;
 	&lt;summary&gt;Returns true when time value is 0.&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;time&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
+	&lt;param name="&amp;amp;time" default="" type="n"&gt;Time counter varable&lt;/param&gt;
 	&lt;return&gt;True when time reaches 0.&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;CountTimer&quot;&gt;
+&lt;function name="TimerCountdownWithReset"&gt;
 	&lt;summary&gt;Returns true when time value is 0, then resets time.&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;time&quot; default=&quot;&quot; type=&quot;n&quot;&gt;&lt;/param&gt;
-	&lt;param name=&quot;reset&quot; default=&quot;&quot; type=&quot;n&quot;&gt;reset value.&lt;/param&gt;
+	&lt;param name="&amp;amp;time" default="" type="n"&gt;Time counter varable&lt;/param&gt;
+	&lt;param name="reset" default="" type="n"&gt;reset value.&lt;/param&gt;
 	&lt;return&gt;True when time reaches 0.&lt;/return&gt;
+&lt;/function&gt;
+&lt;function name="TimerGetRandomValue"&gt;
+	&lt;summary&gt;Generates a Random number after a set time.&lt;/summary&gt;
+	&lt;param name="randomness" default="" type="n"&gt;max random value.&lt;/param&gt;
+	&lt;param name="&amp;amp;random_value" default="" type="n"&gt;Varable to store the random number.&lt;/param&gt;
+	&lt;param name="&amp;amp;time" default="" type="n"&gt;Time counter varable&lt;/param&gt;
+	&lt;param name="timer_reset" default="1000" type="n"&gt;reset value.&lt;/param&gt;
+	&lt;return&gt;True if random_value is updated.&lt;/return&gt;
 &lt;/function&gt;
 ***/
-stock Countdown(&amp;time)
+stock TimerCountdown(&amp;time)
 {
 	time -= GameFrame();
 	return (time &gt; 0 ? false : true);
 }
 
-stock CountTimer(&amp;time, reset)
+stock TimerCountdownWithReset(&amp;time, reset)
 {
 	time -= GameFrame();
 	if ( time &gt; 0 )
@@ -42,6 +50,16 @@ stock CountTimer(&amp;time, reset)
 		time = reset;
 		return true;
 	}
+}
+
+stock TimerGetRandomValue(randomness, &amp;random_value, &amp;time, timer_reset = 1000 )
+{
+	if ( CountTimer(time, timer_reset) )
+	{
+		value = NumberRandom(randomness);
+		return true;
+	}
+	return false;
 }
 
 
@@ -67,15 +85,15 @@ stock SoundPlayRepeat(&amp;value, file[])
 
 
 /***
-&lt;function name=&quot;SoundPlayOnce&quot;&gt;
+&lt;function name="SoundPlayOnce"&gt;
 	&lt;summary&gt;Play a audio file once.&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store if audio has been played.&lt;/param&gt;
-	&lt;param name=&quot;file[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Audio File.&lt;/param&gt;
+	&lt;param name="&amp;amp;value" default="" type="n"&gt;Variable to store if audio has been played.&lt;/param&gt;
+	&lt;param name="file[]" default="" type="a"&gt;Audio File.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;SoundPlayRepeat&quot;&gt;
+&lt;function name="SoundPlayRepeat"&gt;
 	&lt;summary&gt;Trys to repeat playing audio file.&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to store if audio has been played.&lt;/param&gt;
-	&lt;param name=&quot;file[]&quot; default=&quot;&quot; type=&quot;a&quot;&gt;Audio File.&lt;/param&gt;
+	&lt;param name="&amp;amp;value" default="" type="n"&gt;Variable to store if audio has been played.&lt;/param&gt;
+	&lt;param name="file[]" default="" type="a"&gt;Audio File.&lt;/param&gt;
 &lt;/function&gt;
 ***/
 
@@ -115,42 +133,43 @@ stock GetBits( v, p, s )
 
 
 /***
-&lt;function name=&quot;SetBit&quot;&gt;
+&lt;function name="SetBit"&gt;
 	&lt;summary&gt;Changes a bit value&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit Position to change.&lt;/param&gt;
+	&lt;param name="&amp;amp;v" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit Position to change.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;ClearBit&quot;&gt;
+&lt;function name="ClearBit"&gt;
 	&lt;summary&gt;Clears a bit value&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit Position to change.&lt;/param&gt;
+	&lt;param name="&amp;amp;v" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit Position to change.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;ToggleBit&quot;&gt;
+&lt;function name="ToggleBit"&gt;
 	&lt;summary&gt;Toggles a  bit value&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit Position to change.&lt;/param&gt;
+	&lt;param name="&amp;amp;v" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit Position to change.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;TestBit&quot;&gt;
+&lt;function name="TestBit"&gt;
 	&lt;summary&gt;Return the bit value&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit Position to change.&lt;/param&gt;
-	&lt;return type=&quot;bool&quot;&gt;bit value&lt;/return&gt;
+	&lt;param name="&amp;amp;v" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit Position to change.&lt;/param&gt;
+	&lt;return type="bool"&gt;bit value&lt;/return&gt;
 &lt;/function&gt;
-&lt;function name=&quot;SetBits&quot;&gt;
+&lt;function name="SetBits"&gt;
 	&lt;summary&gt;Sets a range of bits.&lt;/summary&gt;
-	&lt;param name=&quot;&amp;amp;v&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Value.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit position.&lt;/param&gt;
-	&lt;param name=&quot;size&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Number of bits to use.&lt;/param&gt;
+	&lt;param name="&amp;amp;v" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="value" default="" type="n"&gt;Value.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit position.&lt;/param&gt;
+	&lt;param name="size" default="" type="n"&gt;Number of bits to use.&lt;/param&gt;
 &lt;/function&gt;
-&lt;function name=&quot;GetBits&quot;&gt;
+&lt;function name="GetBits"&gt;
 	&lt;summary&gt;Sets a range of bits.&lt;/summary&gt;
-	&lt;param name=&quot;value&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Variable to use.&lt;/param&gt;
-	&lt;param name=&quot;position&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Bit position.&lt;/param&gt;
-	&lt;param name=&quot;size&quot; default=&quot;&quot; type=&quot;n&quot;&gt;Number of bits to use.&lt;/param&gt;
+	&lt;param name="value" default="" type="n"&gt;Variable to use.&lt;/param&gt;
+	&lt;param name="position" default="" type="n"&gt;Bit position.&lt;/param&gt;
+	&lt;param name="size" default="" type="n"&gt;Number of bits to use.&lt;/param&gt;
 	&lt;return&gt;value of bits&lt;/return&gt;
 &lt;/function&gt;
 
 ***/
 </pre>
 </div>
+

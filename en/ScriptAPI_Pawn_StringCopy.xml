@@ -1,8 +1,11 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>StringCopy</h2>
-<p class="fundef">StringCopy(dest[],source[])</p>
-<p>Copies the source string into dest.</p>
-<p><strong>Argument 'dest[]':</strong></p>
-<p><strong>Argument 'source[]':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>StringCopy</h2>
+	<p class="fundef">StringCopy(dest[],source[])</p>
+	<p>Copies the source string into dest.</p>
+	<p>
+		<strong>Argument 'dest[]':</strong></p>
+	<p>
+		<strong>Argument 'source[]':</strong></p>
 </div>
+

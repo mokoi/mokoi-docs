@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>NetworkMessage</h2>
-<p class="fundef">NetworkMessage(reliable,serveronly,message[],length)</p>
-<p>Sends a message to entity with the same unique id.</p>
-<p><strong>Argument 'reliable':</strong></p>
-<p><strong>Argument 'serveronly':</strong></p>
-<p><strong>Argument 'message[]':</strong></p>
-<p><strong>Argument 'length':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>NetworkMessage</h2>
+	<p class="fundef">NetworkMessage(reliable,serveronly,message[],length)</p>
+	<p>Sends a message to entity with the same unique id.</p>
+	<p>
+		<strong>Argument 'reliable':</strong></p>
+	<p>
+		<strong>Argument 'serveronly':</strong></p>
+	<p>
+		<strong>Argument 'message[]':</strong></p>
+	<p>
+		<strong>Argument 'length':</strong></p>
 </div>
+

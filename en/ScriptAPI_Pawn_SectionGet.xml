@@ -1,9 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>SectionGet</h2>
-<p class="fundef">SectionGet(section[],&gridx,&gridy)</p>
-<p>Get the current section name.</p>
-<p><strong>Argument 'section[]':</strong>Section name.</p>
-<p><strong>Argument '&gridx':</strong>Grid Position</p>
-<p><strong>Argument '&gridy':</strong>Grid Position</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>SectionGet</h2>
+	<p class="fundef">SectionGet(section[],&amp;gridx,&amp;gridy)</p>
+	<p>Get the current section name.</p>
+	<p>
+		<strong>Argument 'section[]':</strong>Section name.</p>
+	<p>
+		<strong>Argument '&amp;gridx':</strong>Grid Position</p>
+	<p>
+		<strong>Argument '&amp;gridy':</strong>Grid Position</p>
 </div>
+

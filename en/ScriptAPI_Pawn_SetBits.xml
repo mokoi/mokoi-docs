@@ -1,10 +1,15 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>SetBits</h2>
-<p class="fundef">SetBits(&v,value,position,size)</p>
-<p>Sets a range of bits.</p>
-<p><strong>Argument '&v':</strong>Variable to use.</p>
-<p><strong>Argument 'value':</strong>Value.</p>
-<p><strong>Argument 'position':</strong>Bit position.</p>
-<p><strong>Argument 'size':</strong>Number of bits to use.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>SetBits</h2>
+	<p class="fundef">SetBits(&amp;v,value,position,size)</p>
+	<p>Sets a range of bits.</p>
+	<p>
+		<strong>Argument '&amp;v':</strong>Variable to use.</p>
+	<p>
+		<strong>Argument 'value':</strong>Value.</p>
+	<p>
+		<strong>Argument 'position':</strong>Bit position.</p>
+	<p>
+		<strong>Argument 'size':</strong>Number of bits to use.</p>
 </div>
+

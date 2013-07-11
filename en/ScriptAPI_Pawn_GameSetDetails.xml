@@ -1,8 +1,0 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
-<?xml-stylesheet href="../common.css"?>
-<h2>GameSetDetails</h2>
-<p class="fundef">GameSetDetails(slot,array[64])</p>
-<p>Set Save Game Details.</p>
-<p><strong>Argument 'slot':</strong>Save slot to use, 0-9 are available.</p>
-<p><strong>Argument 'array[64]':</strong>256 bytes of extra save data, for uses such as high scores, player name, time of save. This can be access via other games if feature is enable.</p>
-</div>

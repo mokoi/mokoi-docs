@@ -6,7 +6,7 @@
 <p>Design notes on how to handle game design.</p>
 <h3>Platformer</h3>
 
-<img src="./images/genre-platform.png" alt=""/> <img src="./images/genre-platform-mask.png" alt=""/> <br/>
+<img src="../images/genre-platform.png" alt=""/> <img src="../images/genre-platform-mask.png" alt=""/> <br/>
 A Map and it's underlying mask
 
 <p>To create a Platformer, the mask system is important as it can be used a invisible guide for Objects. In the above image, Red would be class as a solid, Blue would use both mask and collision system.</p>
@@ -15,7 +15,7 @@ A Map and it's underlying mask
 <p><a href="Scripting;Pawn;MaskGetValue.xml">MaskGetValue</a>(x, y), along with floatsin &amp; floatcos will be the functions using in a platformer. <a href="Scripting;Pawn;MaskGetValue.xml">MaskGetValue</a> will return a value between 0-255.</p>
 <h3>Beat'em Ups</h3>
 
-<img src="./images/beat-em-up.png" alt=""/> <br/>
+<img src="../images/beat-em-up.png" alt=""/> <br/>
 When Attacking, check for collision in the hit zone then check if it falls into the 'h' value.
 
 <p>Known Issues: Map Editor isn't design to handle delayed enemy loading.</p>

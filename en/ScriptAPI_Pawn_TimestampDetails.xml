@@ -1,13 +1,21 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>TimestampDetails</h2>
-<p class="fundef">TimestampDetails(seconds1970,&year,&month,&day,&hour,&minute,&second)</p>
-<p>Converts a Unix Timestamp to a time and date.</p>
-<p><strong>Argument 'seconds1970':</strong>Timestamp to use</p>
-<p><strong>Argument '&year':</strong>Variable to store the infomation.</p>
-<p><strong>Argument '&month':</strong>Variable to store the infomation.</p>
-<p><strong>Argument '&day':</strong>Variable to store the infomation.</p>
-<p><strong>Argument '&hour':</strong>Variable to store the infomation.</p>
-<p><strong>Argument '&minute':</strong>Variable to store the infomation.</p>
-<p><strong>Argument '&second':</strong>Variable to store the infomation.</p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>TimestampDetails</h2>
+	<p class="fundef">TimestampDetails(seconds1970,&amp;year,&amp;month,&amp;day,&amp;hour,&amp;minute,&amp;second)</p>
+	<p>Converts a Unix Timestamp to a time and date.</p>
+	<p>
+		<strong>Argument 'seconds1970':</strong>Timestamp to use</p>
+	<p>
+		<strong>Argument '&amp;year':</strong>Variable to store the infomation.</p>
+	<p>
+		<strong>Argument '&amp;month':</strong>Variable to store the infomation.</p>
+	<p>
+		<strong>Argument '&amp;day':</strong>Variable to store the infomation.</p>
+	<p>
+		<strong>Argument '&amp;hour':</strong>Variable to store the infomation.</p>
+	<p>
+		<strong>Argument '&amp;minute':</strong>Variable to store the infomation.</p>
+	<p>
+		<strong>Argument '&amp;second':</strong>Variable to store the infomation.</p>
 </div>
+

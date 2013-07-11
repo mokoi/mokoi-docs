@@ -1,7 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml">
 <?xml-stylesheet href="../common.css"?>
-<h2>CharLower</h2>
-<p class="fundef">CharLower(c)</p>
-<p>Returns lower case of c.</p>
-<p><strong>Argument 'c':</strong></p>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>CharLower</h2>
+	<p class="fundef">CharLower(c)</p>
+	<p>Returns lower case of c.</p>
+	<p>
+		<strong>Argument 'c':</strong></p>
 </div>
+
