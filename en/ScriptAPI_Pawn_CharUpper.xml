@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>CharUpper</h2>
-	<p class="fundef">CharUpper(c)</p>
-	<p>Returns upper case of c.</p>
-	<p>
-		<strong>Argument 'c':</strong></p>
-</div>
-

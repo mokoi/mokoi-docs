@@ -1,23 +1,23 @@
-<?xml-stylesheet href="../common.css"?>
-
-<div xmlns="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
 	<h2>Error and warning messages</h2>
 	<p>When the compiler finds an error in a file, it outputs a message giving, in this order:</p>
 	<ol>
-	<li>the name of the file</li>
-	<li>the line number were the compiler detected the error between parentheses, directly behind the filename</li>
-	<li>the error class ("error", "fatal error" or "warning")</li>
-	<li>an error number</li>
-	<li>a descriptive error message</li>
+		<li>the name of the file</li>
+		<li>the line number were the compiler detected the error between parentheses, directly behind the filename</li>
+		<li>the error class ("error", "fatal error" or "warning")</li>
+		<li>an error number</li>
+		<li>a descriptive error message</li>
 	</ol>
 	<p>For example:</p>
 	<pre>demo.mps [line 3] error 001 expected token: ";", but found "{"</pre>
 	<p>Note: the line number given by the compiler may specify a position behind the actual error, since the compiler cannot always establish an error before having analyzed the complete expression.</p>
+
 	<h3>Fixing Errors</h3>
 	<p>When scripting you will come across the Error Dialog (screen above), these have Warning highlighted in Yellow and Error are highlighted in Red and should focus on first. </p>
-	<p>Many of the error can fix by reading what the error description below and the software provide DebugText() function to display the values from variables. </p>
+	<p>Many of the error can fix by reading what the error description below and the software provide ConsoleOutput() + ConsoleLog() functions to display the values from variables. </p>
+	
 	<h3>Errors</h3>
-
 	<h4>001: expected token: token, but found token</h4>
 	<p>A required token is omitted.</p>
 

@@ -1,14 +1,10 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt; Talking to Other Entity</div>
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt;</div>
 	<h2>Tutorial: Talking to Other Entity</h2>
 	<p>Now we have created a entity that moves, lets have another entity target it.</p>
-
-
 	<p>First we need update the Moving Entity from the last tutorial, so when another entity scan for it, it will know which one it looking for.</p>
 	<h3>Updated Moving Entity</h3>
-<pre>
-/* We add a 'public' variable so other entities can access it */
+	<pre>/* We add a 'public' variable so other entities can access it */
 public isplayer = 42;
 #pragma unused isplayer // This line tell the compiler that isplayer variable is being used.
 
@@ -18,25 +14,25 @@ new Fixed:y = 0.00;
 new Fixed:z = 0.00;
 
 /* Display Object variable */
-new obj = -1;
+new object:obj; // the obj varible is tagged as object.
 
 /* We want to get the position on entity start up, so we use the Init function */
 public Init(...)
 {
-    /* We want to store, position for current entity to x, y variables. A empty sting access current entity, other wise you could use a entity ID to get it's position  */
-    EntityGetPosition(x, y, z, SELF);
-    obj = EntityGetNumber(&quot;object-id&quot;, SELF); //Get the Map Object
+  /* We want to store, position for current entity to x, y variables. */
+  EntityGetPosition(x, y, z);
+  obj = EntityGetObject() // Get the display object the entity is attacted to.
 }
 
 main()
 {
-    /* Get Player 1 Axis Values and add them to the entity positions */
-    x += InputAxis(0)* GameFrame2();
-    y += InputAxis(1)* GameFrame2();
+  /* Get Player 1 Axis Values and add them to the entity positions */
+  x += InputAxis(0)* GameFrameSeconds();
+  y += InputAxis(1)* GameFrameSeconds();
 
-    ObjectPosition(obj, fround(x), fround(y), 1, 0, 0);
+  ObjectPosition(obj, fround(x), fround(y), z, 0, 0);
 
-    EntitySetPosition( x, y, z ); // Updates the entity's position
+  EntitySetPosition( x, y, z ); // Updates the entity's position
 }
 </pre>
 	<h3>Targeting Entity</h3>
@@ -44,18 +40,19 @@ main()
 <pre>
 #include &lt;helper&gt;
 
-new player_entity_name{64} = &quot;test&quot;; // String to store a moving entity's id 
+new entity:player_entity; // String to store a moving entity's id 
 new timer;
 
-/* Initialise Three Fixed variables to hold position */
-new Fixed:x = 0.00;
-new Fixed:y = 0.00;
-new Fixed:z = 0.00;
+/* Initialise Three Fixed variables to hold our position */
+new Fixed:x;
+new Fixed:y;
+new Fixed:z;
 
-/* Initialise Three Fixed variables to hold position */
-new Fixed:player_x = 0.00;
-new Fixed:player_y = 0.00;
-new Fixed:player_z = 0.00;
+/* Initialise Three Fixed variables to hold 'player' position */
+new Fixed:player_x;
+new Fixed:player_y;
+new Fixed:player_z;
+
 
 /* This Function will scan the entities on the maps. 
 *  We have to do this, cause the Moving Entity has a random id.
@@ -64,7 +61,7 @@ new Fixed:player_z = 0.00;
 find_player()
 {
 	new entity_ident; // Store a entity's id 
-	new map_id = MapIdent();
+	new map_id = MapCurrentIdent();
 	/* EntitiesList start a list of all the entities on a map. 
 	* passing O as first argument will scan the global entities 
 	*/
@@ -77,7 +74,7 @@ find_player()
 			if ( EntityPublicVariable(entity_name, &quot;isplayer&quot; )  )
 			{
 				/* This is should be a player entity id, so we should make a copy it  */
-				
+				player_entity = entity_ident;
 			}
 		}
 	}
@@ -92,11 +89,11 @@ public Init( ... )
 main()
 {
 	/* every 5 second we are going to do something */
-	if ( CountTimer( timer, 5.000) )
+	if ( TimerCountdownWithReset( timer, 5000) )
 	{
-		EntityGetPosition(player_x, player_y, player_z, player_entity_name ); // Get Player Position
+		EntityGetPosition(player_x, player_y, player_z, player_entity ); // Get Player Position
 	}
-	GraphicsDraw(&quot;&quot;, LINE, fround(x)+8, fround(y)+8, fround(z),  fround(player_x), fround(player_y), 0xFF0000FF );
+	GraphicsDraw(&quot;&quot;, LINE, fround(x)+8, fround(y)+8, z,  fround(player_x), fround(player_y), 0xFF0000FF );
 
 }
 </pre>

@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>PlayerCount</h2>
-	<p class="fundef">PlayerCount()</p>
-	<p>Returns the amount of active players.</p>
-	<p>
-		<strong>Returns: </strong>Returns the amount of active players.</p>
-</div>
-

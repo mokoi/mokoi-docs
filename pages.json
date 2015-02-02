@@ -1,0 +1,50 @@
+{
+	"Building": "Building.xml",
+	"Demo": {
+		"index": "Demo.xml",
+		"Audio": "Demo_Audio.xml"
+	},
+	"DesignNotes": {
+		"index": "DesignNotes.xml",
+		"Controller": "DesignNotes_Controller.xml",
+		"Formats": "DesignNotes_Formats.xml",
+		"Game Process": "DesignNotes_GameProcess.xml",
+		"GUI Styling": "DesignNotes_GUIStyling.xml"
+	}, 
+	"Editor": {
+		"index": "Editor.xml",
+		"Project Settings": "Editor_Project.xml",
+		"Language": "Editor_Language.xml",
+		"Spritesheet": "Editor_Spritesheet.xml",
+		"Maps": "Editor_Maps.xml",
+		"Worlds": "Editor_Worlds.xml",
+		"Audio": "Editor_Audio.xml",
+		"Entity Scripts": "Editor_Entities.xml"
+	},
+	"Guides": {
+		"index": "Guides.xml",
+		"CreatingGames": "Guides_CreatingGames.xml",
+		"CreatingGenres": "Guides_CreatingGenres.xml"
+	},
+	"Scripting": {
+		"index": "Scripting.xml",
+		"Pawn": {
+			"index": "Scripting_Pawn.xml",
+			"ErrorCodes": "Scripting_Pawn_ErrorCodes.xml",
+			"Functions": "Scripting_Pawn_Functions.xml",
+			"Operators": "Scripting_Pawn_Operators.xml",
+			"Statements": "Scripting_Pawn_Statements.xml",
+			"Syntax": "Scripting_Pawn_Syntax.xml",
+			"Variables": "Scripting_Pawn_Variables.xml"
+		}
+	},
+	"Tutorials": {
+		"index": "Tutorials.xml",
+		"1. Hello World": "Tutorials_1HelloWorld.xml",
+		"2. Using Graphics": "Tutorials_2UsingGraphics.xml",
+		"3. Basic Entity": "Tutorials_3BasicEntity.xml",
+		"4. Moving Entity": "Tutorials_4MovingEntity.xml",
+		"5. Talking To Other Entity": "Tutorials_5TalkingToOtherEntity.xml",
+		"Basic Invaders": "Tutorials_BasicInvaders.xml"
+	}
+}

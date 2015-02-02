@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>SectionLoad</h2>
-	<p class="fundef">SectionLoad(name[])</p>
-	<p>Loads a section</p>
-	<p>
-		<strong>Argument 'name[]':</strong></p>
-</div>
-

@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>HideObjects</h2>
-	<p class="fundef">HideObjects(...)</p>
-	<p>Hides all objects passed.</p>
-	<p>
-		<strong>Argument '...':</strong></p>
-</div>
-

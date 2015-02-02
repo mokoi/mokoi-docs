@@ -1,7 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>GameSaveHibernate</h2>
-	<p class="fundef">GameSaveHibernate()</p>
-	<p>Hibernate a game</p>
-</div>
-

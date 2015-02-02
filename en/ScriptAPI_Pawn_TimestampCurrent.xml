@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>TimestampCurrent</h2>
-	<p class="fundef">TimestampCurrent()</p>
-	<p>Returns the seconds from 1970. Also known as Unix Time</p>
-	<p>
-		<strong>Returns: </strong>Returns the seconds from 1970</p>
-</div>
-

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" manifest="/cache.manifest">
+<head>
+	<title>Mokoi Documentation</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<style type="text/css">
+	path { fill-opacity:1; fill-rule:evenodd; stroke:#000000; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1; }
+	rect { fill:#5f5f5f; fill-opacity:1; fill-rule:evenodd; stroke:#000000; stroke-width:2.30767632; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:4; stroke-dasharray:none; stroke-dashoffset:0; stroke-opacity:1; }
+	
+	div#pagetext { flex: 1 0 auto; }
+	aside#sidebar { flex: 0 1 auto; padding-right: 1em; font-size: .8em; }
+	.flex
+	{
+		display: -webkit-flex;
+		-webkit-flex-direction: row;
+		display: flex;
+		flex-direction: row;
+	}
+	</style>
+	<script src="highlight.pack.js"></script>
+	<script src="lx.js"></script>
+	<meta name="google-translate-customization" content="db3381c38679f071-65f53f581fcac1f5-gaa972de4b43bcd15-a"></meta>
+</head>
+<body class="scripted" data-function="LoadPage">
+	<header>
+		<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" id="mokoi_logo">
+			<g transform="scale(0.8,0.8)">
+				<path d="M 40,1 L 31,25 L 40,17.864865 L 49,25 L 40,1 z " style="fill:#d2d2d2;"/>
+				<path d="M 79,40 L 55,31 L 62.135132,40 L 55,49 L 79,40 z " style="fill:#9d9d9d;"/>
+				<path d="M 40,79 L 31,55 L 40,62.135134 L 49,55 L 40,79 z " style="fill:#696969;"/>
+				<path d="M 1,40 L 25,31 L 17.864864,40 L 25,49 L 1,40 z " style="fill:#414141;"/>
+				<rect width="19.581432" height="19.581429" rx="0" ry="0" x="46.208862" y="-10.221174" transform="matrix(0.7071068,0.7071068,-0.7071068,0.7071068,0,0)"/>
+			</g>
+		</svg>
+		<h1>Mokoi</h1>
+		<div>Documentation</div>
+	</header>
+	<nav>
+		<div id="google_translate_element"></div>
+	</nav>
+	<section id="main" class="flex">
+		<aside id="sidebar" class="scripted" data-function="LoadIndex">
+		</aside>
+		<div id="pagetext">
+		</div>
+	</section>
+	<script>function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-2033908-1'}, 'google_translate_element'); }</script>
+	<!--script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script-->
+</body>
+
+<script>
+function IndexAppend(e, pages)
+{
+	for (var item in pages)
+	{
+		if ( typeof pages[item] === 'object' )
+		{
+			var element = document.createElement('ul');
+			e.innerHTML += '<li>' + item + '</li>';
+			e.appendChild(element)
+
+			IndexAppend(element, pages[item]);
+		}
+		else
+		{
+			if ( item == "index" )
+			{
+				var link = document.createElement('a');
+				link.setAttribute('href', '#'+pages[item])
+				link.innerHTML = e.previousSibling.innerHTML;
+				
+				e.previousSibling.innerHTML = "";
+				e.previousSibling.appendChild(link)
+			}
+			else
+			{
+				var list = document.createElement('li');
+				var link = document.createElement('a');
+		
+				link.setAttribute('href', '#'+pages[item])
+				link.innerHTML = item;
+
+				list.appendChild(link)
+				e.appendChild(list)
+			}
+		}
+	}
+}
+
+function scriptLoadPage(e) 
+{
+	page = document.location.hash;
+	if (page)
+	{
+		page = page.substr(1, page.length);
+		var q = new lxRequest('GET', 'en/'+page, true);
+		q.send( document.getElementById('pagetext'), null, function(request) { 
+			try {
+				request.getMessage();
+				if ( request.request.responseXML )
+				{
+					import_content( request.request.responseXML.documentElement, request.parent )
+					highlight()
+				}
+			} catch (e) {
+				request.parent.innerHTML = "Parsing error:" + e; 
+			}
+		} );
+	}
+}
+
+function scriptLoadIndex(e)
+{
+	var q = new lxRequest('GET', 'pages.json', true);
+	q.send( e, null, function(request) { 
+		try {
+			var pages = JSON.parse( request.getMessage() );
+			var element = document.createElement('ul');
+			request.parent.appendChild(element)
+
+			IndexAppend(element, pages);
+		} catch (e) {
+			request.parent.innerHTML = "Parsing error:" + e; 
+		}
+	} );
+}
+
+function highlight()
+{
+	var q = document.getElementsByTagName('pre');
+	for (var i = 0; i < q.length; ++i) { hljs.highlightBlock(q[i]) }
+}
+
+</script>
+<script>
+if ( window.location.protocol === 'file:')
+{
+	var element = document.createElement('div');
+	element.innerHTML = 'Your Browser may not support accessing local files. Access via <a href="http://mokoi.github.io/mokoi-docs/">mokoi.github.io/mokoi-docs/</a>'
+	document.getElementsByTagName('body')[0].insertBefore( element, document.getElementById('main') );
+}
+
+var scritped_elements = document.getElementsByClassName('scripted');
+if (scritped_elements.length)
+{
+	for (var n = 0; n < scritped_elements.length; n++)
+	{
+		var fun = 'script' + scritped_elements[n].getAttribute('data-function');
+		if ( window[fun] )
+		{
+			window[fun](scritped_elements[n]);
+		}
+	}
+}
+window.addEventListener('hashchange', scriptLoadPage, true);
+
+if(document.location.hash == "")
+	document.location.hash = "index.xml";
+
+</script>
+</html>

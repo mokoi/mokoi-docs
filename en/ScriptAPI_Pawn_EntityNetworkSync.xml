@@ -1,9 +1,0 @@
-<?xml-stylesheet href="../common.css"?>
-<div xmlns="http://www.w3.org/1999/xhtml">
-	<h2>EntityNetworkSync</h2>
-	<p class="fundef">EntityNetworkSync(bool:reliable)</p>
-	<p>Send network sync message.</p>
-	<p>
-		<strong>Argument 'bool:reliable':</strong>Use an reliable message.</p>
-</div>
-

@@ -1,7 +1,8 @@
 <?xml-stylesheet href="../common.css"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
-	<div class="navbar"><a href="DesignNotes">Design Notes</a> &gt; Formats</div>
+	<div class="navbar"><a href="DesignNotes">Design Notes</a> &gt; </div>
 
+	<h2>Formats</h2>
 	<p>Mokoi Games are a Platform Neutral Video Games Format. Currently only one working implementation has been made (<a href="http://mokoi.info/projects/luxengine/">&quot;Lux Engine&quot;</a>), though 2 more in development (<a href="http://mokoi.info/projects/lightbulb">Lightbulb</a> and <a href="http://mokoi.info/projects/HTML5">&quot;HTML5&quot;</a>)</p>
 
 
@@ -40,7 +41,7 @@
 		<li>dialog - <em>Stores Language files as text files and speech files in OGG formatted audio files</em></li>
 		<li>lang - <em>Stores Language files as text files</em></li>
 		<li>maps - <em>XML Maps files</em></li>
-		<li>sections -<em>TSV to define each section.</em></li>
+		<li>worlds -<em>TSV to define each section.</em></li>
 		<li>scripts - <em>Game &amp; Map Entities</em></li>
 		<li>sprites - <em>PNG Images and XML sheet info</em></li>
 		<li>soundfx - <em>Audio files</em></li>
@@ -85,15 +86,34 @@ save     14    0
 	<p>Files are name with the two letter language code, with 00.txt acting as a Key file which is also exported to a script routine.</p>
 	<p>Ogg Vorbis is used for audio dialog.</p>
 	<h4>Special Characters</h4>
+	<p>Certain characters will be replace with a Controller Icon or set the colour of the text.</p>
+
+	<h5>Colours</h5>
+	<p>The § symbol followed by a value will colourise the next word.</p>
+
+	<p>§0	Black</p>
+	<p>§1	Dark Blue</p>
+	<p>§2	Dark Green</p>
+	<p>§3	Dark Aqua</p>
+	<p>§4	Dark Red</p>
+	<p>§5	Dark Purple</p>
+	<p>§6	Gold</p>
+	<p>§7	Gray</p>
+	<p>§8	Dark Gray</p>
+	<p>§9	Blue</p>
+	<p>§a	Green</p>
+	<p>§b	Aqua</p>
+	<p>§c	Red</p>
+	<p>§d	Light Purple</p>
+	<p>§e	Yellow</p>
+	<p>§f	White</p>
+
 	<h5>Controller Button</h5>
 	<p>❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿ ➀ ➁ ➂ ➃ ➄ ➅</p>
-	<h5>Controller Axis</h5>
+	<h5>Controller Axis (Primary - Secondary)</h5>
 	<p><strong>y</strong> ▲/▼ △/▽</p>
 	<p><strong>x</strong> ◀/▶ ◁/▷</p>
 	<p><strong>z</strong> ◐/◑ ◒/◓</p>
-
-	<h3>Entities</h3>
-	<p></p>
 
 	<h3>Maps</h3>
 
