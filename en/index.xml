@@ -23,28 +23,26 @@
 
 	<h2>Language Editor</h2>
 	<p>Language Editor manages the Game's dialog text and code strings and the language translations.</p>
-	<p>Initial, you will have the 'lang\en.txt' and 'dialog\en.txt' loaded and these will act as the base for other languages as well.</p>
+	<p>Initial, you will have the 'lang\00.txt' and 'dialog\oo.txt' loaded and these will act as the base for other languages as well.</p>
 	<p>If you wish to support more that language in your game, use the settings 'language.available' and set it to a list of the languages separated by a |. example: en|de|fr</p>
 	<p><a href="Editor_Language.xml">Read more on this component</a></p>
 
+	<h2>Sprite Sheets Editor</h2>
+	<p>Spritesheets are collection of sprites on a image file, which allows for easy management and editing via 3rd party project.</p>
+	<p>The Editor allows for creation and modifying of sprites and animations.</p>
+	<p><a href="Editor_Spritesheet.xml">Read more on this component</a></p>
 
-<h2>Sprite Sheets Editor</h2>
-<p>Spritesheets are collection of sprites on a image file, which allows for easy management and editing via 3rd party project.</p>
-<p>The Editor allows for creation and modifying of sprites and animations.</p>
-<p><a href="Editor_Spritesheet.xml">Read more on this component</a></p>
+	<h2>Map and Worlds Editor</h2>
+	<p>Maps contains objects that are displayed on the screen.</p>
+	<p>Worlds a group of maps, which allow automatic movement between maps.</p>
+	<p><a href="Editor_Maps.xml">More on Map Editor component</a> <a href="Editor_Worlds.xml">More on World Editing component</a></p>
 
-<h2>Map Editor</h2>
-<p><img src="../images/Image22.png" alt=""/></p>
-<p>Map Editor page has two lists, Map Files and Map Section.</p>
-<p>Map Section a group of maps, which allow automatic movement between maps.</p>
-<p><a href="Editor_MapSection.xml">More on Map Section component</a> <a href="Editor_MapEdit.xml">More on Map Editing component</a></p>
+	<h2>Audio</h2>
+	<p>Manage you game's Sound Effects and Music.</p>
+	<p><a href="Editor_Audio.xml">Read more on this component</a></p>
 
-<h2>Audio</h2>
-<p>Manage you game's Sound Effects and Music.</p>
-<p><a href="Editor_Audio.xml">Read more on this component</a></p>
-
-<h2>Game Scripts</h2>
-<p>Game Scripts, also known as Entities, controls how objects are handle in the game.</p>
-<p><a href="Editor_Entities.xml">Read more on this component</a></p>
+	<h2>Entity Scripts</h2>
+	<p>Entity Scripts controls how objects are handle in the game.</p>
+	<p><a href="Editor_Entities.xml">Read more on this component</a></p>
 
 </div>
